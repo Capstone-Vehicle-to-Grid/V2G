@@ -22,6 +22,8 @@
 		52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769D2992E1AA001CE16B /* VehicleModel.swift */; };
 		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
 		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
+		5B472A70299C4ABD00A88595 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5B472A6F299C4ABD00A88595 /* images.jpeg */; };
+		5B472A72299C4D6A00A88595 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B472A71299C4D6A00A88595 /* Asset.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		52CC769D2992E1AA001CE16B /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		52CC769F2992E1D3001CE16B /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		52CC76A12992E214001CE16B /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		5B472A6F299C4ABD00A88595 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
+		5B472A71299C4D6A00A88595 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		42806F0E2979FA7F002AD464 = {
 			isa = PBXGroup;
 			children = (
+				5B472A71299C4D6A00A88595 /* Asset.xcassets */,
+				5B472A6F299C4ABD00A88595 /* images.jpeg */,
 				42806F192979FA7F002AD464 /* Vehicle to Grid */,
 				42806F182979FA7F002AD464 /* Products */,
 			);
@@ -191,6 +197,8 @@
 			files = (
 				42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */,
 				42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */,
+				5B472A72299C4D6A00A88595 /* Asset.xcassets in Resources */,
+				5B472A70299C4ABD00A88595 /* images.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
