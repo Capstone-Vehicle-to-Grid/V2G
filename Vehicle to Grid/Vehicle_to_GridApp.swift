@@ -7,12 +7,14 @@
 
 import SwiftUI
 import FirebaseCore
+import GoogleMaps
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
+    GMSServices.provideAPIKey("AIzaSyBEbXf8wpRdVGkVdoLb_SzMYfq5so83J-I")
 
     return true
   }
