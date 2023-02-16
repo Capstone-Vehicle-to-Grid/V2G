@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */; };
-		42806F1D2979FA7F002AD464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* ContentView.swift */; };
+		42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* LoginView.swift */; };
 		42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F1E2979FA82002AD464 /* Assets.xcassets */; };
 		42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F212979FA82002AD464 /* Preview Assets.xcassets */; };
+		42E881E3299ECE4E00EC6016 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 522DD90E29899B020023FE84 /* GoogleService-Info.plist */; };
 		522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91029899C080023FE84 /* FirebaseAuth */; };
 		522DD91329899C080023FE84 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91229899C080023FE84 /* FirebaseAuthCombine-Community */; };
 		522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91429899C080023FE84 /* FirebaseDatabase */; };
@@ -22,14 +23,12 @@
 		52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769D2992E1AA001CE16B /* VehicleModel.swift */; };
 		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
 		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
-		5B472A70299C4ABD00A88595 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5B472A6F299C4ABD00A88595 /* images.jpeg */; };
-		5B472A72299C4D6A00A88595 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B472A71299C4D6A00A88595 /* Asset.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		42806F172979FA7F002AD464 /* Vehicle to Grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vehicle to Grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle_to_GridApp.swift; sourceTree = "<group>"; };
-		42806F1C2979FA7F002AD464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		42806F1C2979FA7F002AD464 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		42806F1E2979FA82002AD464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42806F212979FA82002AD464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		522DD90E29899B020023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -37,8 +36,6 @@
 		52CC769D2992E1AA001CE16B /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		52CC769F2992E1D3001CE16B /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		52CC76A12992E214001CE16B /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
-		5B472A6F299C4ABD00A88595 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
-		5B472A71299C4D6A00A88595 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +59,6 @@
 		42806F0E2979FA7F002AD464 = {
 			isa = PBXGroup;
 			children = (
-				5B472A71299C4D6A00A88595 /* Asset.xcassets */,
-				5B472A6F299C4ABD00A88595 /* images.jpeg */,
 				42806F192979FA7F002AD464 /* Vehicle to Grid */,
 				42806F182979FA7F002AD464 /* Products */,
 			);
@@ -83,7 +78,6 @@
 				522DD90E29899B020023FE84 /* GoogleService-Info.plist */,
 				42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */,
 				52CC76982992E112001CE16B /* ViewModel */,
-				42806F1C2979FA7F002AD464 /* ContentView.swift */,
 				52CC76962992E104001CE16B /* View */,
 				52CC76942992E0F0001CE16B /* Model */,
 				42806F1E2979FA82002AD464 /* Assets.xcassets */,
@@ -114,6 +108,7 @@
 		52CC76962992E104001CE16B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				42806F1C2979FA7F002AD464 /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,8 +192,7 @@
 			files = (
 				42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */,
 				42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */,
-				5B472A72299C4D6A00A88595 /* Asset.xcassets in Resources */,
-				5B472A70299C4ABD00A88595 /* images.jpeg in Resources */,
+				42E881E3299ECE4E00EC6016 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */,
-				42806F1D2979FA7F002AD464 /* ContentView.swift in Sources */,
+				42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */,
 				52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
