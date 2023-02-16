@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E035242299C7EAF00FF3648 /* GoogleMapsBase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035241299C7EAF00FF3648 /* GoogleMapsBase.xcframework */; };
-		2E035247299C7EF100FF3648 /* GoogleMapsCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035245299C7EF100FF3648 /* GoogleMapsCore.xcframework */; };
-		2E035248299C7EF100FF3648 /* GoogleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035246299C7EF100FF3648 /* GoogleMaps.xcframework */; };
 		2E03524D299C7FAA00FF3648 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E03524C299C7FAA00FF3648 /* Accelerate.framework */; };
 		2E03524F299C7FB200FF3648 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E03524E299C7FB200FF3648 /* CoreData.framework */; };
 		2E035251299C7FBA00FF3648 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035250299C7FBA00FF3648 /* CoreGraphics.framework */; };
@@ -42,12 +39,13 @@
 		522DD91929899C080023FE84 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91829899C080023FE84 /* FirebaseFirestore */; };
 		522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */; };
 		522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */; };
+		7CA5B9E1299DDB9B007ED04A /* GoogleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */; };
+		7CA5B9E2299DDB9B007ED04A /* GoogleMapsBase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */; };
+		7CA5B9E3299DDB9B007ED04A /* GoogleMapsCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */; };
+		7CA5B9E6299DE02A007ED04A /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 7CA5B9E5299DE02A007ED04A /* SwiftLocation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E035241299C7EAF00FF3648 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsBase.xcframework; path = "../../GoogleMaps-7.3.0/Base/Frameworks/GoogleMapsBase.xcframework"; sourceTree = "<group>"; };
-		2E035245299C7EF100FF3648 /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsCore.xcframework; path = "../../GoogleMaps-7.3.0/Maps/Frameworks/GoogleMapsCore.xcframework"; sourceTree = "<group>"; };
-		2E035246299C7EF100FF3648 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMaps.xcframework; path = "../../GoogleMaps-7.3.0/Maps/Frameworks/GoogleMaps.xcframework"; sourceTree = "<group>"; };
 		2E03524C299C7FAA00FF3648 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		2E03524E299C7FB200FF3648 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2E035250299C7FBA00FF3648 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,7 +72,10 @@
 		42806F1E2979FA82002AD464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42806F212979FA82002AD464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		522DD90C29899AE50023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		522DD90E29899B020023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		522DD90E29899B020023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Vehicle to Grid/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMaps.xcframework; sourceTree = "<group>"; };
+		7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsBase.xcframework; sourceTree = "<group>"; };
+		7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsCore.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +86,13 @@
 				2E03526B299C801900FF3648 /* UIKit.framework in Frameworks */,
 				2E035269299C801100FF3648 /* SystemConfiguration.framework in Frameworks */,
 				2E035267299C800A00FF3648 /* QuartzCore.framework in Frameworks */,
+				7CA5B9E1299DDB9B007ED04A /* GoogleMaps.xcframework in Frameworks */,
+				7CA5B9E6299DE02A007ED04A /* SwiftLocation in Frameworks */,
 				2E035265299C800300FF3648 /* OpenGLES.framework in Frameworks */,
+				7CA5B9E2299DDB9B007ED04A /* GoogleMapsBase.xcframework in Frameworks */,
 				2E035263299C7FFD00FF3648 /* Metal.framework in Frameworks */,
 				2E035261299C7FF500FF3648 /* libz.tbd in Frameworks */,
+				7CA5B9E3299DDB9B007ED04A /* GoogleMapsCore.xcframework in Frameworks */,
 				2E03525F299C7FEE00FF3648 /* libc++.tbd in Frameworks */,
 				2E03525D299C7FE400FF3648 /* ImageIO.framework in Frameworks */,
 				2E03525B299C7FDF00FF3648 /* GLKit.framework in Frameworks */,
@@ -98,11 +103,8 @@
 				2E035251299C7FBA00FF3648 /* CoreGraphics.framework in Frameworks */,
 				2E03524F299C7FB200FF3648 /* CoreData.framework in Frameworks */,
 				2E03524D299C7FAA00FF3648 /* Accelerate.framework in Frameworks */,
-				2E035247299C7EF100FF3648 /* GoogleMapsCore.xcframework in Frameworks */,
-				2E035248299C7EF100FF3648 /* GoogleMaps.xcframework in Frameworks */,
 				522DD91729899C080023FE84 /* FirebaseDatabaseSwift in Frameworks */,
 				522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */,
-				2E035242299C7EAF00FF3648 /* GoogleMapsBase.xcframework in Frameworks */,
 				522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */,
 				522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */,
 				522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -140,10 +142,11 @@
 		42806F0E2979FA7F002AD464 = {
 			isa = PBXGroup;
 			children = (
-				2E035246299C7EF100FF3648 /* GoogleMaps.xcframework */,
+				522DD90E29899B020023FE84 /* GoogleService-Info.plist */,
+				7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */,
+				7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */,
+				7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */,
 				2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */,
-				2E035245299C7EF100FF3648 /* GoogleMapsCore.xcframework */,
-				2E035241299C7EAF00FF3648 /* GoogleMapsBase.xcframework */,
 				522DD90C29899AE50023FE84 /* GoogleService-Info.plist */,
 				42806F192979FA7F002AD464 /* Vehicle to Grid */,
 				42806F182979FA7F002AD464 /* Products */,
@@ -162,7 +165,6 @@
 		42806F192979FA7F002AD464 /* Vehicle to Grid */ = {
 			isa = PBXGroup;
 			children = (
-				522DD90E29899B020023FE84 /* GoogleService-Info.plist */,
 				42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */,
 				42806F1C2979FA7F002AD464 /* ContentView.swift */,
 				2E80933829987905003172FE /* MapView.swift */,
@@ -206,6 +208,7 @@
 				522DD91829899C080023FE84 /* FirebaseFirestore */,
 				522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */,
 				522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */,
+				7CA5B9E5299DE02A007ED04A /* SwiftLocation */,
 			);
 			productName = "Vehicle to Grid";
 			productReference = 42806F172979FA7F002AD464 /* Vehicle to Grid.app */;
@@ -237,6 +240,7 @@
 			mainGroup = 42806F0E2979FA7F002AD464;
 			packageReferences = (
 				522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */,
 			);
 			productRefGroup = 42806F182979FA7F002AD464 /* Products */;
 			projectDirPath = "";
@@ -405,11 +409,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to determine nearby charging stations and areas of grid need";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -436,11 +442,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to determine nearby charging stations and areas of grid need";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +495,14 @@
 				kind = branch;
 			};
 		};
+		7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftLocation.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -524,6 +540,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		7CA5B9E5299DE02A007ED04A /* SwiftLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */;
+			productName = SwiftLocation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,20 +7,31 @@
 
 import GoogleMaps
 import UIKit
+import SwiftLocation
 
 class MapViewController: UIViewController {
 
   override func loadView() {
     super.loadView()
-      let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-      let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-      self.view.addSubview(mapView)
-
-    // Creates a marker in the center of the map.
-    let marker = GMSMarker()
-    marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-    marker.title = "Sydney"
-    marker.snippet = "Australia"
-    marker.map = mapView
+      
+    SwiftLocation.gpsLocation().then {
+        if let location = $0.location{
+            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 6.0)
+            let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+            self.view.addSubview(mapView)
+            
+            let marker = GMSMarker()
+            marker.position = location.coordinate
+            marker.title = "You"
+            marker.map = mapView
+        }
+        else{
+            print("Could not get location")
+            
+            let camera = GMSCameraPosition.camera(withLatitude:32.7767, longitude: 96.797, zoom: 6.0)
+            let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+            self.view.addSubview(mapView)
+        }
+    }
   }
 }
