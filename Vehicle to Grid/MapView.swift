@@ -11,15 +11,19 @@ import GoogleMaps
 
 struct MapView: View {
     var body: some View{
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        
+        let scrollViewHeight: CGFloat = 80
+
+          GeometryReader { geometry in
+            ZStack(alignment: .top) {
+              // Map
+              MapViewControllerBridge()
+              
+              }
+            }
+          }
     }
-}
+
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {

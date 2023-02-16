@@ -10,7 +10,6 @@
 		2E035242299C7EAF00FF3648 /* GoogleMapsBase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035241299C7EAF00FF3648 /* GoogleMapsBase.xcframework */; };
 		2E035247299C7EF100FF3648 /* GoogleMapsCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035245299C7EF100FF3648 /* GoogleMapsCore.xcframework */; };
 		2E035248299C7EF100FF3648 /* GoogleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035246299C7EF100FF3648 /* GoogleMaps.xcframework */; };
-		2E03524A299C7F5200FF3648 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 2E035249299C7F5200FF3648 /* res */; };
 		2E03524D299C7FAA00FF3648 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E03524C299C7FAA00FF3648 /* Accelerate.framework */; };
 		2E03524F299C7FB200FF3648 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E03524E299C7FB200FF3648 /* CoreData.framework */; };
 		2E035251299C7FBA00FF3648 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035250299C7FBA00FF3648 /* CoreGraphics.framework */; };
@@ -30,6 +29,7 @@
 		2E77111B299C8552008B2EFA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E77111A299C8552008B2EFA /* MapViewController.swift */; };
 		2E77111D299C8961008B2EFA /* MapViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E77111C299C8961008B2EFA /* MapViewControllerBridge.swift */; };
 		2E80933929987905003172FE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80933829987905003172FE /* MapView.swift */; };
+		2E887F07299DCEF900EF7C29 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */; };
 		42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */; };
 		42806F1D2979FA7F002AD464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* ContentView.swift */; };
 		42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F1E2979FA82002AD464 /* Assets.xcassets */; };
@@ -48,7 +48,6 @@
 		2E035241299C7EAF00FF3648 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsBase.xcframework; path = "../../GoogleMaps-7.3.0/Base/Frameworks/GoogleMapsBase.xcframework"; sourceTree = "<group>"; };
 		2E035245299C7EF100FF3648 /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsCore.xcframework; path = "../../GoogleMaps-7.3.0/Maps/Frameworks/GoogleMapsCore.xcframework"; sourceTree = "<group>"; };
 		2E035246299C7EF100FF3648 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMaps.xcframework; path = "../../GoogleMaps-7.3.0/Maps/Frameworks/GoogleMaps.xcframework"; sourceTree = "<group>"; };
-		2E035249299C7F5200FF3648 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = "../../GoogleMaps-7.3.0/Maps/Frameworks/GoogleMaps.xcframework/ios-arm64_x86_64-simulator/GoogleMaps.framework/res"; sourceTree = "<group>"; };
 		2E03524C299C7FAA00FF3648 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		2E03524E299C7FB200FF3648 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2E035250299C7FBA00FF3648 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,6 +67,7 @@
 		2E77111A299C8552008B2EFA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2E77111C299C8961008B2EFA /* MapViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerBridge.swift; sourceTree = "<group>"; };
 		2E80933829987905003172FE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		42806F172979FA7F002AD464 /* Vehicle to Grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vehicle to Grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle_to_GridApp.swift; sourceTree = "<group>"; };
 		42806F1C2979FA7F002AD464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 		42806F0E2979FA7F002AD464 = {
 			isa = PBXGroup;
 			children = (
-				2E035249299C7F5200FF3648 /* res */,
 				2E035246299C7EF100FF3648 /* GoogleMaps.xcframework */,
+				2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */,
 				2E035245299C7EF100FF3648 /* GoogleMapsCore.xcframework */,
 				2E035241299C7EAF00FF3648 /* GoogleMapsBase.xcframework */,
 				522DD90C29899AE50023FE84 /* GoogleService-Info.plist */,
@@ -252,10 +252,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E03524A299C7F5200FF3648 /* res in Resources */,
 				42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */,
 				42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */,
 				522DD90D29899AE50023FE84 /* GoogleService-Info.plist in Resources */,
+				2E887F07299DCEF900EF7C29 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Vehicle to Grid/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K752J3SG33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
@@ -432,7 +432,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Vehicle to Grid/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K752J3SG33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
