@@ -27,11 +27,11 @@
 		2E77111D299C8961008B2EFA /* MapViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E77111C299C8961008B2EFA /* MapViewControllerBridge.swift */; };
 		2E80933929987905003172FE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80933829987905003172FE /* MapView.swift */; };
 		2E887F07299DCEF900EF7C29 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */; };
+		2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */; };
 		42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */; };
 		42806F1D2979FA7F002AD464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* ContentView.swift */; };
 		42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F1E2979FA82002AD464 /* Assets.xcassets */; };
 		42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F212979FA82002AD464 /* Preview Assets.xcassets */; };
-		522DD90D29899AE50023FE84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 522DD90C29899AE50023FE84 /* GoogleService-Info.plist */; };
 		522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91029899C080023FE84 /* FirebaseAuth */; };
 		522DD91329899C080023FE84 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91229899C080023FE84 /* FirebaseAuthCombine-Community */; };
 		522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91429899C080023FE84 /* FirebaseDatabase */; };
@@ -66,13 +66,12 @@
 		2E77111C299C8961008B2EFA /* MapViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerBridge.swift; sourceTree = "<group>"; };
 		2E80933829987905003172FE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
+		2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42806F172979FA7F002AD464 /* Vehicle to Grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vehicle to Grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle_to_GridApp.swift; sourceTree = "<group>"; };
 		42806F1C2979FA7F002AD464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		42806F1E2979FA82002AD464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42806F212979FA82002AD464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		522DD90C29899AE50023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		522DD90E29899B020023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Vehicle to Grid/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMaps.xcframework; sourceTree = "<group>"; };
 		7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsBase.xcframework; sourceTree = "<group>"; };
 		7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsCore.xcframework; sourceTree = "<group>"; };
@@ -142,12 +141,11 @@
 		42806F0E2979FA7F002AD464 = {
 			isa = PBXGroup;
 			children = (
-				522DD90E29899B020023FE84 /* GoogleService-Info.plist */,
 				7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */,
 				7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */,
+				2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */,
 				7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */,
 				2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */,
-				522DD90C29899AE50023FE84 /* GoogleService-Info.plist */,
 				42806F192979FA7F002AD464 /* Vehicle to Grid */,
 				42806F182979FA7F002AD464 /* Products */,
 				2E03524B299C7FAA00FF3648 /* Frameworks */,
@@ -257,8 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */,
+				2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */,
 				42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */,
-				522DD90D29899AE50023FE84 /* GoogleService-Info.plist in Resources */,
 				2E887F07299DCEF900EF7C29 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

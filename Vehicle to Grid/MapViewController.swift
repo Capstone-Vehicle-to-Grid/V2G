@@ -18,12 +18,13 @@ class MapViewController: UIViewController {
         if let location = $0.location{
             let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 6.0)
             let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+            mapView.isMyLocationEnabled = true
             self.view.addSubview(mapView)
             
-            let marker = GMSMarker()
-            marker.position = location.coordinate
-            marker.title = "You"
-            marker.map = mapView
+            //let marker = GMSMarker()
+            //marker.position = location.coordinate
+            //marker.title = "You"
+            //marker.map = mapView
         }
         else{
             print("Could not get location")
