@@ -23,6 +23,7 @@
 		52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769D2992E1AA001CE16B /* VehicleModel.swift */; };
 		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
 		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
+		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		52CC769D2992E1AA001CE16B /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		52CC769F2992E1D3001CE16B /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		52CC76A12992E214001CE16B /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				42806F1C2979FA7F002AD464 /* LoginView.swift */,
+				5B472A73299EF36C00A88595 /* RegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */,
 				42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */,
 				52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */,
+				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
 				52CC76A22992E214001CE16B /* InfoModel.swift in Sources */,
