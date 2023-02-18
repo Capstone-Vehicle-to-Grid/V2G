@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginView.swift
 //  Vehicle to Grid
 //
 //  Created by Ben Worthington on 1/19/23.
@@ -13,12 +13,16 @@ struct LoginView: View {
   //Propertiers
   @State private var email = ""
   @State private var password = ""
-  @State private var wrongEmail: Float = 0  //shows box around email if incorrect
-  @State private var wrongPassword: Float = 0 //shows box around password if incorrect
-  @State private var showLoginPage = false //To show next page
+  @State private var showAlert = false
+  
+  @Binding var isLoggedIn: Bool
+  
+//  @State private var wrongEmail: Float = 0  //shows box around email if incorrect
+//  @State private var wrongPassword: Float = 0 //shows box around password if incorrect
   
   var body: some View {
-    NavigationView {
+    
+    NavigationStack {
       ZStack {
         Color.blue
           .ignoresSafeArea()
@@ -44,7 +48,7 @@ struct LoginView: View {
             .frame(width: 300, height: 50)
             .background(Color.black.opacity(0.05))
             .cornerRadius(10)
-            .border(.red, width: CGFloat(wrongEmail))
+//            .border(.red, width: CGFloat(wrongEmail))
           
           
           SecureField("Password", text: $password)
@@ -52,7 +56,7 @@ struct LoginView: View {
             .frame(width: 300, height: 50)
             .background(Color.black.opacity(0.05))
             .cornerRadius(10)
-            .border(.red, width: CGFloat(wrongPassword))
+//            .border(.red, width: CGFloat(wrongPassword))
           
           Button(action: authenticateUser) {
             Text("Login")
@@ -61,16 +65,21 @@ struct LoginView: View {
           .frame(width: 300, height: 50)
           .background(Color.blue)
           .cornerRadius(10)
+          .alert(isPresented: $showAlert) {
+            Alert(
+            
+              title: Text("Invalid Login"),
+              message: Text("Please check your email and password and try again."),
+              dismissButton: .default(Text("Ok"))
+            
+            )
+          }
           
           Text("Don't have an account?")
             .foregroundColor(.blue)
           //need to add a link to "here" to the register page
           Text("Click here to register")
             .foregroundColor(.blue)
-          
-//          NavigationLink(destination: Text("You are logged in @\(email)"), isActive: $showLoginPage) {
-//            EmptyView()
-//          }
         }
       }.navigationBarHidden(true)
     }
@@ -81,17 +90,26 @@ struct LoginView: View {
       if error != nil {
         // Handle error
         print("Invalid login credentials")
+        showAlert = true
       } else {
         // Successful login
         print("Successful login")
+        isLoggedIn = true
       }
     }
   }
   
+//  func createNewUser() {
+//    Auth.auth().createUser(withEmail: email, password: password)
+//  }
+  
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
+  
+  @State static var isLoggedIn = false
+  
   static var previews: some View {
-    LoginView()
+    LoginView(isLoggedIn: $isLoggedIn)
   }
 }
