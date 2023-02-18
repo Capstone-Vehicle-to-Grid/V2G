@@ -91,6 +91,7 @@ struct LoginView: View {
     }
   }
   
+  // Function to authenticate existing user
   func authenticateUser() {
     Auth.auth().signIn(withEmail: email, password: password) { result, error in
       if error != nil {
@@ -104,11 +105,6 @@ struct LoginView: View {
       }
     }
   }
-  
-//  func createNewUser() {
-//    Auth.auth().createUser(withEmail: email, password: password)
-//  }
-  
 }
 
 struct LoginView_Previews: PreviewProvider {
