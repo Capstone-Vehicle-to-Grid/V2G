@@ -50,7 +50,7 @@ struct LoginView: View {
           Text("Sign in to continue")
             .foregroundColor(.blue)
           
-          TextField("Username", text: $email)
+          TextField("email", text: $email)
             .padding()
             .frame(width: 300, height: 50)
             .background(Color.black.opacity(0.05))
