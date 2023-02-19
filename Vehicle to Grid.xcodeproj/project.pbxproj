@@ -25,6 +25,8 @@
 		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
 		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
 		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
+		5B472A7729A2B1C900A88595 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
+		5B472A7A29A2B4B900A88595 /* iTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7929A2B4B900A88595 /* iTextField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +50,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				522DD91729899C080023FE84 /* FirebaseDatabaseSwift in Frameworks */,
+				5B472A7729A2B1C900A88595 /* iPhoneNumberField in Frameworks */,
 				522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */,
+				5B472A7A29A2B4B900A88595 /* iTextField in Frameworks */,
 				522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */,
 				522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */,
 				522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -150,6 +154,8 @@
 				522DD91829899C080023FE84 /* FirebaseFirestore */,
 				522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */,
 				522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */,
+				5B472A7629A2B1C900A88595 /* iPhoneNumberField */,
+				5B472A7929A2B4B900A88595 /* iTextField */,
 			);
 			productName = "Vehicle to Grid";
 			productReference = 42806F172979FA7F002AD464 /* Vehicle to Grid.app */;
@@ -181,6 +187,8 @@
 			mainGroup = 42806F0E2979FA7F002AD464;
 			packageReferences = (
 				522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				5B472A7829A2B4B900A88595 /* XCRemoteSwiftPackageReference "iTextField" */,
 			);
 			productRefGroup = 42806F182979FA7F002AD464 /* Products */;
 			projectDirPath = "";
@@ -427,6 +435,22 @@
 				kind = branch;
 			};
 		};
+		5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+		5B472A7829A2B4B900A88595 /* XCRemoteSwiftPackageReference "iTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminsage/iTextField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.8;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -464,6 +488,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		5B472A7629A2B1C900A88595 /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
+		};
+		5B472A7929A2B4B900A88595 /* iTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B472A7829A2B4B900A88595 /* XCRemoteSwiftPackageReference "iTextField" */;
+			productName = iTextField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

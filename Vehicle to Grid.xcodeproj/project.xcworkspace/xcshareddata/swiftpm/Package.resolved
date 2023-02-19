@@ -73,6 +73,24 @@
       }
     },
     {
+      "identity" : "iphonenumberfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MojtabaHs/iPhoneNumberField.git",
+      "state" : {
+        "revision" : "5298972c899ba3555a77549bebeace2e16bc927d",
+        "version" : "0.10.1"
+      }
+    },
+    {
+      "identity" : "itextfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/benjaminsage/iTextField",
+      "state" : {
+        "revision" : "d272db0a18ec6bc072498d8ae40c3839cd79ec64",
+        "version" : "0.0.8"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
@@ -88,6 +106,15 @@
       "state" : {
         "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
         "version" : "2.30909.0"
+      }
+    },
+    {
+      "identity" : "phonenumberkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/PhoneNumberKit",
+      "state" : {
+        "revision" : "434a7432cceca19829bc6e34bdcfc0b0ee4c6801",
+        "version" : "3.5.7"
       }
     },
     {

@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import iPhoneNumberField
+import iTextField
 
 struct RegisterView: View {
     
     @State private var name = ""
     @State private var emailRegister = ""
     @State private var passwordRegister = ""
-    @State private var phoneNumber = ""
+    @State var nameText = ""
+    @State var phoneText = ""
+    @State var phoneEditing = false
     
     var body: some View {
         
@@ -49,11 +53,21 @@ struct RegisterView: View {
                     .cornerRadius(10)
                 //            .border(.red, width: CGFloat(wrongPassword))
                 
-                TextField("phoneNumber", text: $phoneNumber)
+                iTextField("Name", text: $nameText)
                     .padding()
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
+                    .onReturn { phoneEditing = true }
+                    iPhoneNumberField("Phone", text: $phoneText, isEditing: $phoneEditing)
+                    .padding()
+                    .frame(width: 300, height: 50)
+                    .background(Color.black.opacity(0.05))
+                    .cornerRadius(10)
+
+                }
+            }
+                
                 
                 // Button to Sign Up
 //                Button(action: authenticateUser) {
@@ -74,13 +88,12 @@ struct RegisterView: View {
             }
         }
     }
-}
 
 
 //struct RegisterView_Previews: PreviewProvider {
-//  
+//
 //  @State static var isRegistered = false
-//  
+//
 //  static var previews: some View {
 //    RegisterView(isRegistered: $isRegistered)
 //  }
