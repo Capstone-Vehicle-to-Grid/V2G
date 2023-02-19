@@ -14,6 +14,7 @@ struct LoginView: View {
   @State private var email = ""
   @State private var password = ""
   @State private var showAlert = false
+//  @State var needsRegister: Bool = false
   
   @Binding var isLoggedIn: Bool
   
@@ -22,7 +23,7 @@ struct LoginView: View {
   
   var body: some View {
     
-    NavigationStack {
+    NavigationView {
       ZStack {
         Color.blue
           .ignoresSafeArea()
@@ -64,6 +65,7 @@ struct LoginView: View {
             .cornerRadius(10)
 //            .border(.red, width: CGFloat(wrongPassword))
           
+          // Button to login
           Button(action: authenticateUser) {
             Text("Login")
           }
@@ -80,12 +82,12 @@ struct LoginView: View {
             
             )
           }
-          
-          Text("Don't have an account?")
-            .foregroundColor(.blue)
-          //need to add a link to "here" to the register page
-          Text("Click here to register")
-            .foregroundColor(.blue)
+  
+          // Button to go to the register view
+          NavigationLink(destination: RegisterView()) {
+            Text("Click here to register")
+              .foregroundColor(.blue)
+          }
         }
       }.navigationBarHidden(true)
     }

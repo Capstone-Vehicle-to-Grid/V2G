@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct RegisterView: View {
+  
     var body: some View {
-        Text("This is the second page!")
+      
+      NavigationView {
+        
+        Text("Registeration Page")
+        
+      }
     }
 }

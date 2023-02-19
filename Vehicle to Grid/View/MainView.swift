@@ -14,17 +14,19 @@ struct MainView: View {
   
     var body: some View {
       
-      if isLoggedIn {
-        
-        // Stay on this screen
-        Text("Main Screen")
-        
-        
-      } else {
-        
-        // Back to login screen
-        LoginView(isLoggedIn: $isLoggedIn)
-        
+      NavigationView {
+        if isLoggedIn {
+          
+          // Stay on this screen
+          Text("Main Screen")
+          
+          
+        } else {
+          
+          // Back to login screen
+          LoginView(isLoggedIn: $isLoggedIn)
+          
+        }
       }
     }
 }
