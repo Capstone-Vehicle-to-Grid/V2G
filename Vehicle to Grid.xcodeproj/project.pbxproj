@@ -20,7 +20,7 @@
 		522DD91929899C080023FE84 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91829899C080023FE84 /* FirebaseFirestore */; };
 		522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */; };
 		522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */; };
-		52314C7A29A4709D0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7929A4709D0038149E /* UserViewModel.swift */; };
+		52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7C29A551AC0038149E /* UserViewModel.swift */; };
 		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
 		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		42806F212979FA82002AD464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42E881E429A16F2B00EC6016 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		522DD90E29899B020023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		52314C7929A4709D0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		52314C7C29A551AC0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,8 +77,8 @@
 			children = (
 				522DD90E29899B020023FE84 /* GoogleService-Info.plist */,
 				42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */,
-				52CC76982992E112001CE16B /* ViewModel */,
 				52CC76962992E104001CE16B /* View */,
+				52314C7B29A551900038149E /* ViewModel */,
 				52CC76942992E0F0001CE16B /* Model */,
 				42806F1E2979FA82002AD464 /* Assets.xcassets */,
 				42806F202979FA82002AD464 /* Preview Content */,
@@ -92,6 +92,14 @@
 				42806F212979FA82002AD464 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52314C7B29A551900038149E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				52314C7C29A551AC0038149E /* UserViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		52CC76942992E0F0001CE16B /* Model */ = {
@@ -110,14 +118,6 @@
 				5B472A73299EF36C00A88595 /* RegisterView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		52CC76982992E112001CE16B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				52314C7929A4709D0038149E /* UserViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E881E529A16F2B00EC6016 /* MainView.swift in Sources */,
-				52314C7A29A4709D0038149E /* UserViewModel.swift in Sources */,
+				52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */,
 				42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */,
 				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
