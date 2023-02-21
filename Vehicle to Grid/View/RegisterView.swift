@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import iPhoneNumberField
+//import iPhoneNumberField
 //import iTextField
 
 struct RegisterView: View {
@@ -19,6 +19,7 @@ struct RegisterView: View {
     @State var nameText = ""
     @State var phoneText = ""
     @State var phoneEditing = false
+    @State var showAlert = false
     
     var body: some View {
         
@@ -63,11 +64,25 @@ struct RegisterView: View {
                     .frame(width: 300, height: 50)
                     .background(Color.blue)
                     .cornerRadius(10)
+                    .alert(isPresented: $showAlert) {
+                        Alert(
+                            title: Text("Email already in use"),
+                            message: Text("This email is already registered with another account"),
+                            dismissButton: .default(Text("Ok"))
+                        )}
                }
            }
                 
         }
     func registerUser() {
-        viewModel.register()
+        let newUser = viewModel.register()
+        if newUser == true {
+            self.showAlert = false
+        }
+        if newUser != true {
+            self.showAlert = true
+        }
+        
+        self.showAlert = false
     }
 }

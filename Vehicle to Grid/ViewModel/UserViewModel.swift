@@ -24,8 +24,21 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func register() {
-        addUser(user: user)
+    func register() -> Bool {
+        var userAdded = false
+        userList.whereField("userEmail", isEqualTo: user.userEmail)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error accessing database: \(err)")
+                }
+                if querySnapshot!.isEmpty {
+                    self.addUser(user: self.user)
+                    userAdded = true
+                }
+            }
+        
+        return userAdded
     }
+    
     
 }
