@@ -7,9 +7,11 @@
 
 import SwiftUI
 import iPhoneNumberField
-import iTextField
+//import iTextField
 
 struct RegisterView: View {
+    
+    @StateObject var viewModel = UserViewModel()
     
     @State private var name = ""
     @State private var emailRegister = ""
@@ -32,13 +34,13 @@ struct RegisterView: View {
                 Text("Already registered? Login here.")
                     .foregroundColor(.blue)
                 
-                TextField("name", text: $name)
+                TextField("Name", text: $viewModel.user.username)
                     .padding()
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                 
-                TextField("Email", text: $emailRegister)
+                TextField("Email", text: $viewModel.user.userEmail)
                     .padding()
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
@@ -46,55 +48,26 @@ struct RegisterView: View {
                 //            .border(.red, width: CGFloat(wrongEmail))
                 
                 
-                SecureField("Password", text: $passwordRegister)
+                SecureField("Password", text: $viewModel.user.password)
                     .padding()
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                 //            .border(.red, width: CGFloat(wrongPassword))
                 
-                iTextField("Name", text: $nameText)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.black.opacity(0.05))
-                    .cornerRadius(10)
-                    .onReturn { phoneEditing = true }
-                    iPhoneNumberField("Phone", text: $phoneText, isEditing: $phoneEditing)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.black.opacity(0.05))
-                    .cornerRadius(10)
-
+                
+                Button(action: registerUser) {
+                  Text("Register")
                 }
-            }
+                    .foregroundColor(.white)
+                    .frame(width: 300, height: 50)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+               }
+           }
                 
-                
-                // Button to Sign Up
-//                Button(action: authenticateUser) {
-//                  Text("Sign Up")
-//                }
-//                .foregroundColor(.white)
-//                .frame(width: 300, height: 50)
-//                .background(Color.blue)
-//                .cornerRadius(10)
-//                .alert(isPresented: $showAlert) {
-//                  Alert(
-//
-//
-//
-//                  )
-//                }
-                
-            }
         }
+    func registerUser() {
+        viewModel.register()
     }
-
-
-//struct RegisterView_Previews: PreviewProvider {
-//
-//  @State static var isRegistered = false
-//
-//  static var previews: some View {
-//    RegisterView(isRegistered: $isRegistered)
-//  }
-//}
+}

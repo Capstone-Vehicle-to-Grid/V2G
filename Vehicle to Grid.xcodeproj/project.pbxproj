@@ -20,13 +20,9 @@
 		522DD91929899C080023FE84 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91829899C080023FE84 /* FirebaseFirestore */; };
 		522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */; };
 		522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */; };
+		52314C7A29A4709D0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7929A4709D0038149E /* UserViewModel.swift */; };
 		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
-		52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769D2992E1AA001CE16B /* VehicleModel.swift */; };
-		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
-		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
 		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
-		5B472A7729A2B1C900A88595 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
-		5B472A7A29A2B4B900A88595 /* iTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7929A2B4B900A88595 /* iTextField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +33,8 @@
 		42806F212979FA82002AD464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42E881E429A16F2B00EC6016 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		522DD90E29899B020023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		52314C7929A4709D0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = SOURCE_ROOT; };
 		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		52CC769D2992E1AA001CE16B /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
-		52CC769F2992E1D3001CE16B /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
-		52CC76A12992E214001CE16B /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,9 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522DD91729899C080023FE84 /* FirebaseDatabaseSwift in Frameworks */,
-				5B472A7729A2B1C900A88595 /* iPhoneNumberField in Frameworks */,
 				522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */,
-				5B472A7A29A2B4B900A88595 /* iTextField in Frameworks */,
 				522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */,
 				522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */,
 				522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -106,9 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				52CC76992992E174001CE16B /* UserModel.swift */,
-				52CC769D2992E1AA001CE16B /* VehicleModel.swift */,
-				52CC76A12992E214001CE16B /* InfoModel.swift */,
-				52CC769F2992E1D3001CE16B /* PaymentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +115,7 @@
 		52CC76982992E112001CE16B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				52314C7929A4709D0038149E /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -154,8 +144,6 @@
 				522DD91829899C080023FE84 /* FirebaseFirestore */,
 				522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */,
 				522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */,
-				5B472A7629A2B1C900A88595 /* iPhoneNumberField */,
-				5B472A7929A2B4B900A88595 /* iTextField */,
 			);
 			productName = "Vehicle to Grid";
 			productReference = 42806F172979FA7F002AD464 /* Vehicle to Grid.app */;
@@ -218,13 +206,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E881E529A16F2B00EC6016 /* MainView.swift in Sources */,
-				52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */,
+				52314C7A29A4709D0038149E /* UserViewModel.swift in Sources */,
 				42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */,
-				52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */,
 				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
-				52CC76A22992E214001CE16B /* InfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,16 +474,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
-		};
-		5B472A7629A2B1C900A88595 /* iPhoneNumberField */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
-			productName = iPhoneNumberField;
-		};
-		5B472A7929A2B4B900A88595 /* iTextField */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B472A7829A2B4B900A88595 /* XCRemoteSwiftPackageReference "iTextField" */;
-			productName = iTextField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
