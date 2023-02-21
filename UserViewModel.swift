@@ -13,10 +13,11 @@ class UserViewModel: ObservableObject {
     @Published var user: User = User(username: "", password: "", userEmail: "")
     
     private var db = Firestore.firestore()
+    private var userList = Firestore.firestore().collection("users")
     
     func addUser(user: User) {
         do {
-            let _ = try db.collection("users").addDocument(from: user)
+            let _ = try userList.addDocument(from: user)
         }
         catch {
             print(error)
