@@ -18,6 +18,7 @@ struct MainView: View {
         if isLoggedIn {
           
           // Stay on this screen
+            //link to HomePageView
           Text("Main Screen")
           
           
