@@ -24,9 +24,9 @@
 		52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769D2992E1AA001CE16B /* VehicleModel.swift */; };
 		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
 		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
+		5B3D62A629AABE1100622D96 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D62A529AABE1100622D96 /* HomePageView.swift */; };
 		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
 		5B472A7729A2B1C900A88595 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
-		5B472A7A29A2B4B900A88595 /* iTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7929A2B4B900A88595 /* iTextField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +41,7 @@
 		52CC769D2992E1AA001CE16B /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		52CC769F2992E1D3001CE16B /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		52CC76A12992E214001CE16B /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		5B3D62A529AABE1100622D96 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +53,6 @@
 				522DD91729899C080023FE84 /* FirebaseDatabaseSwift in Frameworks */,
 				5B472A7729A2B1C900A88595 /* iPhoneNumberField in Frameworks */,
 				522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */,
-				5B472A7A29A2B4B900A88595 /* iTextField in Frameworks */,
 				522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */,
 				522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */,
 				522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -119,6 +119,7 @@
 				42E881E429A16F2B00EC6016 /* MainView.swift */,
 				42806F1C2979FA7F002AD464 /* LoginView.swift */,
 				5B472A73299EF36C00A88595 /* RegisterView.swift */,
+				5B3D62A529AABE1100622D96 /* HomePageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,7 +156,6 @@
 				522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */,
 				522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */,
 				5B472A7629A2B1C900A88595 /* iPhoneNumberField */,
-				5B472A7929A2B4B900A88595 /* iTextField */,
 			);
 			productName = "Vehicle to Grid";
 			productReference = 42806F172979FA7F002AD464 /* Vehicle to Grid.app */;
@@ -224,6 +224,7 @@
 				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
+				5B3D62A629AABE1100622D96 /* HomePageView.swift in Sources */,
 				52CC76A22992E214001CE16B /* InfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,11 +494,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
 			productName = iPhoneNumberField;
-		};
-		5B472A7929A2B4B900A88595 /* iTextField */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B472A7829A2B4B900A88595 /* XCRemoteSwiftPackageReference "iTextField" */;
-			productName = iTextField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

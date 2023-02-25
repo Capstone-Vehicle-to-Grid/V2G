@@ -7,7 +7,7 @@
 
 import SwiftUI
 import iPhoneNumberField
-import iTextField
+//import iTextField
 
 struct RegisterView: View {
     
@@ -53,17 +53,17 @@ struct RegisterView: View {
                     .cornerRadius(10)
                 //            .border(.red, width: CGFloat(wrongPassword))
                 
-                iTextField("Name", text: $nameText)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.black.opacity(0.05))
-                    .cornerRadius(10)
-                    .onReturn { phoneEditing = true }
-                    iPhoneNumberField("Phone", text: $phoneText, isEditing: $phoneEditing)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.black.opacity(0.05))
-                    .cornerRadius(10)
+//                iTextField("Name", text: $nameText)
+//                    .padding()
+//                    .frame(width: 300, height: 50)
+//                    .background(Color.black.opacity(0.05))
+//                    .cornerRadius(10)
+//                    .onReturn { phoneEditing = true }
+//                    iPhoneNumberField("Phone", text: $phoneText, isEditing: $phoneEditing)
+//                    .padding()
+//                    .frame(width: 300, height: 50)
+//                    .background(Color.black.opacity(0.05))
+//                    .cornerRadius(10)
 
                 }
             }
@@ -85,7 +85,7 @@ struct RegisterView: View {
 //                  )
 //                }
                 
-            }
+//            }
         }
     }
 
