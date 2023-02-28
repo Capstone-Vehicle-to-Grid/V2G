@@ -43,6 +43,10 @@
 		7CA5B9E2299DDB9B007ED04A /* GoogleMapsBase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */; };
 		7CA5B9E3299DDB9B007ED04A /* GoogleMapsCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */; };
 		7CA5B9E6299DE02A007ED04A /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 7CA5B9E5299DE02A007ED04A /* SwiftLocation */; };
+		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
+		52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769D2992E1AA001CE16B /* VehicleModel.swift */; };
+		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
+		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,11 @@
 		7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMaps.xcframework; sourceTree = "<group>"; };
 		7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsBase.xcframework; sourceTree = "<group>"; };
 		7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsCore.xcframework; sourceTree = "<group>"; };
+		522DD90E29899B020023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		52CC769D2992E1AA001CE16B /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
+		52CC769F2992E1D3001CE16B /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
+		52CC76A12992E214001CE16B /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,10 +173,13 @@
 			isa = PBXGroup;
 			children = (
 				42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */,
+				52CC76982992E112001CE16B /* ViewModel */,
 				42806F1C2979FA7F002AD464 /* ContentView.swift */,
 				2E80933829987905003172FE /* MapView.swift */,
 				2E77111A299C8552008B2EFA /* MapViewController.swift */,
 				2E77111C299C8961008B2EFA /* MapViewControllerBridge.swift */,
+				52CC76962992E104001CE16B /* View */,
+				52CC76942992E0F0001CE16B /* Model */,
 				42806F1E2979FA82002AD464 /* Assets.xcassets */,
 				42806F202979FA82002AD464 /* Preview Content */,
 			);
@@ -180,6 +192,31 @@
 				42806F212979FA82002AD464 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52CC76942992E0F0001CE16B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52CC76992992E174001CE16B /* UserModel.swift */,
+				52CC769D2992E1AA001CE16B /* VehicleModel.swift */,
+				52CC76A12992E214001CE16B /* InfoModel.swift */,
+				52CC769F2992E1D3001CE16B /* PaymentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52CC76962992E104001CE16B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52CC76982992E112001CE16B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,11 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */,
 				42806F1D2979FA7F002AD464 /* ContentView.swift in Sources */,
 				2E80933929987905003172FE /* MapView.swift in Sources */,
 				2E77111D299C8961008B2EFA /* MapViewControllerBridge.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
 				2E77111B299C8552008B2EFA /* MapViewController.swift in Sources */,
+				52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */,
+				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
+				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
+				52CC76A22992E214001CE16B /* InfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
