@@ -7,7 +7,6 @@
 
 import SwiftUI
 import iPhoneNumberField
-//import iTextField
 
 struct RegisterView: View {
     
@@ -24,7 +23,6 @@ struct RegisterView: View {
     var body: some View {
         
         NavigationView {
-            //        Text("Registeration Page")
             VStack {
                 Text("Create new account")
                     .font(.largeTitle)
@@ -46,47 +44,27 @@ struct RegisterView: View {
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
-                //            .border(.red, width: CGFloat(wrongEmail))
-                
                 
                 SecureField("Password", text: $viewModel.user.password)
                     .padding()
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
-                //            .border(.red, width: CGFloat(wrongPassword))
-                
                 
                 Button(action: registerUser) {
-                  Text("Register")
+                    Text("Register")
                 }
-                    .foregroundColor(.white)
-                    .frame(width: 300, height: 50)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-               }
-           }
-                
-                
-                // Button to Sign Up
-//                Button(action: authenticateUser) {
-//                  Text("Sign Up")
-//                }
-//                .foregroundColor(.white)
-//                .frame(width: 300, height: 50)
-//                .background(Color.blue)
-//                .cornerRadius(10)
-//                .alert(isPresented: $showAlert) {
-//                  Alert(
-//
-//
-//
-//                  )
-//                }
-                
+                .foregroundColor(.white)
+                .frame(width: 300, height: 50)
+                .background(Color.blue)
+                .cornerRadius(10)
             }
         }
+        
+    }
+    
     func registerUser() {
         let newUser = viewModel.register()
     }
+    
 }
