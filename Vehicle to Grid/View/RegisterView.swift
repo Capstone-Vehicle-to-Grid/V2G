@@ -68,4 +68,7 @@ struct RegisterView: View {
            }
                 
         }
+    func registerUser() {
+        let newUser = viewModel.register()
+    }
 }
