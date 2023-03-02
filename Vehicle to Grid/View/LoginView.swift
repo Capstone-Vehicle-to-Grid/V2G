@@ -50,7 +50,7 @@ struct LoginView: View {
           Text("Sign in to continue")
             .foregroundColor(.blue)
           
-          TextField("email", text: $email)
+          TextField("Email", text: $email)
             .padding()
             .frame(width: 300, height: 50)
             .background(Color.black.opacity(0.05))
@@ -87,6 +87,7 @@ struct LoginView: View {
           NavigationLink(destination: RegisterView()) {
             Text("Click here to register")
               .foregroundColor(.blue)
+              .underline()
           }
         }
       }.navigationBarHidden(true)
