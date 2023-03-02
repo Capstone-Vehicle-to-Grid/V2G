@@ -46,6 +46,14 @@ struct HomePageView: View {
                 NavButtons(text: "Payment History", color: .blue, topPadding: 40, action: {
                     //take to payment history page
                 })
+                
+                Button(action: authenticateUser) {
+                  Text("Logout")
+                }
+                .foregroundColor(.white)
+                .frame(width: 300, height: 50)
+                .background(Color.blue)
+                .cornerRadius(10)
             }
         }
     }
