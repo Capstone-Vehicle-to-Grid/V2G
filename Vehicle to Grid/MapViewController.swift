@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
             let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 6.0)
             let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
             mapView.isMyLocationEnabled = true
+            mapView.settings.myLocationButton = true
             self.view.addSubview(mapView)
             
             //let marker = GMSMarker()
