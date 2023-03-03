@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426FB71C29B243C70059A1A4 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
 		42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */; };
 		42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* LoginView.swift */; };
 		42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F1E2979FA82002AD464 /* Assets.xcassets */; };
@@ -22,12 +23,7 @@
 		522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */; };
 		52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7C29A551AC0038149E /* UserViewModel.swift */; };
 		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
-		52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769D2992E1AA001CE16B /* VehicleModel.swift */; };
-		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
-		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
-		5B3D62A629AABE1100622D96 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D62A529AABE1100622D96 /* HomePageView.swift */; };
 		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
-		5B472A7729A2B1C900A88595 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +36,6 @@
 		522DD90E29899B020023FE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52314C7C29A551AC0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		52CC769D2992E1AA001CE16B /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
-		52CC769F2992E1D3001CE16B /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
-		52CC76A12992E214001CE16B /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
-		5B3D62A529AABE1100622D96 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426FB71C29B243C70059A1A4 /* iPhoneNumberField in Frameworks */,
 				522DD91729899C080023FE84 /* FirebaseDatabaseSwift in Frameworks */,
 				522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */,
 				522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */,
@@ -125,7 +118,6 @@
 				42E881E429A16F2B00EC6016 /* MainView.swift */,
 				42806F1C2979FA7F002AD464 /* LoginView.swift */,
 				5B472A73299EF36C00A88595 /* RegisterView.swift */,
-				5B3D62A529AABE1100622D96 /* HomePageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,8 +214,6 @@
 				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
-				5B3D62A629AABE1100622D96 /* HomePageView.swift in Sources */,
-				52CC76A22992E214001CE16B /* InfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
