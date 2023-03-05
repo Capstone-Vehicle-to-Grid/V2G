@@ -25,7 +25,7 @@ struct Vehicle_to_GridApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

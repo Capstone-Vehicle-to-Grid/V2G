@@ -26,10 +26,13 @@
 		2E80933929987905003172FE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80933829987905003172FE /* MapView.swift */; };
 		2E887F07299DCEF900EF7C29 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */; };
 		2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */; };
+		426FB71C29B243C70059A1A4 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
 		42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */; };
-		42806F1D2979FA7F002AD464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* ContentView.swift */; };
+		42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* LoginView.swift */; };
 		42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F1E2979FA82002AD464 /* Assets.xcassets */; };
 		42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F212979FA82002AD464 /* Preview Assets.xcassets */; };
+		42E881E3299ECE4E00EC6016 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 522DD90E29899B020023FE84 /* GoogleService-Info.plist */; };
+		42E881E529A16F2B00EC6016 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E881E429A16F2B00EC6016 /* MainView.swift */; };
 		522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91029899C080023FE84 /* FirebaseAuth */; };
 		522DD91329899C080023FE84 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91229899C080023FE84 /* FirebaseAuthCombine-Community */; };
 		522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91429899C080023FE84 /* FirebaseDatabase */; };
@@ -37,10 +40,9 @@
 		522DD91929899C080023FE84 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91829899C080023FE84 /* FirebaseFirestore */; };
 		522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */; };
 		522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */; };
+		52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7C29A551AC0038149E /* UserViewModel.swift */; };
 		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
-		52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769D2992E1AA001CE16B /* VehicleModel.swift */; };
-		52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC769F2992E1D3001CE16B /* PaymentModel.swift */; };
-		52CC76A22992E214001CE16B /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76A12992E214001CE16B /* InfoModel.swift */; };
+		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
 		7C21381629B3004C00FE8598 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21381529B3004C00FE8598 /* MapViewModel.swift */; };
 		7C21381929B3032A00FE8598 /* GoogleMapsViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */; };
 		7CA5B9E1299DDB9B007ED04A /* GoogleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */; };
@@ -71,13 +73,13 @@
 		2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42806F172979FA7F002AD464 /* Vehicle to Grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vehicle to Grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle_to_GridApp.swift; sourceTree = "<group>"; };
-		42806F1C2979FA7F002AD464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		42806F1C2979FA7F002AD464 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		42806F1E2979FA82002AD464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42806F212979FA82002AD464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		42E881E429A16F2B00EC6016 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		52314C7C29A551AC0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		52CC769D2992E1AA001CE16B /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
-		52CC769F2992E1D3001CE16B /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
-		52CC76A12992E214001CE16B /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		7C21381529B3004C00FE8598 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = "Vehicle to Grid/ViewModel/Map/MapViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewRepresentable.swift; sourceTree = "<group>"; };
 		7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMaps.xcframework; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426FB71C29B243C70059A1A4 /* iPhoneNumberField in Frameworks */,
 				2E03526B299C801900FF3648 /* UIKit.framework in Frameworks */,
 				2E035269299C801100FF3648 /* SystemConfiguration.framework in Frameworks */,
 				2E035267299C800A00FF3648 /* QuartzCore.framework in Frameworks */,
@@ -172,9 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */,
-				52CC76982992E112001CE16B /* ViewModel */,
-				42806F1C2979FA7F002AD464 /* ContentView.swift */,
 				52CC76962992E104001CE16B /* View */,
+				52314C7B29A551900038149E /* ViewModel */,
 				52CC76942992E0F0001CE16B /* Model */,
 				42806F1E2979FA82002AD464 /* Assets.xcassets */,
 				42806F202979FA82002AD464 /* Preview Content */,
@@ -190,13 +192,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		52314C7B29A551900038149E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				52314C7C29A551AC0038149E /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		52CC76942992E0F0001CE16B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				52CC76992992E174001CE16B /* UserModel.swift */,
-				52CC769D2992E1AA001CE16B /* VehicleModel.swift */,
-				52CC76A12992E214001CE16B /* InfoModel.swift */,
-				52CC769F2992E1D3001CE16B /* PaymentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +211,9 @@
 		52CC76962992E104001CE16B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				42E881E429A16F2B00EC6016 /* MainView.swift */,
+				42806F1C2979FA7F002AD464 /* LoginView.swift */,
+				5B472A73299EF36C00A88595 /* RegisterView.swift */,
 				7C21381729B3031500FE8598 /* Map */,
 			);
 			path = View;
@@ -258,6 +268,7 @@
 				522DD91829899C080023FE84 /* FirebaseFirestore */,
 				522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */,
 				522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */,
+				5B472A7629A2B1C900A88595 /* iPhoneNumberField */,
 				7CA5B9E5299DE02A007ED04A /* SwiftLocation */,
 			);
 			productName = "Vehicle to Grid";
@@ -290,6 +301,8 @@
 			mainGroup = 42806F0E2979FA7F002AD464;
 			packageReferences = (
 				522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				5B472A7829A2B4B900A88595 /* XCRemoteSwiftPackageReference "iTextField" */,
 				7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */,
 			);
 			productRefGroup = 42806F182979FA7F002AD464 /* Products */;
@@ -309,7 +322,7 @@
 				42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */,
 				2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */,
 				42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */,
-				2E887F07299DCEF900EF7C29 /* GoogleMaps.bundle in Resources */,
+				42E881E3299ECE4E00EC6016 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,16 +333,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CC76A02992E1D3001CE16B /* PaymentModel.swift in Sources */,
-				42806F1D2979FA7F002AD464 /* ContentView.swift in Sources */,
+				42E881E529A16F2B00EC6016 /* MainView.swift in Sources */,
+				52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */,
+				42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */,
+				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				2E80933929987905003172FE /* MapView.swift in Sources */,
 				7C21381929B3032A00FE8598 /* GoogleMapsViewRepresentable.swift in Sources */,
-				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
 				7C21381629B3004C00FE8598 /* MapViewModel.swift in Sources */,
-				52CC769E2992E1AA001CE16B /* VehicleModel.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
-				52CC76A22992E214001CE16B /* InfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +562,22 @@
 				kind = branch;
 			};
 		};
+		5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+		5B472A7829A2B4B900A88595 /* XCRemoteSwiftPackageReference "iTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminsage/iTextField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.8;
+			};
+		};
 		7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftLocation.git";
@@ -600,6 +628,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */;
 			productName = SwiftLocation;
+		};
+		5B472A7629A2B1C900A88595 /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
