@@ -24,14 +24,14 @@
 		2E035269299C801100FF3648 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035268299C801100FF3648 /* SystemConfiguration.framework */; };
 		2E03526B299C801900FF3648 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E03526A299C801900FF3648 /* UIKit.framework */; };
 		2E80933929987905003172FE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80933829987905003172FE /* MapView.swift */; };
-		2E887F07299DCEF900EF7C29 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */; };
 		2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */; };
 		426FB71C29B243C70059A1A4 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
 		42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */; };
 		42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* LoginView.swift */; };
 		42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F1E2979FA82002AD464 /* Assets.xcassets */; };
 		42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F212979FA82002AD464 /* Preview Assets.xcassets */; };
-		42E881E3299ECE4E00EC6016 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 522DD90E29899B020023FE84 /* GoogleService-Info.plist */; };
+		42DFA00E29B5569E00E0C20B /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DFA00D29B5569E00E0C20B /* MapViewModel.swift */; };
+		42E881E3299ECE4E00EC6016 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		42E881E529A16F2B00EC6016 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E881E429A16F2B00EC6016 /* MainView.swift */; };
 		522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91029899C080023FE84 /* FirebaseAuth */; };
 		522DD91329899C080023FE84 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91229899C080023FE84 /* FirebaseAuthCombine-Community */; };
@@ -43,7 +43,6 @@
 		52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7C29A551AC0038149E /* UserViewModel.swift */; };
 		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
 		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
-		7C21381629B3004C00FE8598 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21381529B3004C00FE8598 /* MapViewModel.swift */; };
 		7C21381929B3032A00FE8598 /* GoogleMapsViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */; };
 		7CA5B9E1299DDB9B007ED04A /* GoogleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */; };
 		7CA5B9E2299DDB9B007ED04A /* GoogleMapsBase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */; };
@@ -76,11 +75,11 @@
 		42806F1C2979FA7F002AD464 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		42806F1E2979FA82002AD464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42806F212979FA82002AD464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		42DFA00D29B5569E00E0C20B /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		42E881E429A16F2B00EC6016 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		52314C7C29A551AC0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		7C21381529B3004C00FE8598 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = "Vehicle to Grid/ViewModel/Map/MapViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewRepresentable.swift; sourceTree = "<group>"; };
 		7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMaps.xcframework; sourceTree = "<group>"; };
 		7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsBase.xcframework; sourceTree = "<group>"; };
@@ -192,9 +191,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		42DFA00C29B5569000E0C20B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				42DFA00D29B5569E00E0C20B /* MapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		52314C7B29A551900038149E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				42DFA00C29B5569000E0C20B /* Map */,
 				52314C7C29A551AC0038149E /* UserViewModel.swift */,
 			);
 			path = ViewModel;
@@ -219,27 +227,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		52CC76982992E112001CE16B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7C21381B29B3036D00FE8598 /* Map */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		7C21381729B3031500FE8598 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				2E80933829987905003172FE /* MapView.swift */,
 				7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
-		7C21381B29B3036D00FE8598 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				7C21381529B3004C00FE8598 /* MapViewModel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -322,7 +314,7 @@
 				42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */,
 				2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */,
 				42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */,
-				42E881E3299ECE4E00EC6016 /* GoogleService-Info.plist in Resources */,
+				42E881E3299ECE4E00EC6016 /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,12 +326,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E881E529A16F2B00EC6016 /* MainView.swift in Sources */,
+				42DFA00E29B5569E00E0C20B /* MapViewModel.swift in Sources */,
 				52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */,
 				42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */,
 				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				2E80933929987905003172FE /* MapView.swift in Sources */,
 				7C21381929B3032A00FE8598 /* GoogleMapsViewRepresentable.swift in Sources */,
-				7C21381629B3004C00FE8598 /* MapViewModel.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
 			);
@@ -472,16 +464,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Vehicle to Grid/Preview Content\"";
-				DEVELOPMENT_TEAM = K752J3SG33;
+				DEVELOPMENT_TEAM = 3544DPAXZX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to determine nearby charging stations and areas of grid need";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,16 +498,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Vehicle to Grid/Preview Content\"";
-				DEVELOPMENT_TEAM = K752J3SG33;
+				DEVELOPMENT_TEAM = 3544DPAXZX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to determine nearby charging stations and areas of grid need";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -624,15 +618,15 @@
 			package = 522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
 		};
-		7CA5B9E5299DE02A007ED04A /* SwiftLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */;
-			productName = SwiftLocation;
-		};
 		5B472A7629A2B1C900A88595 /* iPhoneNumberField */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
 			productName = iPhoneNumberField;
+		};
+		7CA5B9E5299DE02A007ED04A /* SwiftLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */;
+			productName = SwiftLocation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
