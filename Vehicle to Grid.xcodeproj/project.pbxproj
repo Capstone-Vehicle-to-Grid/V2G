@@ -30,6 +30,22 @@
 		42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* LoginView.swift */; };
 		42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F1E2979FA82002AD464 /* Assets.xcassets */; };
 		42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42806F212979FA82002AD464 /* Preview Assets.xcassets */; };
+		4297D36629B57B4300126BE0 /* overpass-extralight-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35629B57B3E00126BE0 /* overpass-extralight-italic.otf */; };
+		4297D36729B57B4300126BE0 /* overpass-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35729B57B3F00126BE0 /* overpass-italic.otf */; };
+		4297D36829B57B4300126BE0 /* overpass-bold-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35829B57B4000126BE0 /* overpass-bold-italic.otf */; };
+		4297D36929B57B4300126BE0 /* overpass-heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35929B57B4100126BE0 /* overpass-heavy.otf */; };
+		4297D36A29B57B4300126BE0 /* overpass-light-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35A29B57B4100126BE0 /* overpass-light-italic.otf */; };
+		4297D36B29B57B4300126BE0 /* overpass-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35B29B57B4100126BE0 /* overpass-light.otf */; };
+		4297D36C29B57B4300126BE0 /* overpass-thin-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35C29B57B4100126BE0 /* overpass-thin-italic.otf */; };
+		4297D36D29B57B4300126BE0 /* overpass-semibold-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35D29B57B4100126BE0 /* overpass-semibold-italic.otf */; };
+		4297D36E29B57B4300126BE0 /* overpass-extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35E29B57B4100126BE0 /* overpass-extrabold.otf */; };
+		4297D36F29B57B4300126BE0 /* overpass-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D35F29B57B4100126BE0 /* overpass-regular.otf */; };
+		4297D37029B57B4300126BE0 /* overpass-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D36029B57B4200126BE0 /* overpass-bold.otf */; };
+		4297D37129B57B4300126BE0 /* overpass-extrabold-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D36129B57B4200126BE0 /* overpass-extrabold-italic.otf */; };
+		4297D37229B57B4300126BE0 /* overpass-heavy-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D36229B57B4200126BE0 /* overpass-heavy-italic.otf */; };
+		4297D37329B57B4300126BE0 /* overpass-extralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D36329B57B4200126BE0 /* overpass-extralight.otf */; };
+		4297D37429B57B4300126BE0 /* overpass-semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D36429B57B4300126BE0 /* overpass-semibold.otf */; };
+		4297D37529B57B4300126BE0 /* overpass-thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4297D36529B57B4300126BE0 /* overpass-thin.otf */; };
 		42DFA00E29B5569E00E0C20B /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DFA00D29B5569E00E0C20B /* MapViewModel.swift */; };
 		42E881E3299ECE4E00EC6016 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		42E881E529A16F2B00EC6016 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E881E429A16F2B00EC6016 /* MainView.swift */; };
@@ -75,6 +91,23 @@
 		42806F1C2979FA7F002AD464 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		42806F1E2979FA82002AD464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42806F212979FA82002AD464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4297D35629B57B3E00126BE0 /* overpass-extralight-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-extralight-italic.otf"; sourceTree = "<group>"; };
+		4297D35729B57B3F00126BE0 /* overpass-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-italic.otf"; sourceTree = "<group>"; };
+		4297D35829B57B4000126BE0 /* overpass-bold-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-bold-italic.otf"; sourceTree = "<group>"; };
+		4297D35929B57B4100126BE0 /* overpass-heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-heavy.otf"; sourceTree = "<group>"; };
+		4297D35A29B57B4100126BE0 /* overpass-light-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-light-italic.otf"; sourceTree = "<group>"; };
+		4297D35B29B57B4100126BE0 /* overpass-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-light.otf"; sourceTree = "<group>"; };
+		4297D35C29B57B4100126BE0 /* overpass-thin-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-thin-italic.otf"; sourceTree = "<group>"; };
+		4297D35D29B57B4100126BE0 /* overpass-semibold-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-semibold-italic.otf"; sourceTree = "<group>"; };
+		4297D35E29B57B4100126BE0 /* overpass-extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-extrabold.otf"; sourceTree = "<group>"; };
+		4297D35F29B57B4100126BE0 /* overpass-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-regular.otf"; sourceTree = "<group>"; };
+		4297D36029B57B4200126BE0 /* overpass-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-bold.otf"; sourceTree = "<group>"; };
+		4297D36129B57B4200126BE0 /* overpass-extrabold-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-extrabold-italic.otf"; sourceTree = "<group>"; };
+		4297D36229B57B4200126BE0 /* overpass-heavy-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-heavy-italic.otf"; sourceTree = "<group>"; };
+		4297D36329B57B4200126BE0 /* overpass-extralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-extralight.otf"; sourceTree = "<group>"; };
+		4297D36429B57B4300126BE0 /* overpass-semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-semibold.otf"; sourceTree = "<group>"; };
+		4297D36529B57B4300126BE0 /* overpass-thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "overpass-thin.otf"; sourceTree = "<group>"; };
+		4297D37729B57BEB00126BE0 /* Vehicle-to-Grid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Vehicle-to-Grid-Info.plist"; sourceTree = SOURCE_ROOT; };
 		42DFA00D29B5569E00E0C20B /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		42E881E429A16F2B00EC6016 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		52314C7C29A551AC0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -173,10 +206,12 @@
 		42806F192979FA7F002AD464 /* Vehicle to Grid */ = {
 			isa = PBXGroup;
 			children = (
+				4297D37729B57BEB00126BE0 /* Vehicle-to-Grid-Info.plist */,
 				42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */,
 				52CC76962992E104001CE16B /* View */,
 				52314C7B29A551900038149E /* ViewModel */,
 				52CC76942992E0F0001CE16B /* Model */,
+				4297D37629B57B7800126BE0 /* fonts */,
 				42806F1E2979FA82002AD464 /* Assets.xcassets */,
 				42806F202979FA82002AD464 /* Preview Content */,
 			);
@@ -189,6 +224,29 @@
 				42806F212979FA82002AD464 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4297D37629B57B7800126BE0 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4297D35A29B57B4100126BE0 /* overpass-light-italic.otf */,
+				4297D35B29B57B4100126BE0 /* overpass-light.otf */,
+				4297D35F29B57B4100126BE0 /* overpass-regular.otf */,
+				4297D35D29B57B4100126BE0 /* overpass-semibold-italic.otf */,
+				4297D36429B57B4300126BE0 /* overpass-semibold.otf */,
+				4297D35C29B57B4100126BE0 /* overpass-thin-italic.otf */,
+				4297D36529B57B4300126BE0 /* overpass-thin.otf */,
+				4297D35829B57B4000126BE0 /* overpass-bold-italic.otf */,
+				4297D36029B57B4200126BE0 /* overpass-bold.otf */,
+				4297D36129B57B4200126BE0 /* overpass-extrabold-italic.otf */,
+				4297D35E29B57B4100126BE0 /* overpass-extrabold.otf */,
+				4297D35629B57B3E00126BE0 /* overpass-extralight-italic.otf */,
+				4297D36329B57B4200126BE0 /* overpass-extralight.otf */,
+				4297D36229B57B4200126BE0 /* overpass-heavy-italic.otf */,
+				4297D35929B57B4100126BE0 /* overpass-heavy.otf */,
+				4297D35729B57B3F00126BE0 /* overpass-italic.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		42DFA00C29B5569000E0C20B /* Map */ = {
@@ -311,10 +369,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4297D36A29B57B4300126BE0 /* overpass-light-italic.otf in Resources */,
 				42806F222979FA82002AD464 /* Preview Assets.xcassets in Resources */,
+				4297D37029B57B4300126BE0 /* overpass-bold.otf in Resources */,
 				2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */,
+				4297D37429B57B4300126BE0 /* overpass-semibold.otf in Resources */,
+				4297D36729B57B4300126BE0 /* overpass-italic.otf in Resources */,
 				42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */,
+				4297D36D29B57B4300126BE0 /* overpass-semibold-italic.otf in Resources */,
+				4297D36E29B57B4300126BE0 /* overpass-extrabold.otf in Resources */,
+				4297D36F29B57B4300126BE0 /* overpass-regular.otf in Resources */,
 				42E881E3299ECE4E00EC6016 /* (null) in Resources */,
+				4297D36829B57B4300126BE0 /* overpass-bold-italic.otf in Resources */,
+				4297D36C29B57B4300126BE0 /* overpass-thin-italic.otf in Resources */,
+				4297D37129B57B4300126BE0 /* overpass-extrabold-italic.otf in Resources */,
+				4297D37229B57B4300126BE0 /* overpass-heavy-italic.otf in Resources */,
+				4297D37529B57B4300126BE0 /* overpass-thin.otf in Resources */,
+				4297D37329B57B4300126BE0 /* overpass-extralight.otf in Resources */,
+				4297D36B29B57B4300126BE0 /* overpass-light.otf in Resources */,
+				4297D36929B57B4300126BE0 /* overpass-heavy.otf in Resources */,
+				4297D36629B57B4300126BE0 /* overpass-extralight-italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +542,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "Vehicle-to-Grid-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to determine nearby charging stations and areas of grid need";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -502,6 +577,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "Vehicle-to-Grid-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is used to determine nearby charging stations and areas of grid need";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

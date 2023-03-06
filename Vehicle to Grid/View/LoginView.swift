@@ -22,7 +22,7 @@ struct LoginView: View {
     
     NavigationView {
       
-      ZStack {
+      ZStack() {
         
         Color.blue
           .ignoresSafeArea()
@@ -33,43 +33,47 @@ struct LoginView: View {
           .scale(1.35)
           .foregroundColor(.white)
         
-        Image("Image")
-          .resizable()
-        //.scaledToFit()
-          .frame(width: 200, height: 200) //changes size of image
-          .position(x: 200, y:115) //moves position of image on screen
+        //        Image("Image")
+        //          .resizable()
+        //          .scaledToFit()
+        //          .frame(width: 200, height: 200) //changes size of image
+        //          .position(x: 200, y:115) //moves position of image on screen
         
         VStack {
           
-          Text("Welcome!")
-            .font(.largeTitle)
+          Text("GM V2G")
+            .font(.custom("overpass-semibold", size: 50))
             .foregroundColor(.blue)
             .bold()
             .padding()
           
-          Text("Sign in to continue")
-            .foregroundColor(.blue)
+          // Space between title and login fields
+          Spacer()
+            .frame(height: 50)
           
           TextField("Email", text: $email)
             .padding()
-            .frame(width: 300, height: 50)
+            .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
-            .cornerRadius(10)
+//            .cornerRadius(10)
           
           SecureField("Password", text: $password)
             .padding()
-            .frame(width: 300, height: 50)
+            .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
-            .cornerRadius(10)
+//            .cornerRadius(10)
+          
+          Spacer()
+            .frame(height: 30)
           
           // Button to login
           Button(action: authenticateUser) {
-            Text("Login")
+            Text("Log In")
           }
           .foregroundColor(.white)
-          .frame(width: 300, height: 50)
+          .frame(width: 350, height: 40)
           .background(Color.blue)
-          .cornerRadius(10)
+//          .cornerRadius(10)
           .alert(isPresented: $showAlert) {
             Alert(
               
@@ -80,11 +84,11 @@ struct LoginView: View {
             )
           }
           
-          // Button to go to the register view
+          // Button to register
           NavigationLink(destination: RegisterView()) {
-            Text("Click here to register")
+            Text("Register")
               .foregroundColor(.blue)
-              .underline()
+              .frame(width: 200, height: 40)
           }
           
         }
