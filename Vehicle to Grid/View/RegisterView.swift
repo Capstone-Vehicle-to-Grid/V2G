@@ -64,15 +64,15 @@ struct RegisterView: View {
               .frame(width: 300, height: 50)
               .background(Color.blue)
               .cornerRadius(10)
-              .alert(isPresented: $showAlert) {
-                Alert(
+              //.alert(isPresented: $showAlert) {
+              //  Alert(
                   
-                  title: Text("Email already in use"),
-                  message: Text("This email is already associated with another account. Try logging in."),
-                  dismissButton: .default(Text("Ok"))
+              //    title: Text("Email already in use"),
+              //    message: Text("This email is already associated with another account. Try logging in."),
+              //    dismissButton: .default(Text("Ok"))
                   
-                )
-              }
+              //  )
+              //}
         }
       }
   }
