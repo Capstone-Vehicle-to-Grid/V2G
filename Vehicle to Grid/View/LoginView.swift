@@ -14,6 +14,7 @@ struct LoginView: View {
   @State private var email = ""
   @State private var password = ""
   @State private var showAlert = false
+  @State private var showSwitch = true
   //  @State var needsRegister: Bool = false
   
   @Binding var isLoggedIn: Bool
@@ -51,25 +52,35 @@ struct LoginView: View {
           Spacer()
             .frame(height: 50)
           
+          // Email text field
           TextField("Email", text: $email)
             .padding()
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
+            .font(.custom("overpass-light", size: 16))
 //            .cornerRadius(10)
           
+          // Password text field
           SecureField("Password", text: $password)
             .padding()
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
+            .font(.custom("overpass-light", size: 16))
 //            .cornerRadius(10)
           
           Spacer()
             .frame(height: 30)
           
+          // Face ID toggle switch
+          Toggle("Face ID", isOn: $showSwitch)
+            .frame(width:350)
+            .font(.custom("overpass-light", size: 20))
+          
           // Button to login
           Button(action: authenticateUser) {
             Text("Log In")
           }
+          .font(.custom("overpass-light", size: 20))
           .foregroundColor(.white)
           .frame(width: 350, height: 40)
           .background(Color.blue)
@@ -87,6 +98,7 @@ struct LoginView: View {
           // Button to register
           NavigationLink(destination: RegisterView()) {
             Text("Register")
+              .font(.custom("overpass-light", size: 20))
               .foregroundColor(.blue)
               .frame(width: 200, height: 40)
           }
