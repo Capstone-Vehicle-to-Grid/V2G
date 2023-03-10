@@ -12,6 +12,7 @@ struct MainView: View {
   
   // Properties
   @State var isLoggedIn: Bool = false
+  @State var navigated = false
   
   var body: some View {
     
@@ -43,14 +44,15 @@ struct MainView: View {
             
           }
           
+            //Fix this mess I made Chiyou
           HStack{
-            
+            NavigationLink("", destination: MapView(), isActive: $navigated)
             NavButtons(text: "Charging Stations", color: .blue, topPadding: 40, action: {
               //take to charging stations page
+                self.navigated.toggle()
             })
             
             NavButtons(text: "Grid Needs", color: .blue, topPadding: 40, action: {
-              //take to grid needs page
             })
             
           }

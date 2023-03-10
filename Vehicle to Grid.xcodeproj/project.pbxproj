@@ -23,6 +23,7 @@
 		2E035267299C800A00FF3648 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035266299C800A00FF3648 /* QuartzCore.framework */; };
 		2E035269299C801100FF3648 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E035268299C801100FF3648 /* SystemConfiguration.framework */; };
 		2E03526B299C801900FF3648 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E03526A299C801900FF3648 /* UIKit.framework */; };
+		2E3B5D5729BBF44600C6B58B /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2E3B5D5629BBF44600C6B58B /* GoogleMaps.bundle */; };
 		2E80933929987905003172FE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80933829987905003172FE /* MapView.swift */; };
 		2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */; };
 		426FB71C29B243C70059A1A4 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
@@ -67,8 +68,8 @@
 		2E035266299C800A00FF3648 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2E035268299C801100FF3648 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2E03526A299C801900FF3648 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2E3B5D5629BBF44600C6B58B /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		2E80933829987905003172FE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42806F172979FA7F002AD464 /* Vehicle to Grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vehicle to Grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle_to_GridApp.swift; sourceTree = "<group>"; };
@@ -152,10 +153,10 @@
 			isa = PBXGroup;
 			children = (
 				7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */,
+				2E3B5D5629BBF44600C6B58B /* GoogleMaps.bundle */,
 				7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */,
 				2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */,
 				7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */,
-				2E887F06299DCEF900EF7C29 /* GoogleMaps.bundle */,
 				42806F192979FA7F002AD464 /* Vehicle to Grid */,
 				42806F182979FA7F002AD464 /* Products */,
 				2E03524B299C7FAA00FF3648 /* Frameworks */,
@@ -315,6 +316,7 @@
 				2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */,
 				42806F1F2979FA82002AD464 /* Assets.xcassets in Resources */,
 				42E881E3299ECE4E00EC6016 /* (null) in Resources */,
+				2E3B5D5729BBF44600C6B58B /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
