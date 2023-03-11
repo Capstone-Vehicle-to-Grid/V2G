@@ -1,3 +1,8 @@
 In our project googleMaps has been added manually. The podfile may work on your system so I left it there.
 
 Use this link for reference: https://developers.google.com/maps/documentation/ios-sdk/config#install-the-xcframework
+
+Also, for logging into the application.
+
+Email: Testuser@email.com
+PW: password
