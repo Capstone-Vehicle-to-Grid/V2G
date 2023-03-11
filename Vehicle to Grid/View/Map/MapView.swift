@@ -12,20 +12,8 @@ import GoogleMaps
 
 struct MapView: View {
     @ObservedObject var viewModel = MapViewModel()
-    //Test List
-    static let chargingStations = [
-        ChargingStation(name: "San Francisco", coordinate: CLLocationCoordinate2D(latitude: 37.7576, longitude: -122.4194)),
-        ChargingStation(name: "Seattle", coordinate: CLLocationCoordinate2D(latitude: 47.6131742, longitude: -122.4824903)),
-        ChargingStation(name: "Singapore", coordinate: CLLocationCoordinate2D(latitude: 1.3440852, longitude: 103.6836164)),
-        ChargingStation(name: "Sydney", coordinate: CLLocationCoordinate2D(latitude: -33.8473552, longitude: 150.6511076)),
-        ChargingStation(name: "Tokyo", coordinate: CLLocationCoordinate2D(latitude: 35.6684411, longitude: 139.6004407))
-      ]
 
-      @State var markers: [GMSMarker] = chargingStations.map {
-        let marker = GMSMarker(position: $0.coordinate)
-        marker.title = $0.name
-        return marker
-      }
+    @State var markers: [GMSMarker] = []
     
     @State var zoomInCenter: Bool = false
     @State var expandList: Bool = false
@@ -44,36 +32,40 @@ struct MapView: View {
                 } else {
                     Text("Loading...")
                 }
-                
-                
             }
+            .onReceive(viewModel.$stations) { stations in
+                markers = stations.map {
+                    let marker = GMSMarker(position: $0.coordinate)
+                    marker.title = $0.name
+                    print("Marker added at \($0.coordinate.latitude), \($0.coordinate.longitude) with name \($0.name)")
+                    return marker
+                }
+            }
+            
         }
     }
 }
 
 struct ChargingStationsList: View {
+    // Use a binding to the computed property in MapView
+    @Binding var markers: [GMSMarker]
+    var buttonAction: (GMSMarker) -> Void
+    var handleAction: () -> Void
 
-  @Binding var markers: [GMSMarker]
-  var buttonAction: (GMSMarker) -> Void
-  var handleAction: () -> Void
-
-
-  var body: some View {
-    GeometryReader { geometry in
-      VStack(spacing: 0) {
-        // ...
-        // List of Charging Stations
-        List {
-          ForEach(0..<self.markers.count) { id in
-            let marker = self.markers[id]
-            Button(action: {
-              buttonAction(marker)
-            }) {
-              Text(marker.title ?? "")
+    var body: some View {
+        GeometryReader { geometry in
+            VStack(spacing: 0) {
+                // …
+                // List of Charging Stations
+                List {
+                    ForEach(0..<self.markers.count) { id in
+                        let marker = self.markers[id]
+                        Button(action: { buttonAction(marker) }) {
+                            Text(marker.title ?? "")
+                        }
+                    }
+                }.frame(maxWidth: .infinity)
             }
-          }
-        }.frame(maxWidth: .infinity)
-      }
+        }
     }
-  }
 }
