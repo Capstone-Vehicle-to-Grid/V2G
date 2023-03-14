@@ -14,6 +14,7 @@ struct LoginView: View {
   @State private var email = ""
   @State private var password = ""
   @State private var showAlert = false
+  @State private var showSwitch = true
   //  @State var needsRegister: Bool = false
   
   @Binding var isLoggedIn: Bool
@@ -22,7 +23,7 @@ struct LoginView: View {
     
     NavigationView {
       
-      ZStack {
+      ZStack() {
         
         Color.blue
           .ignoresSafeArea()
@@ -33,43 +34,57 @@ struct LoginView: View {
           .scale(1.35)
           .foregroundColor(.white)
         
-        Image("Image")
-          .resizable()
-        //.scaledToFit()
-          .frame(width: 200, height: 200) //changes size of image
-          .position(x: 200, y:115) //moves position of image on screen
+        //        Image("Image")
+        //          .resizable()
+        //          .scaledToFit()
+        //          .frame(width: 200, height: 200) //changes size of image
+        //          .position(x: 200, y:115) //moves position of image on screen
         
         VStack {
           
-          Text("Welcome!")
-            .font(.largeTitle)
+          Text("GM V2G")
+            .font(.custom("overpass-semibold", size: 50))
             .foregroundColor(.blue)
             .bold()
             .padding()
           
-          Text("Sign in to continue")
-            .foregroundColor(.blue)
+          // Space between title and login fields
+          Spacer()
+            .frame(height: 50)
           
+          // Email text field
           TextField("Email", text: $email)
             .padding()
-            .frame(width: 300, height: 50)
+            .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
-            .cornerRadius(10)
+            .font(.custom("overpass-light", size: 16))
+//            .cornerRadius(10)
           
+          // Password text field
           SecureField("Password", text: $password)
             .padding()
-            .frame(width: 300, height: 50)
+            .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
-            .cornerRadius(10)
+            .font(.custom("overpass-light", size: 16))
+//            .cornerRadius(10)
+          
+          Spacer()
+            .frame(height: 30)
+          
+          // Face ID toggle switch
+          Toggle("Face ID", isOn: $showSwitch)
+            .frame(width:350)
+            .font(.custom("overpass-light", size: 20))
           
           // Button to login
           Button(action: authenticateUser) {
-            Text("Login")
+            Text("Log In")
           }
+          .font(.custom("overpass-light", size: 20))
           .foregroundColor(.white)
-          .frame(width: 300, height: 50)
+          .frame(width: 350, height: 40)
           .background(Color.blue)
-          .cornerRadius(10)
+//          .cornerRadius(10)
           .alert(isPresented: $showAlert) {
             Alert(
               
@@ -80,11 +95,12 @@ struct LoginView: View {
             )
           }
           
-          // Button to go to the register view
+          // Button to register
           NavigationLink(destination: RegisterView()) {
-            Text("Click here to register")
+            Text("Register")
+              .font(.custom("overpass-light", size: 20))
               .foregroundColor(.blue)
-              .underline()
+              .frame(width: 200, height: 40)
           }
           
         }

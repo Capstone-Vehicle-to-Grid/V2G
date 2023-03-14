@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 class UserViewModel: ObservableObject {
     
@@ -14,6 +15,7 @@ class UserViewModel: ObservableObject {
     
     private var db = Firestore.firestore()
     private var userList = Firestore.firestore().collection("users")
+    private var userAddedAlert = false
     
     func addUser(user: User) {
         do {
@@ -25,20 +27,28 @@ class UserViewModel: ObservableObject {
     }
     
     func register() -> Bool {
-        var userAdded = false
         userList.whereField("userEmail", isEqualTo: user.userEmail)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error accessing database: \(err)")
+                    self.userAddedAlert = false
                 }
                 if querySnapshot!.isEmpty {
-                    self.addUser(user: self.user)
-                    userAdded = true
+                    Auth.auth().createUser(withEmail: self.user.userEmail, password: self.user.password) { authResult, error in
+                        if let err = err { print("Error creating user: \(err)")
+                            print("Error creating user: \(err)")
+                        }
+                        else {
+                            print("Added user")
+                            self.addUser(user: self.user)
+                            self.userAddedAlert = false
+                        }
+                    } }
+                else {
+                        print("User not added")
+                        self.userAddedAlert = true
+                    }
                 }
+            return self.userAddedAlert
             }
-        
-        return userAdded
     }
-    
-    
-}
