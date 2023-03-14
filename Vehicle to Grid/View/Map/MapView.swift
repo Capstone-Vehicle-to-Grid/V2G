@@ -61,7 +61,7 @@ struct MapView: View {
 
         markers = filteredStations.map {
           let marker = GMSMarker(position: $0.coordinate)
-          marker.title = $0.name
+          marker.title = $0.name + " Station"
           return marker
         }
       }
@@ -77,16 +77,16 @@ struct ChargingStationsList: View {
 
   var body: some View {
     GeometryReader { geometry in
-      VStack(spacing: 0) {
-        List {
-          ForEach(0..<self.markers.count) { id in
-            let marker = self.markers[id]
-            Button(action: { buttonAction(marker) }) {
-              Text(marker.title ?? "")
-            }
-          }
-        }.frame(maxWidth: .infinity)
-      }
+        VStack(spacing: 0) {
+            List {
+                ForEach(0..<self.markers.count, id: \.self) { id in
+                    let marker = self.markers[id]
+                    Button(action: { buttonAction(marker) }) {
+                        Text(marker.title ?? "")
+                    }
+                }
+            }.frame(maxWidth: .infinity)
+        }
     }
   }
 }
