@@ -62,6 +62,7 @@ struct MapView: View {
         markers = filteredStations.map {
           let marker = GMSMarker(position: $0.coordinate)
           marker.title = $0.name + " Station"
+          marker.isDraggable = false
           return marker
         }
       }
