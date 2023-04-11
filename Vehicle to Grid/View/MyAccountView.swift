@@ -4,12 +4,13 @@
 //
 //  Created by David Hammons on 4/6/23.
 //
-
 import SwiftUI
 import Foundation
 import FirebaseFirestore
 
 struct MyAccountView: View {
+    @StateObject var viewModel = UserAccountViewModel()
+    
     var body: some View {
         
         NavigationView {
@@ -22,9 +23,11 @@ struct MyAccountView: View {
                     
                     VStack{
                             Text("Profile")
-                            Text("Name:")
-                            Text("Email:")
-                            Text("Phone:")
+                            .onAppear{
+                                let _ = viewModel.getUserData()
+                            }
+                            Text("Name: \(viewModel.user.username)")
+                            Text("Email: \(viewModel.user.userEmail)")
                         }
                         
                         Spacer()

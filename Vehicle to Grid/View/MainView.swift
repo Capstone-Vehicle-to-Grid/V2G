@@ -12,7 +12,9 @@ struct MainView: View {
   
   // Properties
   @State var isLoggedIn: Bool = false
+  @State var registerLogIn: Bool = false
   @State var navigated = false
+  @State var navigatedMyAccount = false
   
   var body: some View {
     
@@ -33,10 +35,11 @@ struct MainView: View {
           
           //Horizontal stack to have bottons layout side by side
           HStack{
-            
-            NavButtons(text: "My Account", color: .blue, topPadding: 40, action: {
-              //take to account page
+              NavigationLink("", destination: MyAccountView(), isActive: $navigatedMyAccount)
+              NavButtons(text: "My Account", color: .blue, topPadding: 40, action: {
+                  self.navigatedMyAccount.toggle()
             })
+            
             
             NavButtons(text: "Vehicle Charge", color: .blue, topPadding: 40, action: {
               //take to vehicle charge page
