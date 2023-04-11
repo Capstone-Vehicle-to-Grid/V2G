@@ -12,13 +12,14 @@ struct MainView: View {
   
   // Properties
   @State var isLoggedIn: Bool = false
+  @State var registerLogIn: Bool = false
   
   var body: some View {
     
     NavigationView {
       
       // If the user is currently logged in, show MainView
-      if isLoggedIn {
+      if (isLoggedIn || registerLogIn){
         
         VStack{
           

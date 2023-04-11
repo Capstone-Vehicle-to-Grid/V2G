@@ -15,6 +15,7 @@ struct LoginView: View {
   @State private var password = ""
   @State private var showAlert = false
   @State private var showSwitch = true
+  @State var goToRegister = false
   //  @State var needsRegister: Bool = false
   
   @Binding var isLoggedIn: Bool
@@ -96,7 +97,7 @@ struct LoginView: View {
           }
           
           // Button to register
-          NavigationLink(destination: RegisterView()) {
+          NavigationLink(destination: RegisterView(registerLogIn: $goToRegister)) {
             Text("Register")
               .font(.custom("overpass-light", size: 20))
               .foregroundColor(.blue)
