@@ -26,7 +26,8 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func register() -> Bool {
+    func register() -> Bool{
+        var authError = false
         userList.whereField("userEmail", isEqualTo: user.userEmail)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -35,20 +36,37 @@ class UserViewModel: ObservableObject {
                 }
                 if querySnapshot!.isEmpty {
                     Auth.auth().createUser(withEmail: self.user.userEmail, password: self.user.password) { authResult, error in
-                        if let err = err { print("Error creating user: \(err)")
-                            print("Error creating user: \(err)")
-                        }
-                        else {
-                            print("Added user")
-                            self.addUser(user: self.user)
+                        if let err = err { print("Error creating user: \(err.localizedDescription)")
+                            authError = true
                             self.userAddedAlert = false
                         }
-                    } }
+                    }
+                    if authError == false {
+                        print("Added user")
+                        self.addUser(user: self.user)
+                        self.userAddedAlert = true
+                        }
+                    }
                 else {
                         print("User not added")
-                        self.userAddedAlert = true
+                        self.userAddedAlert = false
                     }
                 }
-            return self.userAddedAlert
+        return userAddedAlert
+        
             }
+    func logIn() -> Bool{
+        var loggedIn = false
+        Auth.auth().signIn(withEmail: user.userEmail, password: user.password) { result, error in
+              if error != nil {
+                  print("Could not log in")
+                  loggedIn = false
+              } else {
+                print("Successful login")
+                loggedIn = true
+              }
+            }
+        return loggedIn
+        
+    }
     }
