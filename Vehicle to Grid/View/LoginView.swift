@@ -97,7 +97,7 @@ struct LoginView: View {
           }
           
           // Button to register
-          NavigationLink(destination: RegisterView(isLoggedIn: $goToRegister)) {
+          NavigationLink(destination: RegisterView(registerLogIn: $goToRegister)) {
             Text("Register")
               .font(.custom("overpass-light", size: 20))
               .foregroundColor(.blue)

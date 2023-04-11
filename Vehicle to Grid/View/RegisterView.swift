@@ -19,7 +19,7 @@ struct RegisterView: View {
   @State var phoneEditing = false
   @State var gotologin = false
   @State private var showAlert = false
-  @Binding var isLoggedIn: Bool
+  @Binding var registerLogIn: Bool
   @StateObject var viewModel = UserViewModel()  
   
   var body: some View {
@@ -89,14 +89,15 @@ struct RegisterView: View {
   }
   func registerUser() {
       showAlert = viewModel.register()
-      
-      isLoggedIn = viewModel.logIn()
+      if showAlert == false {
+          registerLogIn = viewModel.logIn()
+      }
     }
 }
 
 struct RegisterView_Previews: PreviewProvider {
-    @State static var isLoggedIn = false
+    @State static var registerLogIn = false
     static var previews: some View {
-    RegisterView(isLoggedIn: $isLoggedIn)
+    RegisterView(registerLogIn: $registerLogIn)
   }
 }
