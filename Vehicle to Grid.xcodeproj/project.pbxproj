@@ -57,6 +57,7 @@
 		522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */; };
 		522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */; };
 		52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7C29A551AC0038149E /* UserViewModel.swift */; };
+		52415E7229E523EE0025FD24 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52415E7129E523EE0025FD24 /* PaymentView.swift */; };
 		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
 		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
 		7C21381929B3032A00FE8598 /* GoogleMapsViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */; };
@@ -111,6 +112,7 @@
 		42DFA00D29B5569E00E0C20B /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		42E881E429A16F2B00EC6016 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		52314C7C29A551AC0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		52415E7129E523EE0025FD24 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewRepresentable.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				42806F1C2979FA7F002AD464 /* LoginView.swift */,
 				5B472A73299EF36C00A88595 /* RegisterView.swift */,
 				7C21381729B3031500FE8598 /* Map */,
+				52415E7129E523EE0025FD24 /* PaymentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				42E881E529A16F2B00EC6016 /* MainView.swift in Sources */,
 				42DFA00E29B5569E00E0C20B /* MapViewModel.swift in Sources */,
 				52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */,
+				52415E7229E523EE0025FD24 /* PaymentView.swift in Sources */,
 				42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */,
 				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				2E80933929987905003172FE /* MapView.swift in Sources */,

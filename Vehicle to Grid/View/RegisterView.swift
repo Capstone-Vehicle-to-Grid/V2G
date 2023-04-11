@@ -60,7 +60,7 @@ struct RegisterView: View {
         Spacer()
           .frame(height: 30)
         
-        Button(action: registerUser) {Text("Register")}
+          Button(action: registerUser) {Text("Register")}
           .foregroundColor(.white)
           .frame(width: 350, height: 40)
           .font(.custom("overpass-light", size: 20))
