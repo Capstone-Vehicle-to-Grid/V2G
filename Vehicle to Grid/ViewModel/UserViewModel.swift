@@ -19,7 +19,11 @@ class UserViewModel: ObservableObject {
     
     func addUser(user: User) {
         do {
-            let _ = try userList.addDocument(from: user)
+            let _ = try userList.addDocument(data: [
+                "username": self.user.username,
+                "userEmail": self.user.userEmail.lowercased(),
+                "password": self.user.password
+            ])
         }
         catch {
             print(error)

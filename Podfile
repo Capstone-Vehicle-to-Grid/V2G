@@ -7,6 +7,6 @@ target 'Vehicle to Grid' do
   use_frameworks!
 
   # Pods for Vehicle to Grid
-	pod 'GoogleMaps', '7.3.0'
+	pod 'GoogleMaps', '7.4.0'
 
 end
