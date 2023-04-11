@@ -8,6 +8,7 @@
 import SwiftUI
 import iPhoneNumberField
 
+
 struct RegisterView: View {
   
   @State private var username = ""
@@ -18,8 +19,8 @@ struct RegisterView: View {
   @State var phoneEditing = false
   @State var gotologin = false
   @State private var showAlert = false
-  @StateObject var viewModel = UserViewModel()
-  
+  @Binding var isLoggedIn: Bool
+  @StateObject var viewModel = UserViewModel()  
   
   var body: some View {
     
@@ -64,16 +65,15 @@ struct RegisterView: View {
           .frame(width: 350, height: 40)
           .font(.custom("overpass-light", size: 20))
           .background(Color.blue)
+          .alert(isPresented: $showAlert) {
+            Alert(
+              
+              title: Text("Email already in use"),
+              message: Text("Please check your email or try logging in."),
+              dismissButton: .default(Text("Ok"))
+            )
+          }
 //          .cornerRadius(10)
-        //.alert(isPresented: $showAlert) {
-        //  Alert(
-        
-        //    title: Text("Email already in use"),
-        //    message: Text("This email is already associated with another account. Try logging in."),
-        //    dismissButton: .default(Text("Ok"))
-        
-        //  )
-        //}
         
         NavigationLink(destination: LoginView(isLoggedIn: $gotologin)) {
           Text("Log in here")
@@ -88,12 +88,15 @@ struct RegisterView: View {
     
   }
   func registerUser() {
-    showAlert = viewModel.register()
-  }
+      showAlert = viewModel.register()
+      
+      isLoggedIn = viewModel.logIn()
+    }
 }
 
 struct RegisterView_Previews: PreviewProvider {
-  static var previews: some View {
-    RegisterView()
+    @State static var isLoggedIn = false
+    static var previews: some View {
+    RegisterView(isLoggedIn: $isLoggedIn)
   }
 }
