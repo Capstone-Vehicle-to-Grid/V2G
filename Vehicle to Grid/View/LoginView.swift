@@ -45,7 +45,7 @@ struct LoginView: View {
           
           Text("GM V2G")
             .font(.custom("overpass-semibold", size: 50))
-            .foregroundColor(.blue)
+            .foregroundColor(Color("285 C"))
             .bold()
             .padding()
           
@@ -84,7 +84,7 @@ struct LoginView: View {
           .font(.custom("overpass-light", size: 20))
           .foregroundColor(.white)
           .frame(width: 350, height: 40)
-          .background(Color.blue)
+          .background(Color("285 C"))
 //          .cornerRadius(10)
           .alert(isPresented: $showAlert) {
             Alert(
@@ -100,7 +100,7 @@ struct LoginView: View {
           NavigationLink(destination: RegisterView(registerLogIn: $goToRegister)) {
             Text("Register")
               .font(.custom("overpass-light", size: 20))
-              .foregroundColor(.blue)
+              .foregroundColor(Color("285 C"))
               .frame(width: 200, height: 40)
           }
           
