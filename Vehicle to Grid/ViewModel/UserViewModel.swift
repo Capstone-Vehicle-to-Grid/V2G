@@ -11,8 +11,7 @@ import FirebaseAuth
 
 class UserViewModel: ObservableObject {
     
-    @Published var user: User = User(username: "", password: "", userEmail: "")
-    
+    @Published var user: User = User(username: "", password: "", userEmail: "test@email.com", vehicleMake: "", vehicleModel: "", vehicleVIN: "")
     private var db = Firestore.firestore()
     private var userList = Firestore.firestore().collection("users")
     private var userAddedAlert = false
@@ -59,6 +58,7 @@ class UserViewModel: ObservableObject {
         return userAddedAlert
         
             }
+    
     func logIn() -> Bool{
         var loggedIn = false
         Auth.auth().signIn(withEmail: user.userEmail, password: user.password) { result, error in
@@ -71,6 +71,21 @@ class UserViewModel: ObservableObject {
               }
             }
         return loggedIn
-        
     }
+    
+    func addInfo() {
+        userList.whereField("userEmail", isEqualTo: user.userEmail)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error accessing database: \(err)")
+                } else {
+                    let document = querySnapshot!.documents.first
+                    document!.reference.updateData([
+                        "vehicleMake": self.user.vehicleMake,
+                        "vehicleModel": self.user.vehicleModel,
+                        "vehicleVIN": self.user.vehicleVIN
+                    ])
+                }
+            }
     }
+}

@@ -18,11 +18,13 @@ struct MyAccountView: View {
             HStack{
                 
                 VStack(alignment: .leading) {
-                    Text("User Name")
+                    Text(viewModel.user.username)
                         .font(.headline)
                         .foregroundColor(Color("311 C"))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
+                        .onAppear{
+                            let _ = viewModel.getUserData() }
                     
                     VStack{
                         
@@ -32,9 +34,7 @@ struct MyAccountView: View {
                             Text("User Info")
                             .font(.headline)
                             .foregroundColor(Color("311 C"))
-                            .onAppear{
-                                let _ = viewModel.getUserData()
-                            }
+                        
                             Text("Name: \(viewModel.user.username)")
                             .foregroundColor(Color("311 C"))
                             .padding(5)
@@ -52,35 +52,25 @@ struct MyAccountView: View {
                             .font(.headline)
                             .foregroundColor(Color("311 C"))
                         
-                        Text("Year: 2023")
+                        Text("Model: \(viewModel.user.vehicleModel)")
                             .foregroundColor(Color("311 C"))
                             .padding(5)
-                        Text("Model: Cadillac LYRIQ")
+                        Text("Make: \(viewModel.user.vehicleMake)")
                             .foregroundColor(Color("311 C"))
                             .padding(5)
-                        Text("VIN: JJ1PMVC43T5571234")
+                        Text("VIN: \(viewModel.user.vehicleVIN)")
                             .foregroundColor(Color("311 C"))
                         
                     }
                     
-                    VStack{
-                        
-                        Divider() // Add a horizontal line as a section separator
-                            .background(Color("285 C"))
-                        
-                        Text("Banking Info")
-                            .font(.headline)
-                            .foregroundColor(Color("311 C"))
-                        
-                        Text("Bank: Bank")
-                            .foregroundColor(Color("311 C"))
-                            .padding(5)
-                        Text("Routing: 111111")
-                            .foregroundColor(Color("311 C"))
-                            .padding(5)
-                        Text("Account: 222222")
-                            .foregroundColor(Color("311 C"))
-                        
+                    Spacer()
+                        .frame(height: 30)
+                    
+                    NavigationLink(destination: UpdateView()) {
+                      Text("Update User Information")
+                        .font(.custom("overpass-light", size: 20))
+                        .foregroundColor(Color("311 C"))
+                        .frame(width: 400, height: 40, alignment: .center)
                     }
                         
                         Spacer()
