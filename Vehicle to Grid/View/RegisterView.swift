@@ -32,7 +32,7 @@ struct RegisterView: View {
         
         Text("Create New Account")
           .font(.custom("overpass-semibold", size: 40))
-          .foregroundColor(.blue)
+          .foregroundColor(Color("285 C"))
           .bold()
           .padding()
         
@@ -64,7 +64,7 @@ struct RegisterView: View {
           .foregroundColor(.white)
           .frame(width: 350, height: 40)
           .font(.custom("overpass-light", size: 20))
-          .background(Color.blue)
+          .background(Color("285 C"))
           .alert(isPresented: $showAlert) {
             Alert(
               
@@ -77,7 +77,7 @@ struct RegisterView: View {
         
         NavigationLink(destination: LoginView(isLoggedIn: $gotologin)) {
           Text("Log in here")
-            .foregroundColor(.blue)
+            .foregroundColor(Color("285 C"))
             .font(.custom("overpass-light", size: 20))
             .frame(width: 200, height: 40)
         }
