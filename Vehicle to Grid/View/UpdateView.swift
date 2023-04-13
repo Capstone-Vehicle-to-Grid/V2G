@@ -83,14 +83,14 @@ struct UpdateView: View {
                     .foregroundColor(Color("285 C"))
                     .font(.custom("overpass-light", size: 20))
                     .frame(width: 200, height: 40)
-                    .alert(isPresented: $showAlert, content: { self.pickAlert() })
+                    .alert(isPresented: $showAlert, content: { self.pickAlert()})
             }
         }
     }
     func updateInfo(){
         self.blankField = false
         self.updatedUser = false
-        if (viewModel.user.username == "" || viewModel.user.userEmail == "" || viewModel.user.password == "" || viewModel.user.vehicleModel == "" || viewModel.user.vehicleMake == "" || viewModel.user.vehicleVIN == ""){
+        if (viewModel.user.username == "" || viewModel.user.userEmail == "" || viewModel.user.password == ""){
             self.blankField = true
         }
         else{

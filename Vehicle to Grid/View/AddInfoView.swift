@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AddInfoView: View {
     @StateObject var viewModel = UserViewModel()
-    @State var loggedIn = true
     @State private var showAlert = false
+    @State var isLoggedIn = false
     
     var body: some View {
         
@@ -41,27 +41,45 @@ struct AddInfoView: View {
                 .background(Color.black.opacity(0.05))
                 .font(.custom("overpass-light", size: 16))
             //
-           
-            Button(action: addInfo) {
-                Text("Update Information")
-                    .foregroundColor(Color("285 C"))
-                    .font(.custom("overpass-light", size: 20))
-                    .frame(width: 200, height: 40)
-                    .alert(isPresented: $showAlert) {
-                      Alert(
-                        
-                        title: Text("Incomplete Fields"),
-                        message: Text("You must complete all fields"),
-                        dismissButton: .default(Text("Ok"))
-                      )
+            NavigationLink(destination: MainView(), isActive: $isLoggedIn){
+                Button(action: {
+                    addInfo()
+                    self.isLoggedIn = viewModel.logIn()
+                }) {
+                    Text("Update Information")
+                        .foregroundColor(Color("285 C"))
+                        .font(.custom("overpass-light", size: 20))
+                        .frame(width: 200, height: 40)
+                        .alert(isPresented: $showAlert) {
+                            Alert(
+                                
+                                title: Text("Incomplete Fields"),
+                                message: Text("You must complete all fields"),
+                                dismissButton: .default(Text("Ok"))
+                            )
+                        }
+                }}
+            
+            NavigationLink(destination: MainView(), isActive: $isLoggedIn){
+                Button(action: {
+                    self.isLoggedIn = viewModel.logIn()
+                    if self.isLoggedIn == false{
+                        self.showAlert = true
                     }
-            }
-            NavigationLink(destination: MainView(isLoggedIn: loggedIn)) {
-              Text("Skip this step")
-                .foregroundColor(Color("285 C"))
-                .font(.custom("overpass-light", size: 20))
-                .frame(width: 200, height: 40)
-            }
+                }) {
+                    Text("Skip This Step")
+                        .foregroundColor(Color("285 C"))
+                        .font(.custom("overpass-light", size: 20))
+                        .frame(width: 200, height: 40)
+                        .alert(isPresented: $showAlert) {
+                            Alert(
+                                
+                                title: Text("Error Logging In"),
+                                message: Text("You were unable to be logged in at this time. Return to the log in screen and try again."),
+                                dismissButton: .default(Text("Ok"))
+                            )
+                        }
+                }}
         }
     }
     

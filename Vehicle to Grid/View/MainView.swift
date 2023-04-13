@@ -12,7 +12,6 @@ struct MainView: View {
   
   // Properties
   @State var isLoggedIn: Bool = false
-  @State var registerLogIn: Bool = false
   @State var navigated = false
   @State var navigatedMyAccount = false
 //  @State var goToAccount = false
@@ -78,7 +77,7 @@ struct MainView: View {
           }
           .foregroundColor(.white)
           .frame(width: 300, height: 50)
-          .background(Color("385 C"))
+          .background(Color("285 C"))
           .cornerRadius(10)
           
         }
