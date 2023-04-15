@@ -13,6 +13,9 @@ class MapViewModel: ObservableObject {
   @Published var userLocation: CLLocationCoordinate2D?
   @Published var stations = [ChargingStation]()
 
+  //Dictionary mapping station names to OpenChargeMapPOI's
+  @Published var poiDictionary = [String: OpenChargeMapPOI]()
+
   init() {
     getUserLocation()
   }
@@ -25,11 +28,14 @@ class MapViewModel: ObservableObject {
         print("Could not get location")
         self.userLocation = CLLocationCoordinate2D(latitude: 32.7767, longitude: 96.797)
       }
-      self.fetchStations()
+      self.fetchStations { stations in
+        self.updatePOIDictionary(with: stations)
+      }
     }
   }
 
-  func fetchStations() {
+  // Modify the fetchStations method to accept a completion handler as a parameter
+  func fetchStations(completion: @escaping ([ChargingStation]) -> Void) {
     guard let userLocation = userLocation else {
       print("User location is nil")
       return
@@ -75,6 +81,9 @@ class MapViewModel: ObservableObject {
           // Update the stations property on the main thread
           DispatchQueue.main.async {
             self.stations = stations
+
+            // Call the completion handler with the stations array
+            completion(stations)
           }
         }
       } catch {
@@ -83,5 +92,57 @@ class MapViewModel: ObservableObject {
     }
     task.resume()
   }
-}
 
+  func updatePOIDictionary(with stations: [ChargingStation]) {
+
+    let group = DispatchGroup()
+
+    for station in stations {
+
+      group.enter()
+
+      var components = URLComponents(string: "https://api.openchargemap.io/v3/poi/")!
+      components.queryItems = [
+        URLQueryItem(name: "key", value: "fbcf6c48-38fd-488c-9d4a-d29a074d6c7e"),
+        URLQueryItem(name: "latitude", value: "\(station.coordinate.latitude)"),
+        URLQueryItem(name: "longitude", value: "\(station.coordinate.longitude)"),
+        URLQueryItem(name: "distance", value: ".1"),
+        URLQueryItem(name: "distanceunit", value: "Miles"),
+        URLQueryItem(name: "maxresults", value: "1"),
+      ]
+      let url = components.url!
+
+      let task = URLSession.shared.dataTask(with: url) { data, response, error in
+
+        if let error = error {
+          print("Error fetching data from OpenChargeMap API: \(error.localizedDescription)")
+        }
+
+        // If there is data, decode it into an array of OpenChargeMapPOI objects
+        else if let data = data {
+          do {
+            let decoder = JSONDecoder()
+            let powerStations = try decoder.decode([OpenChargeMapPOI].self, from: data)
+
+            if let powerStation = powerStations.first {
+
+              DispatchQueue.main.async {
+                self.poiDictionary[station.name] = powerStation
+              }
+            }
+          }
+
+          // If there is a decoding error, print a message and do nothing
+          catch {
+            print("Error decoding data from OpenChargeMap API: \(error.localizedDescription)")
+          }
+        }
+
+        group.leave()
+      }
+
+      task.resume()
+    }
+  }
+
+}

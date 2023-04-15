@@ -21,7 +21,7 @@ struct MainView: View {
     NavigationView {
       
       // If the user is currently logged in, show MainView
-      if (isLoggedIn){
+      if isLoggedIn {
         
         VStack{
           
