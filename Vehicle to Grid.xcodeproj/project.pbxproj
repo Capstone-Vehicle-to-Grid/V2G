@@ -27,6 +27,8 @@
 		2E3B5D5D29BC019E00C6B58B /* ChargingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B5D5C29BC019E00C6B58B /* ChargingStation.swift */; };
 		2E80933929987905003172FE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80933829987905003172FE /* MapView.swift */; };
 		2E8DE76B299EC8A500841827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */; };
+		2EB7A2F529EB3D7C00FF50FF /* GoogleMapsUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 2EB7A2F429EB3D7C00FF50FF /* GoogleMapsUtils */; };
+		2EB7A2F729EB563C00FF50FF /* police_stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EB7A2F629EB563C00FF50FF /* police_stations.json */; };
 		426FB71C29B243C70059A1A4 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 5B472A7629A2B1C900A88595 /* iPhoneNumberField */; };
 		42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */; };
 		42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42806F1C2979FA7F002AD464 /* LoginView.swift */; };
@@ -90,6 +92,7 @@
 		2E3B5D5C29BC019E00C6B58B /* ChargingStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStation.swift; sourceTree = "<group>"; };
 		2E80933829987905003172FE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2EB7A2F629EB563C00FF50FF /* police_stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = police_stations.json; sourceTree = "<group>"; };
 		42806F172979FA7F002AD464 /* Vehicle to Grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vehicle to Grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42806F1A2979FA7F002AD464 /* Vehicle_to_GridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle_to_GridApp.swift; sourceTree = "<group>"; };
 		42806F1C2979FA7F002AD464 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 				426FB71C29B243C70059A1A4 /* iPhoneNumberField in Frameworks */,
 				2E03526B299C801900FF3648 /* UIKit.framework in Frameworks */,
 				2E035269299C801100FF3648 /* SystemConfiguration.framework in Frameworks */,
+				2EB7A2F529EB3D7C00FF50FF /* GoogleMapsUtils in Frameworks */,
 				2E035267299C800A00FF3648 /* QuartzCore.framework in Frameworks */,
 				7CA5B9E1299DDB9B007ED04A /* GoogleMaps.xcframework in Frameworks */,
 				7CA5B9E6299DE02A007ED04A /* SwiftLocation in Frameworks */,
@@ -190,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */,
+				2EB7A2F629EB563C00FF50FF /* police_stations.json */,
 				2E3B5D5629BBF44600C6B58B /* GoogleMaps.bundle */,
 				7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */,
 				2E8DE76A299EC8A500841827 /* GoogleService-Info.plist */,
@@ -327,6 +332,7 @@
 				522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */,
 				5B472A7629A2B1C900A88595 /* iPhoneNumberField */,
 				7CA5B9E5299DE02A007ED04A /* SwiftLocation */,
+				2EB7A2F429EB3D7C00FF50FF /* GoogleMapsUtils */,
 			);
 			productName = "Vehicle to Grid";
 			productReference = 42806F172979FA7F002AD464 /* Vehicle to Grid.app */;
@@ -361,6 +367,7 @@
 				5B472A7529A2B1C800A88595 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 				5B472A7829A2B4B900A88595 /* XCRemoteSwiftPackageReference "iTextField" */,
 				7CA5B9E4299DE02A007ED04A /* XCRemoteSwiftPackageReference "SwiftLocation" */,
+				2EB7A2F329EB3D7C00FF50FF /* XCRemoteSwiftPackageReference "google-maps-ios-utils" */,
 			);
 			productRefGroup = 42806F182979FA7F002AD464 /* Products */;
 			projectDirPath = "";
@@ -386,6 +393,7 @@
 				4297D36D29B57B4300126BE0 /* overpass-semibold-italic.otf in Resources */,
 				4297D36E29B57B4300126BE0 /* overpass-extrabold.otf in Resources */,
 				4297D36F29B57B4300126BE0 /* overpass-regular.otf in Resources */,
+				2EB7A2F729EB563C00FF50FF /* police_stations.json in Resources */,
 				42E881E3299ECE4E00EC6016 /* (null) in Resources */,
 				2E3B5D5729BBF44600C6B58B /* GoogleMaps.bundle in Resources */,
 				4297D36829B57B4300126BE0 /* overpass-bold-italic.otf in Resources */,
@@ -634,6 +642,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2EB7A2F329EB3D7C00FF50FF /* XCRemoteSwiftPackageReference "google-maps-ios-utils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/google-maps-ios-utils";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -669,6 +685,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2EB7A2F429EB3D7C00FF50FF /* GoogleMapsUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EB7A2F329EB3D7C00FF50FF /* XCRemoteSwiftPackageReference "google-maps-ios-utils" */;
+			productName = GoogleMapsUtils;
+		};
 		522DD91029899C080023FE84 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 522DD90F29899C080023FE84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

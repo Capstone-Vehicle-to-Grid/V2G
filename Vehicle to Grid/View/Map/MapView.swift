@@ -8,12 +8,11 @@
 import GoogleMaps
 import SwiftUI
 import UIKit
+import GoogleMapsUtils
 
 struct MapView: View {
   @ObservedObject var viewModel = MapViewModel()
-
   @State var markers: [GMSMarker] = []
-
   @State var zoomInCenter: Bool = false
   @State var expandList: Bool = false
   @State var selectedMarker: GMSMarker?
@@ -27,7 +26,9 @@ struct MapView: View {
         // Map
         if let userLocation = viewModel.userLocation {
           let camera = GMSCameraPosition.camera(withTarget: userLocation, zoom: 6.0)
-          GoogleMapsViewRepresentable(camera: camera, markers: $markers)
+        GoogleMapsViewRepresentable(camera: camera, markers: $markers)
+            
+            
         } else {
           Text("Loading...")
         }
@@ -65,9 +66,11 @@ struct MapView: View {
           marker.isDraggable = false
           return marker
         }
+          
       }
 
     }
+      
   }
 }
 
