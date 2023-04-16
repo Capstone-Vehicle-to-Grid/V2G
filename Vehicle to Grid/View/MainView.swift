@@ -14,6 +14,7 @@ struct MainView: View {
   @State var isLoggedIn: Bool = false
   @State var navigated = false
   @State var navigatedMyAccount = false
+  @State var navigatedVehicleCharge = false
 //  @State var goToAccount = false
   
   var body: some View {
@@ -40,10 +41,11 @@ struct MainView: View {
                   self.navigatedMyAccount.toggle()
             })
             
-            
-            NavButtons(text: "Vehicle Charge", color: .blue, topPadding: 40, action: {
-              //take to vehicle charge page
-            })
+              NavigationLink("", destination: VehicleChargeView(vehicleCharge: 0.0), isActive: $navigatedVehicleCharge)
+              NavButtons(text: "Vehicle Charge", color: .blue, topPadding: 40, action: {
+                  self.navigatedVehicleCharge.toggle()
+                  
+              })
             
           }
           
