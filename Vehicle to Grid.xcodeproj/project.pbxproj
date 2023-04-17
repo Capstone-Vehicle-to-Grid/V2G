@@ -64,6 +64,7 @@
 		522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */; };
 		52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7C29A551AC0038149E /* UserViewModel.swift */; };
 		52415E7229E523EE0025FD24 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52415E7129E523EE0025FD24 /* PaymentView.swift */; };
+		5253326229EDBECB00DB2F29 /* ChargingStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253326129EDBECB00DB2F29 /* ChargingStationView.swift */; };
 		52B3190329EBB2E10070C52F /* VehicleChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3190229EBB2E10070C52F /* VehicleChargeView.swift */; };
 		52B3190529EBB2F30070C52F /* VehicleChargeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3190429EBB2F30070C52F /* VehicleChargeViewModel.swift */; };
 		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
@@ -131,6 +132,7 @@
 		5202F5AF29EBAB3400EFD231 /* librdkafka.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librdkafka.a; path = ../../../../../../../usr/local/Cellar/librdkafka/2.1.0/lib/librdkafka.a; sourceTree = "<group>"; };
 		52314C7C29A551AC0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		52415E7129E523EE0025FD24 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		5253326129EDBECB00DB2F29 /* ChargingStationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationView.swift; sourceTree = "<group>"; };
 		52B3190229EBB2E10070C52F /* VehicleChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleChargeView.swift; sourceTree = "<group>"; };
 		52B3190429EBB2F30070C52F /* VehicleChargeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleChargeViewModel.swift; sourceTree = "<group>"; };
 		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				52F7CA5C29E5C3860095797E /* MyAccountView.swift */,
 				52013B2829E652D700C7947F /* UpdateView.swift */,
 				52B3190229EBB2E10070C52F /* VehicleChargeView.swift */,
+				5253326129EDBECB00DB2F29 /* ChargingStationView.swift */,
 				52013B2A29E655AA00C7947F /* AddInfoView.swift */,
 				7C21381729B3031500FE8598 /* Map */,
 				52415E7129E523EE0025FD24 /* PaymentView.swift */,
@@ -452,6 +455,7 @@
 				42E881E529A16F2B00EC6016 /* MainView.swift in Sources */,
 				42DFA00E29B5569E00E0C20B /* MapViewModel.swift in Sources */,
 				52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */,
+				5253326229EDBECB00DB2F29 /* ChargingStationView.swift in Sources */,
 				52415E7229E523EE0025FD24 /* PaymentView.swift in Sources */,
 				52B3190529EBB2F30070C52F /* VehicleChargeViewModel.swift in Sources */,
 				52013B2929E652D700C7947F /* UpdateView.swift in Sources */,
