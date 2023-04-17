@@ -10,9 +10,7 @@ import FirebaseAuth
 
 struct LoginView: View {
   
-  //Propertiers
-  @State private var email = ""
-  @State private var password = ""
+  // Propertiers
   @State private var showAlert = false
   @State private var showSwitch = true
   @State var goToRegister = false
@@ -55,7 +53,7 @@ struct LoginView: View {
             .frame(height: 50)
           
           // Email text field
-          TextField("Email", text: $email)
+          TextField("Email", text: $viewModel.user.userEmail)
             .padding()
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
@@ -63,7 +61,7 @@ struct LoginView: View {
           //            .cornerRadius(10)
           
           // Password text field
-          SecureField("Password", text: $password)
+          SecureField("Password", text: $viewModel.user.password)
             .padding()
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
@@ -115,7 +113,7 @@ struct LoginView: View {
   
   func login() {
     
-    viewModel.authenticateUser(email: email, password: password) { successfulLogin in
+    viewModel.authenticateUser() { successfulLogin in
       
       print("Value of successfulLogin = \(successfulLogin)")
       

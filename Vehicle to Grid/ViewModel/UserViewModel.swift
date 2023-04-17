@@ -77,9 +77,9 @@ class UserViewModel: ObservableObject {
   }
   
   // Authenticate (login) user through firebase auth
-  func authenticateUser(email: String, password: String, completition: @escaping (Bool) -> Void) {
+  func authenticateUser(completition: @escaping (Bool) -> Void) {
     
-    Auth.auth().signIn(withEmail: email, password: password) { result, error in
+    Auth.auth().signIn(withEmail: self.user.userEmail, password: self.user.password) { result, error in
       
       if error != nil {
         
