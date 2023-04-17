@@ -16,6 +16,7 @@ struct LoginView: View {
   @State private var showAlert = false
   @State private var showSwitch = true
   @State var goToRegister = false
+  @StateObject var viewModel = UserViewModel()
   //  @State var needsRegister: Bool = false
   
   @Binding var isLoggedIn: Bool
@@ -59,7 +60,7 @@ struct LoginView: View {
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
             .font(.custom("overpass-light", size: 16))
-//            .cornerRadius(10)
+          //            .cornerRadius(10)
           
           // Password text field
           SecureField("Password", text: $password)
@@ -67,7 +68,7 @@ struct LoginView: View {
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
             .font(.custom("overpass-light", size: 16))
-//            .cornerRadius(10)
+          //            .cornerRadius(10)
           
           Spacer()
             .frame(height: 30)
@@ -78,14 +79,14 @@ struct LoginView: View {
             .font(.custom("overpass-light", size: 20))
           
           // Button to login
-          Button(action: authenticateUser) {
+          Button(action: login) {
             Text("Log In")
           }
           .font(.custom("overpass-light", size: 20))
           .foregroundColor(.white)
           .frame(width: 350, height: 40)
           .background(Color("285 C"))
-//          .cornerRadius(10)
+          //          .cornerRadius(10)
           .alert(isPresented: $showAlert) {
             Alert(
               
@@ -112,27 +113,49 @@ struct LoginView: View {
     
   }
   
-  // Function to authenticate existing user
-  func authenticateUser() {
+  func login() {
     
-    Auth.auth().signIn(withEmail: email, password: password) { result, error in
-      if error != nil {
+    viewModel.authenticateUser(email: email, password: password) { successfulLogin in
+      
+      print("Value of successfulLogin = \(successfulLogin)")
+      
+      if successfulLogin {
         
-        // Handle error
-        print("Invalid login credentials")
-        showAlert = true
+        isLoggedIn = true
+        print("Should be logging in now...")
         
       } else {
         
-        // Successful login
-        print("Successful login")
-        isLoggedIn = true
+        showAlert = true
+        print("Invalid login.")
         
       }
       
     }
     
   }
+  
+//  OLD - Function to authenticate existing user
+//  func authenticateUser() {
+//
+//    Auth.auth().signIn(withEmail: email, password: password) { result, error in
+//      if error != nil {
+//
+//        // Handle error
+//        print("Invalid login credentials")
+//        showAlert = true
+//
+//      } else {
+//
+//        // Successful login
+//        print("Successful login")
+//        isLoggedIn = true
+//
+//      }
+//
+//    }
+//
+//  }
   
 }
 
