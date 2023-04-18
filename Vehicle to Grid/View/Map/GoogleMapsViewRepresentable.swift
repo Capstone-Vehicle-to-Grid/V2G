@@ -20,15 +20,16 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
         mapView.settings.zoomGestures = true
         
         let heatmapLayer = GMUHeatmapTileLayer()
-        heatmapLayer.map = mapView
-        
-        print("Heatmap layer added to mapView: \(heatmapLayer.map != nil)")
-        
+        print("heatmapLayer created successfully")
         addHeatmap(to: heatmapLayer)
+        heatmapLayer.map = mapView
+        print("heatmapLayer added to mapView successfully")
+            
         
         return mapView
     }
     
+    // The rest of the code remains unchanged
     func addHeatmap(to heatmapLayer: GMUHeatmapTileLayer) {
         print("Making HEATMAPPP")
         // Get the data: latitude/longitude positions of police stations.
@@ -52,25 +53,26 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
           let lng = item["lng"] as! CLLocationDegrees
           let coords = GMUWeightedLatLng(
             coordinate: CLLocationCoordinate2DMake(lat, lng),
-            intensity: 10.0
+            intensity: 1.0
           )
           list.append(coords)
           print(lat, lng)
         }
+        
+        heatmapLayer.weightedData = list
+        print("heatmapLayer.weightedData set successfully")
 
-        // Add the latlngs to the heatmap layer.
-        DispatchQueue.main.async {
-            heatmapLayer.weightedData = list
-            let gradientColors: [UIColor] = [.green, .red]
-            let gradientStartPoints: [NSNumber] = [0.2, 1.0]
-            heatmapLayer.gradient = GMUGradient(
-              colors: gradientColors,
-              startPoints: gradientStartPoints,
-              colorMapSize: 256
-            )
-            heatmapLayer.opacity = 0.5
-                  
-        }
+        let gradientColors: [UIColor] = [.green, .red]
+        let gradientStartPoints: [NSNumber] = [0.2, 1.0]
+        heatmapLayer.gradient = GMUGradient(
+            colors: gradientColors,
+            startPoints: gradientStartPoints,
+            colorMapSize: 256
+                )
+        heatmapLayer.opacity = 1.0
+        heatmapLayer.radius = 100
+                    
+        
         print("List of GMUWeightedLatLng objects created: \(list)")
         print("Heatmap gradient set: \(heatmapLayer.gradient != nil)")
     }
