@@ -26,36 +26,6 @@ struct LoginView: View {
       
       ZStack() {
         
-<<<<<<< Updated upstream
-        Color("Background Gray")
-          .ignoresSafeArea()
-        
-        VStack {
-          
-          VStack(spacing: 0) {
-            
-            Image("GM Logo")
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(width: 100, height: 100)
-              .padding(.top, 50)
-            
-            Text("V2G")
-              .font(.custom("overpass-semibold", size: 50))
-              .foregroundColor(Color("Primary Blue"))
-              .bold()
-              .padding(.bottom, 30)
-            
-          }
-=======
-//        Color.blue
-//          .ignoresSafeArea()
-//        Circle()
-//          .scale(1.7)
-//          .foregroundColor(.white.opacity(0.15))
-//        Circle()
-//          .scale(1.35)
-//          .foregroundColor(.white)i
           Image("Image 1")
               .resizable()
               .scaledToFill()
@@ -65,27 +35,26 @@ struct LoginView: View {
           
           Text("General Motors")
             .font(.custom("overpass-semibold", size: 50))
-            .foregroundColor(Color("311 C"))
+            .foregroundColor(Color("Accent Blue"))
             .bold()
             .padding()
           
           // Space between title and login fields
           Spacer()
             .frame(height: 50)
->>>>>>> Stashed changes
           
           // Email text field
           TextField("Email", text: $viewModel.user.userEmail)
             .padding()
             .frame(width: 350, height: 50)
-            .background(Color("Cool Gray 1 C").opacity(0.70))
+            .background(Color("Accent Gray").opacity(0.70))
             .font(.custom("overpass-light", size: 16))
           
           // Password text field
           SecureField("Password", text: $viewModel.user.password)
             .padding()
             .frame(width: 350, height: 50)
-            .background(Color("Cool Gray 1 C").opacity(0.70))
+            .background(Color("Accent Gray").opacity(0.70))
             .font(.custom("overpass-light", size: 16))
           
           Spacer()
@@ -104,12 +73,8 @@ struct LoginView: View {
           .font(.custom("overpass-light", size: 20))
           .foregroundColor(Color("Accent Gray"))
           .frame(width: 350, height: 40)
-<<<<<<< Updated upstream
-          .background(Color("Primary Blue"))
-=======
-          .background(Color("311 C"))
+          .background(Color("Accent Blue"))
           //          .cornerRadius(10)
->>>>>>> Stashed changes
           .alert(isPresented: $showAlert) {
             Alert(
               
@@ -124,11 +89,7 @@ struct LoginView: View {
           NavigationLink(destination: RegisterView(showAddInfoView: $showAddInfoView, isLoggedIn: $isLoggedIn)) {
             Text("Register")
               .font(.custom("overpass-light", size: 20))
-<<<<<<< Updated upstream
-              .foregroundColor(Color("Primary Blue"))
-=======
-              .foregroundColor(Color("311 C"))
->>>>>>> Stashed changes
+              .foregroundColor(Color("Accent Blue"))
               .frame(width: 200, height: 40)
           }
           
