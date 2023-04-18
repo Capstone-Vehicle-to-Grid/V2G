@@ -84,7 +84,7 @@ struct MainView: View {
             
               NavButtons(text: "Payment History", color: Color(("Accent Blue")), topPadding: 40, action: {
               //take to payment history page
-                openURL(URL(string: "https://www.apple.com")!)
+                openURL(URL(string: "https://www.paypal.com/us/home")!)
             })
             
           }
