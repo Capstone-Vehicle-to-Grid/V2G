@@ -20,19 +20,16 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
         mapView.settings.zoomGestures = true
         
         let heatmapLayer = GMUHeatmapTileLayer()
-        print("heatmapLayer created successfully")
         addHeatmap(to: heatmapLayer)
         heatmapLayer.map = mapView
-        print("heatmapLayer added to mapView successfully")
             
-        
         return mapView
     }
     
     // The rest of the code remains unchanged
     func addHeatmap(to heatmapLayer: GMUHeatmapTileLayer) {
-        print("Making HEATMAPPP")
-        // Get the data: latitude/longitude positions of police stations.
+        // Get the data: latitude/longitude positions of zip_codes
+        //Police_Stations is sample data
         guard let path = Bundle.main.url(forResource: "police_stations", withExtension: "json") else {
           return
         }
@@ -56,11 +53,9 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
             intensity: 1.0
           )
           list.append(coords)
-          print(lat, lng)
         }
         
         heatmapLayer.weightedData = list
-        print("heatmapLayer.weightedData set successfully")
 
         let gradientColors: [UIColor] = [.green, .red]
         let gradientStartPoints: [NSNumber] = [0.2, 1.0]
@@ -70,11 +65,8 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
             colorMapSize: 256
                 )
         heatmapLayer.opacity = 1.0
+        //CHANGE THIS WHEN ADDING POINTS
         heatmapLayer.radius = 100
-                    
-        
-        print("List of GMUWeightedLatLng objects created: \(list)")
-        print("Heatmap gradient set: \(heatmapLayer.gradient != nil)")
     }
     
     func updateUIView(_ uiView: GMSMapView, context: Context) {
