@@ -30,33 +30,54 @@ class UserViewModel: ObservableObject {
     }
   }
   
-  func register() -> Bool{
+  func register(completion: @escaping (Bool) -> Void) {
+    
+    var existingUser: Bool = false
+    
     var authError = false
     userList.whereField("userEmail", isEqualTo: user.userEmail.lowercased())
       .getDocuments() { (querySnapshot, err) in
+        
         if let err = err {
           print("Error accessing database: \(err)")
-          self.userAddedAlert = true
+//          self.userAddedAlert = true
+          existingUser = true
         }
+        
         if querySnapshot!.isEmpty {
+          
           Auth.auth().createUser(withEmail: self.user.userEmail.lowercased(), password: self.user.password) { authResult, error in
-            if let err = err { print("Error creating user: \(err.localizedDescription)")
+            
+            if let err = err {
+              
+              print("Error creating user: \(err.localizedDescription)")
               authError = true
-              self.userAddedAlert = true
+//              self.userAddedAlert = true
+              existingUser = true
             }
+            
           }
+          
           if authError == false {
+            
             print("Added user")
             self.addUser(user: self.user)
-            self.userAddedAlert = false
+//            self.userAddedAlert = false
+            existingUser = false
+            
           }
-        }
-        else {
+          
+        } else {
+          
           print("User not added")
-          self.userAddedAlert = true
+//          self.userAddedAlert = true
+          existingUser = true
+          
         }
+        
+        completion(existingUser)
+        
       }
-    return userAddedAlert
     
   }
   
