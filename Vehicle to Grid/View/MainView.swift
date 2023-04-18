@@ -15,6 +15,7 @@ struct MainView: View {
   @State var navigated = false
   @State var navigatedMyAccount = false
   @State var navigatedVehicleCharge = false
+  @Environment(\.openURL) var openURL
 //  @State var goToAccount = false
   
   var body: some View {
@@ -70,6 +71,7 @@ struct MainView: View {
             
             NavButtons(text: "Payment History", color: .blue, topPadding: 40, action: {
               //take to payment history page
+                openURL(URL(string: "https://www.apple.com")!)
             })
             
           }
