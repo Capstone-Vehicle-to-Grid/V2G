@@ -26,10 +26,10 @@ struct LoginView: View {
       
       ZStack() {
         
-          Image("Image 1")
-              .resizable()
-              .scaledToFill()
-              .edgesIgnoringSafeArea(.all)
+        Image("Image 1")
+          .resizable()
+          .scaledToFill()
+          .edgesIgnoringSafeArea(.all)
         
         VStack {
           
@@ -64,7 +64,7 @@ struct LoginView: View {
           Toggle("Face ID", isOn: $showSwitch)
             .frame(width:350)
             .font(.custom("overpass-light", size: 20))
-            .foregroundColor(Color("Primary Black"))
+            .foregroundColor(Color("Accent Blue"))
           
           // Button to login
           Button(action: login) {
