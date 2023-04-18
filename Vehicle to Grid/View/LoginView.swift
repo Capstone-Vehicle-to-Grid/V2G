@@ -10,12 +10,11 @@ import FirebaseAuth
 
 struct LoginView: View {
   
-  //Propertiers
-  @State private var email = ""
-  @State private var password = ""
+  // Propertiers
   @State private var showAlert = false
   @State private var showSwitch = true
   @State var goToRegister = false
+  @State var showAddInfoView = false
   @StateObject var viewModel = UserViewModel()
   //  @State var needsRegister: Bool = false
   
@@ -36,12 +35,6 @@ struct LoginView: View {
           .scale(1.35)
           .foregroundColor(.white)
         
-        //        Image("Image")
-        //          .resizable()
-        //          .scaledToFit()
-        //          .frame(width: 200, height: 200) //changes size of image
-        //          .position(x: 200, y:115) //moves position of image on screen
-        
         VStack {
           
           Text("GM V2G")
@@ -55,7 +48,7 @@ struct LoginView: View {
             .frame(height: 50)
           
           // Email text field
-          TextField("Email", text: $email)
+          TextField("Email", text: $viewModel.user.userEmail)
             .padding()
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
@@ -63,7 +56,7 @@ struct LoginView: View {
           //            .cornerRadius(10)
           
           // Password text field
-          SecureField("Password", text: $password)
+          SecureField("Password", text: $viewModel.user.password)
             .padding()
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
@@ -98,7 +91,7 @@ struct LoginView: View {
           }
           
           // Button to register
-          NavigationLink(destination: RegisterView(registerLogIn: $goToRegister)) {
+          NavigationLink(destination: RegisterView(showAddInfoView: $showAddInfoView, isLoggedIn: $isLoggedIn)) {
             Text("Register")
               .font(.custom("overpass-light", size: 20))
               .foregroundColor(Color("285 C"))
@@ -115,7 +108,7 @@ struct LoginView: View {
   
   func login() {
     
-    viewModel.authenticateUser(email: email, password: password) { successfulLogin in
+    viewModel.authenticateUser() { successfulLogin in
       
       print("Value of successfulLogin = \(successfulLogin)")
       
@@ -134,28 +127,6 @@ struct LoginView: View {
     }
     
   }
-  
-//  OLD - Function to authenticate existing user
-//  func authenticateUser() {
-//
-//    Auth.auth().signIn(withEmail: email, password: password) { result, error in
-//      if error != nil {
-//
-//        // Handle error
-//        print("Invalid login credentials")
-//        showAlert = true
-//
-//      } else {
-//
-//        // Successful login
-//        print("Successful login")
-//        isLoggedIn = true
-//
-//      }
-//
-//    }
-//
-//  }
   
 }
 
