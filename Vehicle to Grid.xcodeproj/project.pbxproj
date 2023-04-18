@@ -53,6 +53,8 @@
 		42DFA00E29B5569E00E0C20B /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DFA00D29B5569E00E0C20B /* MapViewModel.swift */; };
 		42E881E3299ECE4E00EC6016 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		42E881E529A16F2B00EC6016 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E881E429A16F2B00EC6016 /* MainView.swift */; };
+		52013B2929E652D700C7947F /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52013B2829E652D700C7947F /* UpdateView.swift */; };
+		52013B2B29E655AA00C7947F /* AddInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52013B2A29E655AA00C7947F /* AddInfoView.swift */; };
 		522DD91129899C080023FE84 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91029899C080023FE84 /* FirebaseAuth */; };
 		522DD91329899C080023FE84 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91229899C080023FE84 /* FirebaseAuthCombine-Community */; };
 		522DD91529899C080023FE84 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91429899C080023FE84 /* FirebaseDatabase */; };
@@ -61,7 +63,12 @@
 		522DD91B29899C080023FE84 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91A29899C080023FE84 /* FirebaseFirestoreCombine-Community */; };
 		522DD91D29899C080023FE84 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 522DD91C29899C080023FE84 /* FirebaseFirestoreSwift */; };
 		52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52314C7C29A551AC0038149E /* UserViewModel.swift */; };
+		52415E7229E523EE0025FD24 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52415E7129E523EE0025FD24 /* PaymentView.swift */; };
+		52B3190329EBB2E10070C52F /* VehicleChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3190229EBB2E10070C52F /* VehicleChargeView.swift */; };
+		52B3190529EBB2F30070C52F /* VehicleChargeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3190429EBB2F30070C52F /* VehicleChargeViewModel.swift */; };
 		52CC769A2992E174001CE16B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC76992992E174001CE16B /* UserModel.swift */; };
+		52F7CA5D29E5C3860095797E /* MyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7CA5C29E5C3860095797E /* MyAccountView.swift */; };
+		52F7CA5F29E5C82B0095797E /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7CA5E29E5C82B0095797E /* UserAccountViewModel.swift */; };
 		5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B472A73299EF36C00A88595 /* RegisterView.swift */; };
 		7C21381929B3032A00FE8598 /* GoogleMapsViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */; };
 		7CA5B9E1299DDB9B007ED04A /* GoogleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */; };
@@ -117,8 +124,21 @@
 		4297D37729B57BEB00126BE0 /* Vehicle-to-Grid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Vehicle-to-Grid-Info.plist"; sourceTree = SOURCE_ROOT; };
 		42DFA00D29B5569E00E0C20B /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		42E881E429A16F2B00EC6016 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		52013B2829E652D700C7947F /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		52013B2A29E655AA00C7947F /* AddInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoView.swift; sourceTree = "<group>"; };
+		5202F5AD29EBAAB900EFD231 /* 2023 Senior Awards Essay.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "2023 Senior Awards Essay.pdf"; path = "../../2023 Senior Awards Essay.pdf"; sourceTree = "<group>"; };
+		5202F5AE29EBAAE800EFD231 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../../../../../../../usr/local/Cellar/librdkafka/2.1.0/include; sourceTree = "<group>"; };
+		5202F5AF29EBAB3400EFD231 /* librdkafka.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librdkafka.a; path = ../../../../../../../usr/local/Cellar/librdkafka/2.1.0/lib/librdkafka.a; sourceTree = "<group>"; };
 		52314C7C29A551AC0038149E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		52415E7129E523EE0025FD24 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		52B3190229EBB2E10070C52F /* VehicleChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleChargeView.swift; sourceTree = "<group>"; };
+		52B3190429EBB2F30070C52F /* VehicleChargeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleChargeViewModel.swift; sourceTree = "<group>"; };
 		52CC76992992E174001CE16B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		52CDF61829EBA7C40006689E /* librdkafka */ = {isa = PBXFileReference; lastKnownFileType = folder; name = librdkafka; path = ../../../../../../../usr/local/Cellar/librdkafka; sourceTree = "<group>"; };
+		52CDF61929EBA7D70006689E /* librdkafka */ = {isa = PBXFileReference; lastKnownFileType = folder; name = librdkafka; path = ../../../../../../../usr/local/Cellar/librdkafka/2.1.0/include/librdkafka; sourceTree = "<group>"; };
+		52CDF61A29EBA8100006689E /* 2.1.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 2.1.0; path = ../../../../../../../usr/local/Cellar/librdkafka/2.1.0; sourceTree = "<group>"; };
+		52F7CA5C29E5C3860095797E /* MyAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountView.swift; sourceTree = "<group>"; };
+		52F7CA5E29E5C82B0095797E /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		5B472A73299EF36C00A88595 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		7C21381829B3032A00FE8598 /* GoogleMapsViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewRepresentable.swift; sourceTree = "<group>"; };
 		7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMaps.xcframework; sourceTree = "<group>"; };
@@ -170,6 +190,12 @@
 		2E03524B299C7FAA00FF3648 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5202F5AF29EBAB3400EFD231 /* librdkafka.a */,
+				5202F5AE29EBAAE800EFD231 /* include */,
+				5202F5AD29EBAAB900EFD231 /* 2023 Senior Awards Essay.pdf */,
+				52CDF61A29EBA8100006689E /* 2.1.0 */,
+				52CDF61829EBA7C40006689E /* librdkafka */,
+				52CDF61929EBA7D70006689E /* librdkafka */,
 				2E03526A299C801900FF3648 /* UIKit.framework */,
 				2E035268299C801100FF3648 /* SystemConfiguration.framework */,
 				2E035266299C800A00FF3648 /* QuartzCore.framework */,
@@ -272,6 +298,8 @@
 			children = (
 				42DFA00C29B5569000E0C20B /* Map */,
 				52314C7C29A551AC0038149E /* UserViewModel.swift */,
+				52B3190429EBB2F30070C52F /* VehicleChargeViewModel.swift */,
+				52F7CA5E29E5C82B0095797E /* UserAccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -291,7 +319,12 @@
 				42E881E429A16F2B00EC6016 /* MainView.swift */,
 				42806F1C2979FA7F002AD464 /* LoginView.swift */,
 				5B472A73299EF36C00A88595 /* RegisterView.swift */,
+				52F7CA5C29E5C3860095797E /* MyAccountView.swift */,
+				52013B2829E652D700C7947F /* UpdateView.swift */,
+				52B3190229EBB2E10070C52F /* VehicleChargeView.swift */,
+				52013B2A29E655AA00C7947F /* AddInfoView.swift */,
 				7C21381729B3031500FE8598 /* Map */,
+				52415E7129E523EE0025FD24 /* PaymentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,14 +448,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F7CA5F29E5C82B0095797E /* UserAccountViewModel.swift in Sources */,
 				42E881E529A16F2B00EC6016 /* MainView.swift in Sources */,
 				42DFA00E29B5569E00E0C20B /* MapViewModel.swift in Sources */,
 				52314C7D29A551AC0038149E /* UserViewModel.swift in Sources */,
+				52415E7229E523EE0025FD24 /* PaymentView.swift in Sources */,
+				52B3190529EBB2F30070C52F /* VehicleChargeViewModel.swift in Sources */,
+				52013B2929E652D700C7947F /* UpdateView.swift in Sources */,
+				52F7CA5D29E5C3860095797E /* MyAccountView.swift in Sources */,
 				42806F1D2979FA7F002AD464 /* LoginView.swift in Sources */,
 				2E3B5D5D29BC019E00C6B58B /* ChargingStation.swift in Sources */,
+				52013B2B29E655AA00C7947F /* AddInfoView.swift in Sources */,
 				5B472A74299EF36C00A88595 /* RegisterView.swift in Sources */,
 				2E80933929987905003172FE /* MapView.swift in Sources */,
 				7C21381929B3032A00FE8598 /* GoogleMapsViewRepresentable.swift in Sources */,
+				52B3190329EBB2E10070C52F /* VehicleChargeView.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
 				7CF30E4D29E8CF8800E91C0C /* OpenChargeMapPOI.swift in Sources */,
@@ -573,6 +613,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/librdkafka/2.1.0/lib,
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.uark.capstone.Vehicle-to-Grid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -607,6 +651,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/librdkafka/2.1.0/lib,
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.uark.capstone.Vehicle-to-Grid";
