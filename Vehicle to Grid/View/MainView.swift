@@ -29,7 +29,7 @@ struct MainView: View {
           
           HStack{
             Text("GENERAL MOTORS")
-              .background(Color(("285 C")))
+              .background(Color(("Primary Blue")))
               .foregroundColor(.white)
               .font(.system(size: 45))
           }
@@ -38,12 +38,12 @@ struct MainView: View {
           //Horizontal stack to have bottons layout side by side
           HStack{
               NavigationLink("", destination: MyAccountView(), isActive: $navigatedMyAccount)
-              NavButtons(text: "My Account", color: Color(("285 C")), topPadding: 40, action: {
+              NavButtons(text: "My Account", color: Color(("Primary Blue")), topPadding: 40, action: {
                   self.navigatedMyAccount.toggle()
             })
             
               NavigationLink("", destination: VehicleChargeView(vehicleCharge: 0.0), isActive: $navigatedVehicleCharge)
-              NavButtons(text: "Vehicle Charge", color: Color(("285 C")), topPadding: 40, action: {
+              NavButtons(text: "Vehicle Charge", color: Color(("Primary Blue")), topPadding: 40, action: {
                   self.navigatedVehicleCharge.toggle()
                   
               })
@@ -53,24 +53,24 @@ struct MainView: View {
             //Fix this mess I made Chiyou
           HStack{
             NavigationLink("", destination: MapView(), isActive: $navigated)
-            NavButtons(text: "Charging Stations", color: Color(("285 C")), topPadding: 40, action: {
+            NavButtons(text: "Charging Stations", color: Color(("Primary Blue")), topPadding: 40, action: {
               //take to charging stations page
                 self.navigated.toggle()
             })
               
             
-            NavButtons(text: "Grid Needs", color: Color(("285 C")), topPadding: 40, action: {
+            NavButtons(text: "Grid Needs", color: Color(("Primary Blue")), topPadding: 40, action: {
             })
             
           }
           
           HStack{
             
-            NavButtons(text: "Energy Demand", color: Color(("285 C")), topPadding: 40, action: {
+            NavButtons(text: "Energy Demand", color: Color(("Primary Blue")), topPadding: 40, action: {
               //take to energy demand page
             })
             
-              NavButtons(text: "Payment History", color: Color(("285 C")), topPadding: 40, action: {
+              NavButtons(text: "Payment History", color: Color(("Primary Blue")), topPadding: 40, action: {
               //take to payment history page
                 openURL(URL(string: "https://www.apple.com")!)
             })
@@ -82,7 +82,7 @@ struct MainView: View {
           }
           .foregroundColor(.white)
           .frame(width: 300, height: 50)
-          .background(Color("285 C"))
+          .background(Color("Primary Blue"))
           .cornerRadius(10)
           
         }
