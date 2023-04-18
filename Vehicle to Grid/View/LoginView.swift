@@ -26,26 +26,26 @@ struct LoginView: View {
       
       ZStack() {
         
-        Color.blue
+        Color("Background Gray")
           .ignoresSafeArea()
-        Circle()
-          .scale(1.7)
-          .foregroundColor(.white.opacity(0.15))
-        Circle()
-          .scale(1.35)
-          .foregroundColor(.white)
         
         VStack {
           
-          Text("GM V2G")
-            .font(.custom("overpass-semibold", size: 50))
-            .foregroundColor(Color("285 C"))
-            .bold()
-            .padding()
-          
-          // Space between title and login fields
-          Spacer()
-            .frame(height: 50)
+          VStack(spacing: 0) {
+            
+            Image("GM Logo")
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+              .frame(width: 100, height: 100)
+              .padding(.top, 50)
+            
+            Text("V2G")
+              .font(.custom("overpass-semibold", size: 50))
+              .foregroundColor(Color("Primary Blue"))
+              .bold()
+              .padding(.bottom, 30)
+            
+          }
           
           // Email text field
           TextField("Email", text: $viewModel.user.userEmail)
@@ -53,7 +53,6 @@ struct LoginView: View {
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
             .font(.custom("overpass-light", size: 16))
-          //            .cornerRadius(10)
           
           // Password text field
           SecureField("Password", text: $viewModel.user.password)
@@ -61,7 +60,6 @@ struct LoginView: View {
             .frame(width: 350, height: 50)
             .background(Color.black.opacity(0.05))
             .font(.custom("overpass-light", size: 16))
-          //            .cornerRadius(10)
           
           Spacer()
             .frame(height: 30)
@@ -70,16 +68,16 @@ struct LoginView: View {
           Toggle("Face ID", isOn: $showSwitch)
             .frame(width:350)
             .font(.custom("overpass-light", size: 20))
+            .foregroundColor(Color("Primary Black"))
           
           // Button to login
           Button(action: login) {
             Text("Log In")
           }
           .font(.custom("overpass-light", size: 20))
-          .foregroundColor(.white)
+          .foregroundColor(Color("Accent Gray"))
           .frame(width: 350, height: 40)
-          .background(Color("285 C"))
-          //          .cornerRadius(10)
+          .background(Color("Primary Blue"))
           .alert(isPresented: $showAlert) {
             Alert(
               
@@ -94,7 +92,7 @@ struct LoginView: View {
           NavigationLink(destination: RegisterView(showAddInfoView: $showAddInfoView, isLoggedIn: $isLoggedIn)) {
             Text("Register")
               .font(.custom("overpass-light", size: 20))
-              .foregroundColor(Color("285 C"))
+              .foregroundColor(Color("Primary Blue"))
               .frame(width: 200, height: 40)
           }
           
