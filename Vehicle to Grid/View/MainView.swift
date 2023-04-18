@@ -57,6 +57,7 @@ struct MainView: View {
               //take to charging stations page
                 self.navigated.toggle()
             })
+              
             
             NavButtons(text: "Grid Needs", color: Color(("285 C")), topPadding: 40, action: {
             })
