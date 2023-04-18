@@ -20,19 +20,29 @@ class MapViewModel: ObservableObject {
     getUserLocation()
   }
 
-  func getUserLocation() {
-    SwiftLocation.gpsLocation().then {
-      if let location = $0.location {
-        self.userLocation = location.coordinate
-      } else {
-        print("Could not get location")
-        self.userLocation = CLLocationCoordinate2D(latitude: 32.7767, longitude: 96.797)
-      }
-      self.fetchStations { stations in
-        self.updatePOIDictionary(with: stations)
+    func getUserLocation() {
+      SwiftLocation.gpsLocation().then {
+        if let location = $0.location {
+          self.userLocation = location.coordinate
+            
+            self.getZipFromCoordinate(coordinate: self.userLocation!) { zipCode in
+            if let zipCode = zipCode {
+              print(zipCode)
+            } else {
+              print("Could not get zip code")
+            }
+          }
+            
+        } else {
+          print("Could not get location")
+          self.userLocation = CLLocationCoordinate2D(latitude: 32.7767, longitude: 96.797)
+        }
+          
+        self.fetchStations { stations in
+          self.updatePOIDictionary(with: stations)
+        }
       }
     }
-  }
 
   // Modify the fetchStations method to accept a completion handler as a parameter
   func fetchStations(completion: @escaping ([ChargingStation]) -> Void) {
@@ -144,5 +154,24 @@ class MapViewModel: ObservableObject {
       task.resume()
     }
   }
+    
+    func getZipFromCoordinate(coordinate: CLLocationCoordinate2D, completion: @escaping (String?) -> Void) {
+      let geocoder = CLGeocoder()
+      let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+      geocoder.reverseGeocodeLocation(location) { placemarks, error in
+        if let placemark = placemarks?.first {
+          if let zipCode = placemark.postalCode {
+            completion(zipCode)
+          } else {
+            print("No zip code found")
+            completion(nil)
+          }
+        } else {
+          print("Geocoder failed: \(error?.localizedDescription ?? "unknown error")")
+          completion(nil)
+        }
+      }
+    }
+
 
 }
