@@ -20,29 +20,36 @@ class MapViewModel: ObservableObject {
     getUserLocation()
   }
 
-    func getUserLocation() {
-      SwiftLocation.gpsLocation().then {
-        if let location = $0.location {
-          self.userLocation = location.coordinate
-            
-            self.getZipFromCoordinate(coordinate: self.userLocation!) { zipCode in
-            if let zipCode = zipCode {
-              print(zipCode)
-            } else {
-              print("Could not get zip code")
+  func getUserLocation() {
+    SwiftLocation.gpsLocation().then {
+      if let location = $0.location {
+        self.userLocation = location.coordinate
+
+        self.getZipFromCoordinate(coordinate: self.userLocation!) { zipCode in
+          if let zipCode = zipCode {
+            print(zipCode)
+            self.getNearbyZipCodes(zipCode: zipCode) { zipCodes in
+              for zipCode in zipCodes {
+                self.getCoordinateFromZipCode(zipCode: zipCode) { coord in
+                  print(coord)
+                }
+              }
             }
+          } else {
+            print("Could not get zip code")
           }
-            
-        } else {
-          print("Could not get location")
-          self.userLocation = CLLocationCoordinate2D(latitude: 32.7767, longitude: 96.797)
         }
-          
-        self.fetchStations { stations in
-          self.updatePOIDictionary(with: stations)
-        }
+
+      } else {
+        print("Could not get location")
+        self.userLocation = CLLocationCoordinate2D(latitude: 32.7767, longitude: 96.797)
+      }
+
+      self.fetchStations { stations in
+        self.updatePOIDictionary(with: stations)
       }
     }
+  }
 
   // Modify the fetchStations method to accept a completion handler as a parameter
   func fetchStations(completion: @escaping ([ChargingStation]) -> Void) {
@@ -154,24 +161,88 @@ class MapViewModel: ObservableObject {
       task.resume()
     }
   }
-    
-    func getZipFromCoordinate(coordinate: CLLocationCoordinate2D, completion: @escaping (String?) -> Void) {
-      let geocoder = CLGeocoder()
-      let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-      geocoder.reverseGeocodeLocation(location) { placemarks, error in
-        if let placemark = placemarks?.first {
-          if let zipCode = placemark.postalCode {
-            completion(zipCode)
-          } else {
-            print("No zip code found")
-            completion(nil)
-          }
+
+  func getZipFromCoordinate(
+    coordinate: CLLocationCoordinate2D, completion: @escaping (String?) -> Void
+  ) {
+    let geocoder = CLGeocoder()
+    let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    geocoder.reverseGeocodeLocation(location) { placemarks, error in
+      if let placemark = placemarks?.first {
+        if let zipCode = placemark.postalCode {
+          completion(zipCode)
         } else {
-          print("Geocoder failed: \(error?.localizedDescription ?? "unknown error")")
+          print("No zip code found")
           completion(nil)
         }
+      } else {
+        print("Geocoder failed: \(error?.localizedDescription ?? "unknown error")")
+        completion(nil)
+      }
+    }
+  }
+
+  func getNearbyZipCodes(zipCode: String, completion: @escaping ([String]) -> Void) {
+    let baseUrl = "https://app.zipcodebase.com/api/v1/radius"
+    let apiKey = "e5ac92a0-de1d-11ed-a637-67bfb6b78611"
+
+    var urlComponents = URLComponents(string: baseUrl)!
+    urlComponents.queryItems = [
+      URLQueryItem(name: "apikey", value: apiKey),
+      URLQueryItem(name: "code", value: zipCode),
+      URLQueryItem(name: "radius", value: "50"),
+      URLQueryItem(name: "country", value: "us"),
+    ]
+
+    let request = URLRequest(url: urlComponents.url!)
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      if let error = error {
+        print("Error: \(error.localizedDescription)")
+        return
+      }
+
+      guard let data = data, let response = response as? HTTPURLResponse else {
+        print("Invalid data or response")
+        return
+      }
+
+      if response.statusCode == 200 {
+        do {
+          let decoder = JSONDecoder()
+          let zipcodeResponse = try decoder.decode(ZipcodeResponse.self, from: data)
+          var zipCodes = [String]()
+          for nearbyZipcode in zipcodeResponse.results {
+            zipCodes.append(nearbyZipcode.code)
+          }
+          completion(zipCodes)
+        } catch {
+          print("JSON decoding error: \(error.localizedDescription)")
+        }
+      } else {
+        print("Request failed with status code: \(response.statusCode)")
       }
     }
 
+    task.resume()
+  }
+
+  func getCoordinateFromZipCode(
+    zipCode: String, completion: @escaping (CLLocationCoordinate2D) -> Void
+  ) {
+    let geocoder = CLGeocoder()
+    print("Geocoding zip code: \(zipCode)")
+    geocoder.geocodeAddressString(zipCode) { placemarks, error in
+      if let error = error {
+        print("Error: \(error.localizedDescription)")
+        return
+      }
+      if let placemarks = placemarks {
+        let placemark = placemarks[0]
+        if let coordinate = placemark.location?.coordinate {
+          completion(coordinate)
+        }
+      }
+    }
+  }
 
 }

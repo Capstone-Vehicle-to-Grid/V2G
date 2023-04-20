@@ -68,6 +68,7 @@
 		7CA5B9E2299DDB9B007ED04A /* GoogleMapsBase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */; };
 		7CA5B9E3299DDB9B007ED04A /* GoogleMapsCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */; };
 		7CA5B9E6299DE02A007ED04A /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 7CA5B9E5299DE02A007ED04A /* SwiftLocation */; };
+		7CC776F029F0AEAF007CB7AA /* ZipCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC776EF29F0AEAF007CB7AA /* ZipCodeResponse.swift */; };
 		7CF30E4D29E8CF8800E91C0C /* OpenChargeMapPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF30E4C29E8CF8800E91C0C /* OpenChargeMapPOI.swift */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		7CA5B9DE299DDB99007ED04A /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMaps.xcframework; sourceTree = "<group>"; };
 		7CA5B9DF299DDB9A007ED04A /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsBase.xcframework; sourceTree = "<group>"; };
 		7CA5B9E0299DDB9A007ED04A /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMapsCore.xcframework; sourceTree = "<group>"; };
+		7CC776EF29F0AEAF007CB7AA /* ZipCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeResponse.swift; sourceTree = "<group>"; };
 		7CF30E4C29E8CF8800E91C0C /* OpenChargeMapPOI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChargeMapPOI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,6 +283,7 @@
 			children = (
 				52CC76992992E174001CE16B /* UserModel.swift */,
 				7CF30E4C29E8CF8800E91C0C /* OpenChargeMapPOI.swift */,
+				7CC776EF29F0AEAF007CB7AA /* ZipCodeResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				2E80933929987905003172FE /* MapView.swift in Sources */,
 				7C21381929B3032A00FE8598 /* GoogleMapsViewRepresentable.swift in Sources */,
 				52CC769A2992E174001CE16B /* UserModel.swift in Sources */,
+				7CC776F029F0AEAF007CB7AA /* ZipCodeResponse.swift in Sources */,
 				42806F1B2979FA7F002AD464 /* Vehicle_to_GridApp.swift in Sources */,
 				7CF30E4D29E8CF8800E91C0C /* OpenChargeMapPOI.swift in Sources */,
 			);
