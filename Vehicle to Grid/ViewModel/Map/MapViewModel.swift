@@ -6,14 +6,14 @@
 //
 
 import Foundation
+import GameplayKit
 import GoogleMaps
 import SwiftLocation
 
 class MapViewModel: ObservableObject {
   @Published var userLocation: CLLocationCoordinate2D?
   @Published var stations = [ChargingStation]()
-
-  //Dictionary mapping station names to OpenChargeMapPOI's
+  @Published var gridNeedPoints = [GridNeedPoint]()
   @Published var poiDictionary = [String: OpenChargeMapPOI]()
 
   init() {
@@ -28,13 +28,36 @@ class MapViewModel: ObservableObject {
         self.getZipFromCoordinate(coordinate: self.userLocation!) { zipCode in
           if let zipCode = zipCode {
             print(zipCode)
+
             self.getNearbyZipCodes(zipCode: zipCode) { zipCodes in
               for zipCode in zipCodes {
                 self.getCoordinateFromZipCode(zipCode: zipCode) { coord in
-                  print(coord)
+                  // Fetch the historical rate from NREL for the coordinate
+                  self.getHistoricalRate(lat: coord.latitude, lng: coord.longitude) {
+                    historicalRate in
+                    if let historicalRate = historicalRate {
+                      // Generate the grid need ratio with Perlin noise for the coordinate and a random seed
+                      let ratio = self.generateGridNeedRatio(
+                        lat: coord.latitude, lng: coord.longitude, seed: Int.random(in: 0...100))
+                      // Create a GridNeedPoint object with the ratio constructor
+                      let gridNeedPoint = GridNeedPoint(
+                        zipCode: zipCode, coordinates: coord,
+                        historicalCost: Double(historicalRate.outputs.commercial),
+                        ratio: Double(ratio))
+                        
+                      print(gridNeedPoint)
+                        
+                      DispatchQueue.main.async {
+                        self.gridNeedPoints.append(gridNeedPoint)
+                      }
+                    } else {
+                      print("Could not get historical rate")
+                    }
+                  }
                 }
               }
             }
+
           } else {
             print("Could not get zip code")
           }
@@ -190,7 +213,7 @@ class MapViewModel: ObservableObject {
     urlComponents.queryItems = [
       URLQueryItem(name: "apikey", value: apiKey),
       URLQueryItem(name: "code", value: zipCode),
-      URLQueryItem(name: "radius", value: "50"),
+      URLQueryItem(name: "radius", value: "15"),
       URLQueryItem(name: "country", value: "us"),
     ]
 
@@ -245,4 +268,45 @@ class MapViewModel: ObservableObject {
     }
   }
 
+  func getHistoricalRate(lat: Double, lng: Double, completion: @escaping (HistoricalRate?) -> Void)
+  {
+    let url = URL(
+      string:
+        "https://developer.nrel.gov/api/utility_rates/v3.json?api_key=I4jcAw9YJbzYyYZLJKubl4J67TNtnXMgS0WFchtj&lat=\(lat)&lon=\(lng)"
+    )!
+    let task = URLSession.shared.dataTask(with: url) { data, response, error in
+      if let error = error {
+        print("Error: \(error.localizedDescription)")
+        completion(nil)
+        return
+      }
+      if let data = data {
+        let decoder = JSONDecoder()
+        do {
+          let historicalRate = try decoder.decode(HistoricalRate.self, from: data)
+          completion(historicalRate)
+        } catch {
+          print("Error: \(error.localizedDescription)")
+          completion(nil)
+        }
+      }
+    }
+    task.resume()
+  }
+
+  // A function that returns a mock ratio of current cost / historical cost for a given lat/lng and seed
+  func generateGridNeedRatio(lat: Double, lng: Double, seed: Int) -> Float {
+    let noiseSource = GKPerlinNoiseSource()
+    noiseSource.seed = Int32(seed)
+    let noise = GKNoise(noiseSource)
+    let noiseMap = GKNoiseMap(
+      noise,
+      size: vector_double2(1.0, 1.0),
+      origin: vector_double2(0.0, 0.0),
+      sampleCount: vector_int2(128, 128),
+      seamless: true)
+    let value = noiseMap.value(at: vector_int2(Int32(lat), Int32(lng)))
+
+    return 1 + value * 0.3
+  }
 }
