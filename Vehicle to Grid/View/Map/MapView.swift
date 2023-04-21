@@ -18,21 +18,24 @@ struct MapView: View {
   @State var selectedMarker: GMSMarker?
   @State var yDragTranslation: CGFloat = 0
 
-  var body: some View {
-    //let scrollViewHeight: CGFloat = 80
-
-    GeometryReader { geometry in
-      ZStack(alignment: .top) {
-        // Map
-        if let userLocation = viewModel.userLocation {
-          let camera = GMSCameraPosition.camera(withTarget: userLocation, zoom: 6.0)
-          GoogleMapsViewRepresentable(
-            camera: camera, markers: $markers, gridNeedPoints: $viewModel.gridNeedPoints)  // Pass the gridNeedPoints array as a binding
-        } else {
-          Text("Loading...")
-        }
+    var body: some View {
+        //let scrollViewHeight: CGFloat = 80
         
+        GeometryReader { geometry in
+            ZStack(alignment: .top) {
+                // Map
+                if let userLocation = viewModel.userLocation {
+                    let camera = GMSCameraPosition.camera(withTarget: userLocation, zoom: 6.0)
+                    GoogleMapsViewRepresentable(
+                        camera: camera, markers: $markers, gridNeedPoints: $viewModel.gridNeedPoints)  // Pass the gridNeedPoints array as a binding
+                } else {
+                    Text("Loading...")
+                }
+                
+            }
+        }
     }
+    
     func getInfo(markerStation: ChargingStation) -> String {
         let markerStationDict = viewModel.poiDictionary[markerStation.name]
         let address = markerStationDict?.address
