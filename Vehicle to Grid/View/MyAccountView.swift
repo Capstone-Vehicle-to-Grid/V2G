@@ -20,7 +20,7 @@ struct MyAccountView: View {
                 VStack(alignment: .leading) {
                     Text(viewModel.user.username)
                         .font(.headline)
-                        .foregroundColor(Color("311 C"))
+                        .foregroundColor(Color("Accent Blue"))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                         .onAppear{
@@ -29,37 +29,37 @@ struct MyAccountView: View {
                     VStack{
                         
                         Divider() // Add a horizontal line as a section separator
-                            .background(Color("285 C"))
+                            .background(Color("Accent Blue"))
                         
                             Text("User Info")
                             .font(.headline)
-                            .foregroundColor(Color("311 C"))
+                            .foregroundColor(Color("Accent Blue"))
                         
                             Text("Name: \(viewModel.user.username)")
-                            .foregroundColor(Color("311 C"))
+                            .foregroundColor(Color("Accent Blue"))
                             .padding(5)
                             Text("Email: \(viewModel.user.userEmail)")
-                            .foregroundColor(Color("311 C"))
+                            .foregroundColor(Color("Accent Blue"))
                             
                         }
                     
                     VStack{
 
                         Divider() // Add a horizontal line as a section separator
-                            .background(Color("285 C"))
+                            .background(Color("Primary Blue"))
                         
                         Text("Vehicle Info")
                             .font(.headline)
-                            .foregroundColor(Color("311 C"))
+                            .foregroundColor(Color("Accent Blue"))
                         
                         Text("Model: \(viewModel.user.vehicleModel)")
-                            .foregroundColor(Color("311 C"))
+                            .foregroundColor(Color("Accent Blue"))
                             .padding(5)
                         Text("Make: \(viewModel.user.vehicleMake)")
-                            .foregroundColor(Color("311 C"))
+                            .foregroundColor(Color("Accent Blue"))
                             .padding(5)
                         Text("VIN: \(viewModel.user.vehicleVIN)")
-                            .foregroundColor(Color("311 C"))
+                            .foregroundColor(Color("Accent Blue"))
                         
                     }
                     
@@ -69,7 +69,7 @@ struct MyAccountView: View {
                     NavigationLink(destination: UpdateView()) {
                       Text("Update User Information")
                         .font(.custom("overpass-light", size: 20))
-                        .foregroundColor(Color("311 C"))
+                        .foregroundColor(Color("Accent Blue"))
                         .frame(width: 400, height: 40, alignment: .center)
                     }
                         
@@ -79,7 +79,7 @@ struct MyAccountView: View {
                 
                     Spacer()
                 }
-            .background(Color("Black 7 C")) //Change background color so its under
+            .background(Color("Primary Black")) //Change background color so its under
             }
         }
     }

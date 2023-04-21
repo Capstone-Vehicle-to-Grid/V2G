@@ -43,7 +43,8 @@ struct MainView: View {
                   Image("Image")
                       .resizable()
                       .scaledToFill()
-//                      .frame(width: 200, height: 200)
+//                      .scaleEffect(0.5)
+//                      .frame(width: 60.0, height: 60.0)
                       .aspectRatio(contentMode: .fit)
               }
           }
