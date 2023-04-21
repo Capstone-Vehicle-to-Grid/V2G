@@ -324,4 +324,3 @@ class MapViewModel: ObservableObject {
     return 1 + value * 0.3
   }
 }
-
