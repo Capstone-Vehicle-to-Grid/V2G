@@ -10,11 +10,12 @@ import FirebaseAuth
 
 struct LoginView: View {
   
-  //Propertiers
-  @State private var email = ""
-  @State private var password = ""
+  // Propertiers
   @State private var showAlert = false
   @State private var showSwitch = true
+  @State var goToRegister = false
+  @State var showAddInfoView = false
+  @StateObject var viewModel = UserViewModel()
   //  @State var needsRegister: Bool = false
   
   @Binding var isLoggedIn: Bool
@@ -25,26 +26,16 @@ struct LoginView: View {
       
       ZStack() {
         
-        Color.blue
-          .ignoresSafeArea()
-        Circle()
-          .scale(1.7)
-          .foregroundColor(.white.opacity(0.15))
-        Circle()
-          .scale(1.35)
-          .foregroundColor(.white)
-        
-        //        Image("Image")
-        //          .resizable()
-        //          .scaledToFit()
-        //          .frame(width: 200, height: 200) //changes size of image
-        //          .position(x: 200, y:115) //moves position of image on screen
+        Image("Image 1")
+          .resizable()
+          .scaledToFill()
+          .edgesIgnoringSafeArea(.all)
         
         VStack {
           
-          Text("GM V2G")
+          Text("General Motors")
             .font(.custom("overpass-semibold", size: 50))
-            .foregroundColor(.blue)
+            .foregroundColor(Color("Accent Blue"))
             .bold()
             .padding()
           
@@ -53,20 +44,18 @@ struct LoginView: View {
             .frame(height: 50)
           
           // Email text field
-          TextField("Email", text: $email)
+          TextField("Email", text: $viewModel.user.userEmail)
             .padding()
             .frame(width: 350, height: 50)
-            .background(Color.black.opacity(0.05))
+            .background(Color("Accent Gray").opacity(0.70))
             .font(.custom("overpass-light", size: 16))
-//            .cornerRadius(10)
           
           // Password text field
-          SecureField("Password", text: $password)
+          SecureField("Password", text: $viewModel.user.password)
             .padding()
             .frame(width: 350, height: 50)
-            .background(Color.black.opacity(0.05))
+            .background(Color("Accent Gray").opacity(0.70))
             .font(.custom("overpass-light", size: 16))
-//            .cornerRadius(10)
           
           Spacer()
             .frame(height: 30)
@@ -75,16 +64,17 @@ struct LoginView: View {
           Toggle("Face ID", isOn: $showSwitch)
             .frame(width:350)
             .font(.custom("overpass-light", size: 20))
+            .foregroundColor(Color("Accent Blue"))
           
           // Button to login
-          Button(action: authenticateUser) {
+          Button(action: login) {
             Text("Log In")
           }
           .font(.custom("overpass-light", size: 20))
-          .foregroundColor(.white)
+          .foregroundColor(Color("Accent Gray"))
           .frame(width: 350, height: 40)
-          .background(Color.blue)
-//          .cornerRadius(10)
+          .background(Color("Accent Blue"))
+          //          .cornerRadius(10)
           .alert(isPresented: $showAlert) {
             Alert(
               
@@ -96,10 +86,10 @@ struct LoginView: View {
           }
           
           // Button to register
-          NavigationLink(destination: RegisterView()) {
+          NavigationLink(destination: RegisterView(showAddInfoView: $showAddInfoView, isLoggedIn: $isLoggedIn)) {
             Text("Register")
               .font(.custom("overpass-light", size: 20))
-              .foregroundColor(.blue)
+              .foregroundColor(Color("Accent Blue"))
               .frame(width: 200, height: 40)
           }
           
@@ -111,21 +101,21 @@ struct LoginView: View {
     
   }
   
-  // Function to authenticate existing user
-  func authenticateUser() {
+  func login() {
     
-    Auth.auth().signIn(withEmail: email, password: password) { result, error in
-      if error != nil {
+    viewModel.authenticateUser() { successfulLogin in
+      
+      print("Value of successfulLogin = \(successfulLogin)")
+      
+      if successfulLogin {
         
-        // Handle error
-        print("Invalid login credentials")
-        showAlert = true
+        isLoggedIn = true
+        print("Should be logging in now...")
         
       } else {
         
-        // Successful login
-        print("Successful login")
-        isLoggedIn = true
+        showAlert = true
+        print("Invalid login.")
         
       }
       

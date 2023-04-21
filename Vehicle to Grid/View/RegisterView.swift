@@ -8,18 +8,20 @@
 import SwiftUI
 import iPhoneNumberField
 
+
 struct RegisterView: View {
   
-  @State private var username = ""
-  @State private var emailRegister = ""
-  @State private var passwordRegister = ""
+  //  @State var showAddInfoView: Bool = false
   @State var nameText = ""
   @State var phoneText = ""
   @State var phoneEditing = false
-  @State var gotologin = false
-  @State private var showAlert = false
+  //  @State var gotologin = false
+  @State var showAlert = false
+  //  @State var showAddInfoView = false
+  //  @Binding var registerLogIn: Bool
+  @Binding var showAddInfoView: Bool
+  @Binding var isLoggedIn: Bool
   @StateObject var viewModel = UserViewModel()
-  
   
   var body: some View {
     
@@ -27,59 +29,65 @@ struct RegisterView: View {
     
     NavigationView {
       
-      VStack {
+      ZStack {
         
-        Text("Create New Account")
-          .font(.custom("overpass-semibold", size: 40))
-          .foregroundColor(.blue)
-          .bold()
-          .padding()
+        Image("Image 1")
+          .resizable()
+          .scaledToFill()
+          .edgesIgnoringSafeArea(.all)
         
-        TextField("Name", text: $viewModel.user.username)
-          .padding()
-          .frame(width: 350, height: 50)
-          .background(Color.black.opacity(0.05))
-          .font(.custom("overpass-light", size: 16))
-        //          .cornerRadius(10)
-        
-        TextField("Email", text: $viewModel.user.userEmail)
-          .padding()
-          .frame(width: 350, height: 50)
-          .background(Color.black.opacity(0.05))
-          .font(.custom("overpass-light", size: 16))
-        //          .cornerRadius(10)
-        
-        SecureField("Password", text: $viewModel.user.password)
-          .padding()
-          .frame(width: 350, height: 50)
-          .background(Color.black.opacity(0.05))
-          .font(.custom("overpass-light", size: 16))
-        //          .cornerRadius(10)
-        
-        Spacer()
-          .frame(height: 30)
-        
-        Button(action: registerUser) {Text("Register")}
-          .foregroundColor(.white)
-          .frame(width: 350, height: 40)
-          .font(.custom("overpass-light", size: 20))
-          .background(Color.blue)
-//          .cornerRadius(10)
-        //.alert(isPresented: $showAlert) {
-        //  Alert(
-        
-        //    title: Text("Email already in use"),
-        //    message: Text("This email is already associated with another account. Try logging in."),
-        //    dismissButton: .default(Text("Ok"))
-        
-        //  )
-        //}
-        
-        NavigationLink(destination: LoginView(isLoggedIn: $gotologin)) {
-          Text("Log in here")
-            .foregroundColor(.blue)
+        VStack {
+          
+          Text("Create New Account")
+            .font(.custom("overpass-semibold", size: 40))
+            .foregroundColor(Color("Accent Blue"))
+            .bold()
+            .padding()
+          
+          TextField("Name", text: $viewModel.user.username)
+            .padding()
+            .frame(width: 350, height: 50)
+          //          .background(Color.black.opacity(0.05))
+            .background(Color("Accent Gray").opacity(0.70))
+            .font(.custom("overpass-light", size: 16))
+          //          .cornerRadius(10)
+          
+          TextField("Email", text: $viewModel.user.userEmail)
+            .padding()
+            .frame(width: 350, height: 50)
+          //          .background(Color.black.opacity(0.05))
+            .background(Color("Accent Gray").opacity(0.70))
+            .font(.custom("overpass-light", size: 16))
+          //          .cornerRadius(10)
+          
+          SecureField("Password", text: $viewModel.user.password)
+            .padding()
+            .frame(width: 350, height: 50)
+          //          .background(Color.black.opacity(0.05))
+            .background(Color("Accent Gray").opacity(0.70))
+            .font(.custom("overpass-light", size: 16))
+          //          .cornerRadius(10)
+          
+          Spacer()
+            .frame(height: 30)
+          
+          Button(action: {
+            register()
+          }) {Text("Register")}
+            .foregroundColor(Color("Accent Gray"))
+            .frame(width: 350, height: 40)
             .font(.custom("overpass-light", size: 20))
-            .frame(width: 200, height: 40)
+            .background(Color("Accent Blue"))
+            .alert(isPresented: $showAlert) {
+              Alert(
+                
+                title: Text("Email already in use"),
+                message: Text("Please check your email or try logging in."),
+                dismissButton: .cancel(Text("Ok"))
+                
+              )
+            }
+          
         }
         
       }
@@ -87,13 +95,69 @@ struct RegisterView: View {
     }
     
   }
-  func registerUser() {
-    showAlert = viewModel.register()
+  
+  func register() {
+    
+    viewModel.register() { successfulRegister in
+      
+      print("Value of successfulRegister = \(successfulRegister)")
+      
+      if !successfulRegister {
+        
+        showAddInfoView = true
+        print("User successfully registered")
+        
+      } else {
+        
+        showAlert = true
+        print("User already exists")
+        
+      }
+      
+    }
+    
+    //    let registerSuccess = viewModel.register()
+    //
+    //    print("Value of registerSuccess = \(registerSuccess)")
+    //
+    //    if !registerSuccess {
+    //
+    //      showAddInfoView = true
+    //
+    //    } else {
+    //
+    //      showAlert = true
+    //
+    //    }
+    
   }
+  
+  //  func registerUser() -> Bool {
+  //    showAlert = false
+  //    showAlert = viewModel.register()
+  //    if showAlert == false {
+  //      return true
+  //    }
+  //    else {
+  //      return false }
+  //  }
+  
+  //  func pickAlert() -> Alert {
+  //    return Alert(
+  //      title: Text("Email already in use"),
+  //      message: Text("Please check your email or try logging in."),
+  //      dismissButton: .default(Text("Ok"))
+  //    )
+  //  }
+  
 }
 
+
 struct RegisterView_Previews: PreviewProvider {
+  //  @State static var registerLogIn = false
+  @State static var showAddInfoView = false
+  @State static var isLoggedIn = false
   static var previews: some View {
-    RegisterView()
+    RegisterView(showAddInfoView: $showAddInfoView, isLoggedIn: $isLoggedIn)
   }
 }

@@ -15,6 +15,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
     GMSServices.provideAPIKey("AIzaSyBEbXf8wpRdVGkVdoLb_SzMYfq5so83J-I")
+    
+    UINavigationBar.appearance().tintColor = .white
 
     return true
   }
