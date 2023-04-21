@@ -35,24 +35,38 @@ class MapViewModel: ObservableObject {
                   // Fetch the historical rate from NREL for the coordinate
                   self.getHistoricalRate(lat: coord.latitude, lng: coord.longitude) {
                     historicalRate in
+
                     if let historicalRate = historicalRate {
-                      // Generate the grid need ratio with Perlin noise for the coordinate and a random seed
-                      let ratio = self.generateGridNeedRatio(
-                        lat: coord.latitude, lng: coord.longitude, seed: Int.random(in: 0...100))
-                      // Create a GridNeedPoint object with the ratio constructor
-                      let gridNeedPoint = GridNeedPoint(
-                        zipCode: zipCode, coordinates: coord,
-                        historicalCost: Double(historicalRate.outputs.commercial),
-                        ratio: Double(ratio))
-                        
-                      print(gridNeedPoint)
-                        
-                      DispatchQueue.main.async {
-                        self.gridNeedPoints.append(gridNeedPoint)
+                      // Generate 10 points per zip code
+                      for _ in 1...3 {
+                        // Generate a random offset for the latitude and longitude
+                        let latOffset = Double.random(in: -0.09...0.09)
+                        let lngOffset = Double.random(in: -0.09...0.09)
+                        // Create a new coordinate with the offset
+                        let newCoord = CLLocationCoordinate2D(
+                          latitude: coord.latitude + latOffset,
+                          longitude: coord.longitude + lngOffset
+                        )
+                        // Generate the grid need ratio with Perlin noise for the new coordinate and a random seed
+                        let ratio = self.generateGridNeedRatio(
+                          lat: newCoord.latitude, lng: newCoord.longitude,
+                          seed: Int.random(in: 0...100))
+                        // Create a GridNeedPoint object with the ratio constructor
+                        let gridNeedPoint = GridNeedPoint(
+                          zipCode: zipCode, coordinates: newCoord,
+                          historicalCost: Double(historicalRate.outputs.commercial),
+                          ratio: Double(ratio))
+
+                        print(gridNeedPoint)
+
+                        DispatchQueue.main.async {
+                          self.gridNeedPoints.append(gridNeedPoint)
+                        }
                       }
                     } else {
                       print("Could not get historical rate")
                     }
+
                   }
                 }
               }

@@ -6,83 +6,62 @@
 //
 import Foundation
 import GoogleMaps
-import SwiftUI
 import GoogleMapsUtils
+import SwiftUI
 
 struct GoogleMapsViewRepresentable: UIViewRepresentable {
-    let camera: GMSCameraPosition
-    @Binding var markers: [GMSMarker]
+  let camera: GMSCameraPosition
+  @Binding var markers: [GMSMarker]
+  @Binding var gridNeedPoints: [GridNeedPoint]  // Add this property to bind to the grid need points array
 
-    func makeUIView(context: Context) -> GMSMapView {
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        mapView.settings.zoomGestures = true
-        
-        let heatmapLayer = GMUHeatmapTileLayer()
-        print("heatmapLayer created successfully")
-        addHeatmap(to: heatmapLayer)
-        heatmapLayer.map = mapView
-        print("heatmapLayer added to mapView successfully")
-            
-        
-        return mapView
-    }
-    
-    // The rest of the code remains unchanged
-    func addHeatmap(to heatmapLayer: GMUHeatmapTileLayer) {
-        print("Making HEATMAPPP")
-        // Get the data: latitude/longitude positions of police stations.
-        guard let path = Bundle.main.url(forResource: "police_stations", withExtension: "json") else {
-          return
-        }
-        guard let data = try? Data(contentsOf: path) else {
-          return
-        }
-        guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
-          return
-        }
-        guard let object = json as? [[String: Any]] else {
-          print("Could not read the JSON.")
-          return
-        }
+  func makeUIView(context: Context) -> GMSMapView {
+    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+    mapView.isMyLocationEnabled = true
+    mapView.settings.myLocationButton = true
+    mapView.settings.zoomGestures = true
+    return mapView
+  }
 
-        var list = [GMUWeightedLatLng]()
-        for item in object {
-          let lat = item["lat"] as! CLLocationDegrees
-          let lng = item["lng"] as! CLLocationDegrees
-          let coords = GMUWeightedLatLng(
-            coordinate: CLLocationCoordinate2DMake(lat, lng),
-            intensity: 1.0
-          )
-          list.append(coords)
-          print(lat, lng)
-        }
-        
-        heatmapLayer.weightedData = list
-        print("heatmapLayer.weightedData set successfully")
+  func updateUIView(_ uiView: GMSMapView, context: Context) {
 
-        let gradientColors: [UIColor] = [.green, .red]
-        let gradientStartPoints: [NSNumber] = [0.2, 1.0]
-        heatmapLayer.gradient = GMUGradient(
-            colors: gradientColors,
-            startPoints: gradientStartPoints,
-            colorMapSize: 256
-                )
-        heatmapLayer.opacity = 1.0
-        heatmapLayer.radius = 100
-                    
-        
-        print("List of GMUWeightedLatLng objects created: \(list)")
-        print("Heatmap gradient set: \(heatmapLayer.gradient != nil)")
+    markers.forEach { $0.map = uiView as GMSMapView }
+
+    let heatmapLayer = GMUHeatmapTileLayer()
+    addGridNeedPoints(to: heatmapLayer)
+
+    heatmapLayer.map = uiView
+  }
+
+  func addGridNeedPoints(to heatmapLayer: GMUHeatmapTileLayer) {
+    var list = [GMUWeightedLatLng]()
+    for point in gridNeedPoints {
+      let weightedPoint = GMUWeightedLatLng(
+        coordinate: point.coordinates,
+        intensity: Float(point.costRatio) / 1.3
+      )
+      list.append(weightedPoint)
+
+      print(point.zipCode, point.costRatio)
+
     }
-    
-    func updateUIView(_ uiView: GMSMapView, context: Context) {
-        markers.forEach { $0.map = uiView as GMSMapView }
-    }
+
+    heatmapLayer.weightedData = list
+
+    print("heatmapLayer.weightedData set successfully")
+
+    let gradientColors: [UIColor] = [.green, .red]
+    let gradientStartPoints: [NSNumber] = [0.5, 0.75]
+
+    heatmapLayer.gradient = GMUGradient(
+      colors: gradientColors,
+      startPoints: gradientStartPoints,
+      colorMapSize: 256
+    )
+
+    heatmapLayer.opacity = 1.0
+
+    heatmapLayer.radius = 100
+
+    print("List of GMUWeightedLatLng objects created: \(list)")
+  }
 }
-
-
-
-
-

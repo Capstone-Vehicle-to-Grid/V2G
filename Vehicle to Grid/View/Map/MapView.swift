@@ -6,9 +6,9 @@
 //
 
 import GoogleMaps
+import GoogleMapsUtils
 import SwiftUI
 import UIKit
-import GoogleMapsUtils
 
 struct MapView: View {
   @ObservedObject var viewModel = MapViewModel()
@@ -26,9 +26,8 @@ struct MapView: View {
         // Map
         if let userLocation = viewModel.userLocation {
           let camera = GMSCameraPosition.camera(withTarget: userLocation, zoom: 6.0)
-        GoogleMapsViewRepresentable(camera: camera, markers: $markers)
-            
-            
+          GoogleMapsViewRepresentable(
+            camera: camera, markers: $markers, gridNeedPoints: $viewModel.gridNeedPoints)  // Pass the gridNeedPoints array as a binding
         } else {
           Text("Loading...")
         }
@@ -66,11 +65,11 @@ struct MapView: View {
           marker.isDraggable = false
           return marker
         }
-          
+
       }
 
     }
-      
+
   }
 }
 
@@ -81,16 +80,16 @@ struct ChargingStationsList: View {
 
   var body: some View {
     GeometryReader { geometry in
-        VStack(spacing: 0) {
-            List {
-                ForEach(0..<self.markers.count, id: \.self) { id in
-                    let marker = self.markers[id]
-                    Button(action: { buttonAction(marker) }) {
-                        Text(marker.title ?? "")
-                    }
-                }
-            }.frame(maxWidth: .infinity)
-        }
+      VStack(spacing: 0) {
+        List {
+          ForEach(0..<self.markers.count, id: \.self) { id in
+            let marker = self.markers[id]
+            Button(action: { buttonAction(marker) }) {
+              Text(marker.title ?? "")
+            }
+          }
+        }.frame(maxWidth: .infinity)
+      }
     }
   }
 }
