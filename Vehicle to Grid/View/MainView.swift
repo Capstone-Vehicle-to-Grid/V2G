@@ -26,14 +26,6 @@ struct MainView: View {
       if isLoggedIn {
         VStack{
             
-//            GeometryReader { geo in
-//                Image("Image")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: geo.size.width * 7)
-//                    .frame(width: geo.size.width, height: geo.size.height)
-//            }
-//            .background(Color("Primary Black"))
           HStack{
 //            Text("GENERAL MOTORS")
 //              .background(Color(("Primary Blue")))
@@ -65,12 +57,14 @@ struct MainView: View {
           }
             //Fix this mess I made Chiyou
           HStack{
-            NavigationLink("", destination: MapView(), isActive: $navigated)
-            NavButtons(text: "Charging Stations", color: Color(("Accent Blue")), topPadding: 40, action: {
-              //take to charging stations page
-                self.navigated.toggle()
-            })
-              
+              HStack{
+                  Image(systemName: "tabbar_gps")
+                  NavigationLink("", destination: MapView(), isActive: $navigated)
+                  NavButtons(text: "Charging Stations", color: Color(("Accent Blue")), topPadding: 40, action: {
+                      //take to charging stations page
+                      self.navigated.toggle()
+                  })
+              }
             
             NavButtons(text: "Grid Needs", color: Color(("Accent Blue")), topPadding: 40, action: {
             })
@@ -82,12 +76,12 @@ struct MainView: View {
             NavButtons(text: "Energy Demand", color: Color(("Accent Blue")), topPadding: 40, action: {
               //take to energy demand page
             })
-            
-              NavButtons(text: "Payment History", color: Color(("Accent Blue")), topPadding: 40, action: {
-              //take to payment history page
-                openURL(URL(string: "https://www.paypal.com/us/home")!)
-            })
-            
+              
+
+                  NavButtons(text: "Payment History", color: Color(("Accent Blue")), topPadding: 40, action: {
+                      //take to payment history page
+                      openURL(URL(string: "https://www.paypal.com/us/home")!)
+                  })
           }
             
             

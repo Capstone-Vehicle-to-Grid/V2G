@@ -18,7 +18,7 @@ struct UpdateView: View {
         VStack{
             Text("Update Information")
               .font(.custom("overpass-semibold", size: 40))
-              .foregroundColor(Color("285 C"))
+              .foregroundColor(Color("Primary Blue"))
               .bold()
               .padding()
               .onAppear{
@@ -26,7 +26,7 @@ struct UpdateView: View {
             
             Text("Account Information")
                 .font(.custom("overpass-semibold", size: 20))
-                .foregroundColor(Color("285 C"))
+                .foregroundColor(Color("Primary Blue"))
                 .bold()
                 .padding()
             
@@ -87,6 +87,8 @@ struct UpdateView: View {
             }
         }
     }
+    
+    
     func updateInfo(){
         self.blankField = false
         self.updatedUser = false
