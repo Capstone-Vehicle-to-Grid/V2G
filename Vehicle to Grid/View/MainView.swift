@@ -57,14 +57,13 @@ struct MainView: View {
           }
             //Fix this mess I made Chiyou
           HStack{
-              HStack{
-//                  Image(systemName: "tabbar_gps")
-                  NavigationLink("", destination: MapView(), isActive: $navigated)
-                  NavButtons(text: "Charging Stations", color: Color(("Accent Blue")), topPadding: 40, action: {
-                      //take to charging stations page
-                      self.navigated.toggle()
-                  })
-              }
+              
+              NavigationLink("", destination: MapView(), isActive: $navigated)
+              NavButtons(text: "Charging Stations", color: Color(("Accent Blue")), topPadding: 40, action: {
+                  //take to charging stations page
+                  self.navigated.toggle()
+              })
+            
             
             NavButtons(text: "Grid Needs", color: Color(("Accent Blue")), topPadding: 40, action: {
             })
