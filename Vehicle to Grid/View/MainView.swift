@@ -58,7 +58,7 @@ struct MainView: View {
             //Fix this mess I made Chiyou
           HStack{
               HStack{
-                  Image(systemName: "tabbar_gps")
+//                  Image(systemName: "tabbar_gps")
                   NavigationLink("", destination: MapView(), isActive: $navigated)
                   NavButtons(text: "Charging Stations", color: Color(("Accent Blue")), topPadding: 40, action: {
                       //take to charging stations page
@@ -77,11 +77,12 @@ struct MainView: View {
               //take to energy demand page
             })
               
-
-                  NavButtons(text: "Payment History", color: Color(("Accent Blue")), topPadding: 40, action: {
-                      //take to payment history page
-                      openURL(URL(string: "https://www.paypal.com/us/home")!)
-                  })
+              NavigationLink("", destination: PaymentView(), isActive: $navigated)
+              NavButtons(text: "Payment History", color: Color(("Accent Blue")), topPadding: 40, action: {
+                  //take to payment history page
+                  self.navigated.toggle()
+//                  openURL(URL(string: "https://www.paypal.com/us/home")!)
+              })
           }
             
             
