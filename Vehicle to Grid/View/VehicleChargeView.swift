@@ -14,59 +14,62 @@ struct VehicleChargeView: View {
     @State var vehicleCharge: Float
 
         var body: some View {
-            VStack {
-                HStack{
-                    Text("Current Vehicle Charge")
-                        .font(.custom("overpass-semibold", size: 30))
-                        .foregroundColor(Color("Primary Blue"))
-                        .bold()
-                        .padding()
-                        .onAppear{
-                            let _ = viewModel.getUserData() }
-                }
-                Spacer()
-                    .frame(height: 30)
-                if (viewModel.user.vehicleMake != "" && viewModel.user.vehicleModel != "") {
-                    Text("Your vehicle, \(viewModel.user.vehicleMake) \(viewModel.user.vehicleModel), is currently")
-                        .font(.custom("overpass-semibold", size: 20))
-                        .foregroundColor(Color("Primary Blue"))
-                        .bold()
-                        .padding()
-                        .onAppear {
-                            kafkaClient.produce(message: "0.62")
-                            kafkaMessage = kafkaClient.consume() ?? "No message"
-                            var message = kafkaMessage.codingKey.stringValue
-                            self.vehicleCharge = Float(message) ?? 0.0
-                        }
-                        .onDisappear {
-                            kafkaClient.commit()
-                            kafkaMessage = ""
-                        }
-                    
-                    ChargeLevelBar(progress: self.$vehicleCharge)
-                                        .frame(width: 150.0, height: 150.0)
-                                        .padding(40.0)
-                    
-                    Button("Refresh") {
-                        kafkaMessage = kafkaClient.consume() ?? "No message"
+            ZStack{
+                Color("Primary Black").ignoresSafeArea() // sets background color, zstack allows for it to be under fields
+                VStack {
+                    HStack{
+                        Text("Current Vehicle Charge")
+                            .font(.custom("overpass-semibold", size: 30))
+                            .foregroundColor(Color("Accent Blue"))
+                            .bold()
+                            .padding()
+                            .onAppear{
+                                let _ = viewModel.getUserData() }
                     }
-                }
-                else{
-                    Text("You do not currently have a General Motors vehicle connected to this account.")
-                        .font(.custom("overpass-semibold", size: 20))
-                        .foregroundColor(Color("Primary Blue"))
-                        .bold()
-                        .padding()
-                        .multilineTextAlignment(.center)
+                    Spacer()
+                        .frame(height: 30)
+                    if (viewModel.user.vehicleMake != "" && viewModel.user.vehicleModel != "") {
+                        Text("Your vehicle, \(viewModel.user.vehicleMake) \(viewModel.user.vehicleModel), is currently")
+                            .font(.custom("overpass-semibold", size: 20))
+                            .foregroundColor(Color("Accent Blue"))
+                            .bold()
+                            .padding()
+                            .onAppear {
+                                kafkaClient.produce(message: "0.62")
+                                kafkaMessage = kafkaClient.consume() ?? "No message"
+                                var message = kafkaMessage.codingKey.stringValue
+                                self.vehicleCharge = Float(message) ?? 0.0
+                            }
+                            .onDisappear {
+                                kafkaClient.commit()
+                                kafkaMessage = ""
+                            }
+                        
+                        ChargeLevelBar(progress: self.$vehicleCharge)
+                            .frame(width: 150.0, height: 150.0)
+                            .padding(40.0)
+                        
+                        Button("Refresh") {
+                            kafkaMessage = kafkaClient.consume() ?? "No message"
+                        }
+                    }
+                    else{
+                        Text("You do not currently have a General Motors vehicle connected to this account.")
+                            .font(.custom("overpass-semibold", size: 20))
+                            .foregroundColor(Color("Accent Blue"))
+                            .bold()
+                            .padding()
+                            .multilineTextAlignment(.center)
+                        
+                        Text("Navigate to your account page to update your vehicle information.")
+                            .font(.custom("overpass-semibold", size: 20))
+                            .foregroundColor(Color("Accent Blue"))
+                            .bold()
+                            .padding()
+                            .multilineTextAlignment(.center)
+                    }
                     
-                    Text("Navigate to your account page to update your vehicle information.")
-                        .font(.custom("overpass-semibold", size: 20))
-                        .foregroundColor(Color("Primary Blue"))
-                        .bold()
-                        .padding()
-                        .multilineTextAlignment(.center)
                 }
-                
             }
         }
 }

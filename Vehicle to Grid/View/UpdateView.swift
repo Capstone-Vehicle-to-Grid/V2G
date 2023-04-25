@@ -14,78 +14,81 @@ struct UpdateView: View {
     @State private var updatedUser = false
 
     var body: some View {
-        
-        VStack{
-            Text("Update Information")
-              .font(.custom("overpass-semibold", size: 40))
-              .foregroundColor(Color("Primary Blue"))
-              .bold()
-              .padding()
-              .onAppear{
-                  let _ = viewModel.getUserData() }
-            
-            Text("Account Information")
-                .font(.custom("overpass-semibold", size: 20))
-                .foregroundColor(Color("Primary Blue"))
-                .bold()
-                .padding()
-            
-            TextField("New Username", text: $viewModel.user.username)
-                .padding()
-                .frame(width: 350, height: 50)
-                .background(Color.black.opacity(0.05))
-                .font(.custom("overpass-light", size: 16))
-            //          .cornerRadius(10)
-            
-            TextField("New Email", text: $viewModel.user.userEmail)
-                .padding()
-                .frame(width: 350, height: 50)
-                .background(Color.black.opacity(0.05))
-                .font(.custom("overpass-light", size: 16))
-            //          .cornerRadius(10)
-            
-            TextField("New Password", text: $viewModel.user.password)
-                .padding()
-                .frame(width: 350, height: 50)
-                .background(Color.black.opacity(0.05))
-                .font(.custom("overpass-light", size: 16))
-            //          .cornerRadius(10)
-
-            Text("Vehicle Information")
-                .font(.custom("overpass-semibold", size: 20))
-                .foregroundColor(Color("Primary Blue"))
-                .bold()
-                .padding()
-            
-            TextField("Vehicle Make", text: $viewModel.user.vehicleMake)
-                .padding()
-                .frame(width: 350, height: 50)
-                .background(Color.black.opacity(0.05))
-                .font(.custom("overpass-light", size: 16))
-            //          .cornerRadius(10)
-            
-            TextField("Vehicle Model", text: $viewModel.user.vehicleModel)
-                .padding()
-                .frame(width: 350, height: 50)
-                .background(Color.black.opacity(0.05))
-                .font(.custom("overpass-light", size: 16))
-            //          .cornerRadius(10)
-            
-            TextField("Vehicle VIN", text: $viewModel.user.vehicleVIN)
-                .padding()
-                .frame(width: 350, height: 50)
-                .background(Color.black.opacity(0.05))
-                .font(.custom("overpass-light", size: 16))
-            //          .cornerRadius(10)
-            
-            Button(action: updateInfo) {
+        ZStack{
+            Color("Primary Black").ignoresSafeArea() // sets background color, zstack allows for it to be under fields
+            VStack{
                 Text("Update Information")
+                    .font(.custom("overpass-semibold", size: 40))
+                    .foregroundColor(Color("Accent Blue"))
+                    .bold()
+                    .padding()
+                    .onAppear{
+                        let _ = viewModel.getUserData() }
+                
+                Text("Account Information")
+                    .font(.custom("overpass-semibold", size: 20))
+                    .foregroundColor(Color("Accent Blue"))
+                    .bold()
+                    .padding()
+                
+                TextField("New Username", text: $viewModel.user.username)
+                    .padding()
+                    .frame(width: 350, height: 50)
+                    .background(Color("Accent Gray").opacity(0.70))
+                    .font(.custom("overpass-light", size: 16))
+                //          .cornerRadius(10)
+                
+                TextField("New Email", text: $viewModel.user.userEmail)
+                    .padding()
+                    .frame(width: 350, height: 50)
+                    .background(Color("Accent Gray").opacity(0.70))
+                    .font(.custom("overpass-light", size: 16))
+                //          .cornerRadius(10)
+                
+                TextField("New Password", text: $viewModel.user.password)
+                    .padding()
+                    .frame(width: 350, height: 50)
+                    .background(Color("Accent Gray").opacity(0.70))
+                    .font(.custom("overpass-light", size: 16))
+                //          .cornerRadius(10)
+                
+                Text("Vehicle Information")
+                    .font(.custom("overpass-semibold", size: 20))
+                    .foregroundColor(Color("Accent Blue"))
+                    .bold()
+                    .padding()
+                
+                TextField("Vehicle Make", text: $viewModel.user.vehicleMake)
+                    .padding()
+                    .frame(width: 350, height: 50)
+                    .background(Color("Accent Gray").opacity(0.70))
+                    .font(.custom("overpass-light", size: 16))
+                //          .cornerRadius(10)
+                
+                TextField("Vehicle Model", text: $viewModel.user.vehicleModel)
+                    .padding()
+                    .frame(width: 350, height: 50)
+                    .background(Color("Accent Gray").opacity(0.70))
+                    .font(.custom("overpass-light", size: 16))
+                //          .cornerRadius(10)
+                
+                TextField("Vehicle VIN", text: $viewModel.user.vehicleVIN)
+                    .padding()
+                    .frame(width: 350, height: 50)
+                    .background(Color("Accent Gray").opacity(0.70))
+                    .font(.custom("overpass-light", size: 16))
+                //          .cornerRadius(10)
+                
+                Button(action: updateInfo) {
+                    Text("Update Information")
                     //.foregroundColor(Color("285 C"))
-                    .font(.custom("overpass-light", size: 20))
-                    .frame(width: 200, height: 40)
-                    .alert(isPresented: $showAlert, content: { self.pickAlert()})
+                        .font(.custom("overpass-light", size: 20))
+                        .frame(width: 200, height: 40)
+                        .alert(isPresented: $showAlert, content: { self.pickAlert()})
+                }
             }
         }
+
     }
     
     
@@ -120,6 +123,7 @@ struct UpdateView: View {
             message: Text("Your account information was unable to be updated."),
             dismissButton: .default(Text("Ok")))
     }
+    
 }
 
 struct UpdateView_Previews: PreviewProvider {
