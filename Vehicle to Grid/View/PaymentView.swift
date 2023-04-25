@@ -11,11 +11,12 @@ struct PaymentView: View {
     //    @StateObject var viewModel = userPaymentViewModel()
     @Environment(\.openURL) var openURL
     var body: some View {
-        
         NavigationView {
             HStack{
                 
+                
                 VStack(alignment: .leading) {
+                    Spacer()
                     Text("Current Balance: $25")
                         .font(.headline)
                         .foregroundColor(Color("Accent Blue"))
@@ -68,7 +69,7 @@ struct PaymentView: View {
                             Text("You received $5.00")
                                 .foregroundColor(Color("Accent Blue"))
                                 .frame(maxWidth: .infinity, alignment: .center)
-                            Text("On 1/9/20223")
+                            Text("On 1/9/2023")
                                 .foregroundColor(Color("Accent Blue"))
                                 .frame(maxWidth: .infinity, alignment: .center)
                             Text("Transaction #: 0033")

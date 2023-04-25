@@ -15,7 +15,10 @@ struct MainView: View {
   @State var navigated = false
   @State var navigatedMyAccount = false
   @State var navigatedVehicleCharge = false
+  @State var navigatedPayment = false
   @Environment(\.openURL) var openURL
+    @State var gridNeed: String = "unavailable"
+    @StateObject var gridViewModel = MapViewModel()
 //  @State var goToAccount = false
   
   var body: some View {
@@ -40,14 +43,25 @@ struct MainView: View {
                       .aspectRatio(contentMode: .fit)
               }
           }
-          Spacer()
+         Spacer()
           
           //Horizontal stack to have bottons layout side by side
           HStack{
-              NavigationLink("", destination: MyAccountView(), isActive: $navigatedMyAccount)
-              NavButtons(text: "My Account", color: Color(("Accent Blue")), topPadding: 40, action: {
-                  self.navigatedMyAccount.toggle()
-            })
+              Text("Grid Need: \n\(gridNeed)")
+                  .onAppear{
+                      getGridNeed()
+                  }
+                .padding()
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, maxHeight: 120)
+                .background(Color("Accent Blue"))
+                .cornerRadius(30)
+                .shadow(radius: 40)
+                .padding(.top, 40)
+                .padding(.horizontal)
+                .font(.system(size: 20))
+                .multilineTextAlignment(.center)
+
             
               NavigationLink("", destination: VehicleChargeView(vehicleCharge: 0.0), isActive: $navigatedVehicleCharge)
               NavButtons(text: "Vehicle Charge", color: Color(("Accent Blue")), topPadding: 40, action: {
@@ -56,34 +70,31 @@ struct MainView: View {
               })
           }
             //Fix this mess I made Chiyou
-          HStack{
-              
-              NavigationLink("", destination: MapView(), isActive: $navigated)
-              NavButtons(text: "Charging Stations", color: Color(("Accent Blue")), topPadding: 40, action: {
-                  //take to charging stations page
-                  self.navigated.toggle()
+            HStack{
+                
+                NavigationLink("", destination: MapView(), isActive: $navigated)
+                NavButtons(text: "Display Map", color: Color(("Accent Blue")), topPadding: 40, action: {
+                    //take to charging stations page
+                    self.navigated.toggle()
+                })
+                
+                
+            }
+            HStack {
+                NavigationLink("", destination: PaymentView(), isActive: $navigatedPayment)
+                NavButtons(text: "Payment History", color: Color(("Accent Blue")), topPadding: 40, action: {
+                    //take to payment history page
+                    self.navigatedPayment.toggle()
+  //                  openURL(URL(string: "https://www.paypal.com/us/home")!)
+                })
+                
+                NavigationLink("", destination: MyAccountView(), isActive: $navigatedMyAccount)
+                NavButtons(text: "My Account", color: Color(("Accent Blue")), topPadding: 40, action: {
+                    self.navigatedMyAccount.toggle()
               })
-            
-            
-            NavButtons(text: "Grid Needs", color: Color(("Accent Blue")), topPadding: 40, action: {
-            })
-            
-          }
-          
-          HStack{
-            
-            NavButtons(text: "Energy Demand", color: Color(("Accent Blue")), topPadding: 40, action: {
-              //take to energy demand page
-            })
-              
-              NavigationLink("", destination: PaymentView(), isActive: $navigated)
-              NavButtons(text: "Payment History", color: Color(("Accent Blue")), topPadding: 40, action: {
-                  //take to payment history page
-                  self.navigated.toggle()
-//                  openURL(URL(string: "https://www.paypal.com/us/home")!)
-              })
-          }
-            
+            }
+            Spacer()
+            Spacer()
             
           
           Button(action: signUserOut) {
@@ -125,6 +136,16 @@ struct MainView: View {
     }
     
   }
+
+    func getGridNeed() {
+        if gridViewModel.isInHighGridNeed == false{
+            self.gridNeed = "Low"
+        }
+        
+        if gridViewModel.isInHighGridNeed == true {
+            self.gridNeed = "HIGH"
+        }
+    }
   
 }
 

@@ -53,7 +53,7 @@ struct UpdateView: View {
 
             Text("Vehicle Information")
                 .font(.custom("overpass-semibold", size: 20))
-                //.foregroundColor(Color("285 C"))
+                .foregroundColor(Color("Primary Blue"))
                 .bold()
                 .padding()
             

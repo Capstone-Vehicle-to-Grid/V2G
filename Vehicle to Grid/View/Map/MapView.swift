@@ -60,7 +60,6 @@ struct MapView: View {
           }
           var i = 0
           markers = filteredStations.map {
-              let infoView = UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 500))
               let marker = GMSMarker(position: $0.coordinate)
               let markerStation = filteredStations[i]
               let info = getInfo(markerStation: markerStation)
@@ -81,12 +80,12 @@ struct MapView: View {
     var info = ""
     if address?.addressLine2 == "" || address?.addressLine2 == nil {
       info =
-        ("Address:\n\(address?.addressLine1 ?? "Not found")\n" + "\(address?.town ?? ""), "
+        ("Current Price: \(markerStationDict?.usageCost ?? "Unavailable" )\n" + "Address:\n\(address?.addressLine1 ?? "Not found")\n" + "\(address?.town ?? ""), "
           + "\(address?.stateOrProvince ?? "")\n" + "\(address?.postcode ?? "")\n" + "\nHours: "
           + "\nCurrent Price: ")
     } else {
       info =
-        ("Address:\n \(address?.addressLine1 ?? "Not found")\n" + "\(address?.addressLine2 ?? "")\n"
+        ("Current Price: \(markerStationDict?.usageCost ?? "Unavailable" )\n" + "Address:\n \(address?.addressLine1 ?? "Not found")\n" + "\(address?.addressLine2 ?? "")\n"
           + "\(address?.town ?? ""), " + "\(address?.stateOrProvince ?? "")\n"
           + "\(address?.postcode ?? "")\n" + "\nHours: " + "\nCurrent Price: ")
     }
