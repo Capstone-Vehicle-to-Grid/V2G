@@ -33,33 +33,44 @@ struct MapView: View {
         }
       }
       .onReceive(viewModel.$stations) { stations in
-             //This is a crude filtering function and should probably be replaced with GoogleMapsUtils GMUClusterManager at some point in the near future
-             let minDistance = 100.0  // Minimum distance between markers in feet
-             var filteredStations = [ChargingStation]()
-             for station in stations {
-               let isTooClose =
-                 filteredStations.first { otherStation in
-                   let distance = CLLocation(
-                     latitude: station.coordinate.latitude,
-                     longitude: station.coordinate.longitude
-                   ).distance(
-                     from: CLLocation(
-                       latitude: otherStation.coordinate.latitude,
-                       longitude: otherStation.coordinate.longitude
-                     ))
-                   return distance < minDistance / 3.281  // Convert feet to meters
-                 } != nil
-               if !isTooClose {
-                 filteredStations.append(station)
-               }
-             }
-             markers = filteredStations.map {
-               let marker = GMSMarker(position: $0.coordinate)
-               marker.title = $0.name + " Station"
-               marker.isDraggable = false
-               return marker
-             }
-           }
+          
+          //This is a crude filtering function and should probably be replaced with GoogleMapsUtils GMUClusterManager at some point in the near future
+          
+          let minDistance = 100.0  // Minimum distance between markers in feet
+          var filteredStations = [ChargingStation]()
+          
+          for station in stations {
+              let isTooClose =
+              filteredStations.first { otherStation in
+                  let distance = CLLocation(
+                      latitude: station.coordinate.latitude,
+                      longitude: station.coordinate.longitude
+                  ).distance(
+                      from: CLLocation(
+                          latitude: otherStation.coordinate.latitude,
+                          longitude: otherStation.coordinate.longitude
+                      ))
+                  
+                  return distance < minDistance / 3.281  // Convert feet to meters
+              } != nil
+              
+              if !isTooClose {
+                  filteredStations.append(station)
+              }
+          }
+          var i = 0
+          markers = filteredStations.map {
+              let marker = GMSMarker(position: $0.coordinate)
+              let markerStation = filteredStations[i]
+              let info = getInfo(markerStation: markerStation)
+              marker.title = $0.name + " Station"
+              marker.snippet = info
+              marker.isDraggable = false
+              i += 1
+              return marker
+          }
+          
+      }
     }
   }
 

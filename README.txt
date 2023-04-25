@@ -4,5 +4,5 @@ Use this link for reference: https://developers.google.com/maps/documentation/io
 
 Also, for logging into the application.
 
-Email: Testuser@email.com
+Email: Test@email.com
 PW: password
