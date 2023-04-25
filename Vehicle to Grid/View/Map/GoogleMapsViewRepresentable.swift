@@ -25,7 +25,6 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
   func updateUIView(_ uiView: GMSMapView, context: Context) {
 
     markers.forEach { $0.map = uiView as GMSMapView }
-
     let heatmapLayer = GMUHeatmapTileLayer()
     addGridNeedPoints(to: heatmapLayer)
 
@@ -45,10 +44,6 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
 
     }
 
-    heatmapLayer.weightedData = list
-
-    print("heatmapLayer.weightedData set successfully")
-
     let gradientColors: [UIColor] = [.green, .red]
     let gradientStartPoints: [NSNumber] = [0.5, 0.75]
 
@@ -59,9 +54,16 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
     )
 
     heatmapLayer.opacity = 1.0
-
+    heatmapLayer.maximumZoomIntensity = 13
+    heatmapLayer.minimumZoomIntensity = 8
     heatmapLayer.radius = 100
-
+      
+    //List Set up After
+    heatmapLayer.weightedData = list
+    print("heatmapLayer.weightedData set successfully")
     print("List of GMUWeightedLatLng objects created: \(list)")
+    
+    
+    
   }
 }
