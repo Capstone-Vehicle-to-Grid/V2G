@@ -10,6 +10,7 @@ import Foundation
 public class OpenChargeMapPOI : Codable {
     var id: Int?
     var address: AddressInfo?
+    var operatorInfo: OperatorInfo?
     var distance: Float?
     var usageCost: String?
 
@@ -18,6 +19,26 @@ public class OpenChargeMapPOI : Codable {
       case address = "AddressInfo"
       case distance = "Distance"
       case usageCost = "UsageCost"
+      case operatorInfo = "OperatorInfo"
+    }
+    
+    public class OperatorInfo: Codable {
+        let websiteURL: URL?
+        let phonePrimaryContact: String?
+        let phoneSecondaryContact: String?
+        let contactEmail: String?
+        let id: Int?
+        let title: String?
+
+        enum CodingKeys: String, CodingKey {
+            case websiteURL = "WebsiteURL"
+            case phonePrimaryContact = "PhonePrimaryContact"
+            case phoneSecondaryContact = "PhoneSecondaryContact"
+            case contactEmail = "ContactEmail"
+            case id = "ID"
+            case title = "Title"
+        }
+        
     }
 
     public class AddressInfo : Codable, CustomStringConvertible {
