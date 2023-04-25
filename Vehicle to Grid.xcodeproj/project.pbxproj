@@ -332,8 +332,8 @@
 				52013B2829E652D700C7947F /* UpdateView.swift */,
 				52B3190229EBB2E10070C52F /* VehicleChargeView.swift */,
 				52013B2A29E655AA00C7947F /* AddInfoView.swift */,
-				7C21381729B3031500FE8598 /* Map */,
 				52415E7129E523EE0025FD24 /* PaymentView.swift */,
+				7C21381729B3031500FE8598 /* Map */,
 			);
 			path = View;
 			sourceTree = "<group>";

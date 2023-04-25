@@ -18,7 +18,7 @@ struct VehicleChargeView: View {
                 HStack{
                     Text("Current Vehicle Charge")
                         .font(.custom("overpass-semibold", size: 30))
-                        .foregroundColor(Color("285 C"))
+                        .foregroundColor(Color("Primary Blue"))
                         .bold()
                         .padding()
                         .onAppear{
@@ -29,7 +29,7 @@ struct VehicleChargeView: View {
                 if (viewModel.user.vehicleMake != "" && viewModel.user.vehicleModel != "") {
                     Text("Your vehicle, \(viewModel.user.vehicleMake) \(viewModel.user.vehicleModel), is currently")
                         .font(.custom("overpass-semibold", size: 20))
-                        .foregroundColor(Color("285 C"))
+                        .foregroundColor(Color("Primary Blue"))
                         .bold()
                         .padding()
                         .onAppear {
@@ -54,14 +54,14 @@ struct VehicleChargeView: View {
                 else{
                     Text("You do not currently have a General Motors vehicle connected to this account.")
                         .font(.custom("overpass-semibold", size: 20))
-                        .foregroundColor(Color("285 C"))
+                        .foregroundColor(Color("Primary Blue"))
                         .bold()
                         .padding()
                         .multilineTextAlignment(.center)
                     
                     Text("Navigate to your account page to update your vehicle information.")
                         .font(.custom("overpass-semibold", size: 20))
-                        .foregroundColor(Color("285 C"))
+                        .foregroundColor(Color("Primary Blue"))
                         .bold()
                         .padding()
                         .multilineTextAlignment(.center)
