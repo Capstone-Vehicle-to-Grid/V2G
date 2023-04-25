@@ -53,7 +53,7 @@ struct UpdateView: View {
 
             Text("Vehicle Information")
                 .font(.custom("overpass-semibold", size: 20))
-                .foregroundColor(Color("285 C"))
+                //.foregroundColor(Color("285 C"))
                 .bold()
                 .padding()
             
@@ -80,7 +80,7 @@ struct UpdateView: View {
             
             Button(action: updateInfo) {
                 Text("Update Information")
-                    .foregroundColor(Color("285 C"))
+                    //.foregroundColor(Color("285 C"))
                     .font(.custom("overpass-light", size: 20))
                     .frame(width: 200, height: 40)
                     .alert(isPresented: $showAlert, content: { self.pickAlert()})

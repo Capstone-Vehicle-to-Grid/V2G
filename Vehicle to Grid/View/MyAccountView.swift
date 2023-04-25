@@ -31,7 +31,7 @@ struct MyAccountView: View {
                         Divider() // Add a horizontal line as a section separator
                             .background(Color("Accent Blue"))
                         
-                            Text("User Info")
+                        Text("User Info")
                             .font(.headline)
                             .foregroundColor(Color("Accent Blue"))
                         
@@ -64,7 +64,7 @@ struct MyAccountView: View {
                     }
                     
                     Spacer()
-                        .frame(height: 30)
+                        .frame(height: 50)
                     
                     NavigationLink(destination: UpdateView()) {
                       Text("Update User Information")
@@ -72,12 +72,10 @@ struct MyAccountView: View {
                         .foregroundColor(Color("Accent Blue"))
                         .frame(width: 400, height: 40, alignment: .center)
                     }
-                        
-                        Spacer()
-                    
+                    Spacer()
+                        .frame(height:30)
                     }
                 
-                    Spacer()
                 }
             .background(Color("Primary Black")) //Change background color so its under
             }

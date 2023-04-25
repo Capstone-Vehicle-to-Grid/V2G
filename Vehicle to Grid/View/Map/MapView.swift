@@ -60,6 +60,7 @@ struct MapView: View {
           }
           var i = 0
           markers = filteredStations.map {
+              let infoView = UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 500))
               let marker = GMSMarker(position: $0.coordinate)
               let markerStation = filteredStations[i]
               let info = getInfo(markerStation: markerStation)

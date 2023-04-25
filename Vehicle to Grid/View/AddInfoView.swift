@@ -19,8 +19,8 @@ struct AddInfoView: View {
     
     VStack{
       Text("Add Account Information")
-        .font(.custom("overpass-semibold", size: 40))
-        .foregroundColor(Color("285 C"))
+        .font(.custom("overpass-semibold", size: 30))
+        //.foregroundColor(Color("285 C"))
         .bold()
         .padding()
       
@@ -50,7 +50,7 @@ struct AddInfoView: View {
           self.isLoggedIn = viewModel.logIn()
         }) {
           Text("Update Information")
-            .foregroundColor(Color("285 C"))
+            .foregroundColor(Color("Accent Blue"))
             .font(.custom("overpass-light", size: 20))
             .frame(width: 200, height: 40)
             .alert(isPresented: $showAlert) {
@@ -71,7 +71,7 @@ struct AddInfoView: View {
           }
         }) {
           Text("Skip This Step")
-            .foregroundColor(Color("285 C"))
+            .foregroundColor(Color("Accent Blue"))
             .font(.custom("overpass-light", size: 20))
             .frame(width: 200, height: 40)
             .alert(isPresented: $showAlert) {

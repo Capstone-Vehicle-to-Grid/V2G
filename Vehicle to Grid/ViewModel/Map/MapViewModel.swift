@@ -17,6 +17,7 @@ class MapViewModel: ObservableObject {
   @Published var poiDictionary = [String: OpenChargeMapPOI]()
   @Published private var gridNeed = Float(1.0)
   @Published var isInHighGridNeed = false
+
     
     private var highGridNeedStart = Float(1.05);
     private var perlinSeed = 331363;
@@ -351,3 +352,4 @@ class MapViewModel: ObservableObject {
     return 1 + value * 0.3
   }
 }
+
