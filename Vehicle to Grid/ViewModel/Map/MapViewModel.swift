@@ -15,6 +15,11 @@ class MapViewModel: ObservableObject {
   @Published var stations = [ChargingStation]()
   @Published var gridNeedPoints = [GridNeedPoint]()
   @Published var poiDictionary = [String: OpenChargeMapPOI]()
+    @Published private var gridNeed = Float(1.0)
+  @Published var isInHighGridNeed = false
+    
+    private var highGridNeedStart = Float(1.05);
+    private var perlinSeed = 331363;
 
   init() {
     getUserLocation()
@@ -28,7 +33,21 @@ class MapViewModel: ObservableObject {
         self.getZipFromCoordinate(coordinate: self.userLocation!) { zipCode in
           if let zipCode = zipCode {
             print(zipCode)
-
+              
+              
+            // Generate the grid need ratio with Perlin noise for the new coordinate and a random seed
+            let ratio = self.generateGridNeedRatio(
+                lat: location.coordinate.latitude, lng: location.coordinate.longitude,
+                seed: self.perlinSeed)
+              
+            self.gridNeed = ratio;
+                
+            if ratio > self.highGridNeedStart{
+                self.isInHighGridNeed = true;
+            }
+              
+            print("Grid need is " + self.gridNeed.description)
+                
             self.getNearbyZipCodes(zipCode: zipCode) { zipCodes in
               for zipCode in zipCodes {
                 self.getCoordinateFromZipCode(zipCode: zipCode) { coord in
@@ -50,7 +69,7 @@ class MapViewModel: ObservableObject {
                         // Generate the grid need ratio with Perlin noise for the new coordinate and a random seed
                         let ratio = self.generateGridNeedRatio(
                           lat: newCoord.latitude, lng: newCoord.longitude,
-                          seed: Int.random(in: 0...100))
+                          seed: self.perlinSeed)
                         // Create a GridNeedPoint object with the ratio constructor
                         let gridNeedPoint = GridNeedPoint(
                           zipCode: zipCode, coordinates: newCoord,
@@ -319,7 +338,7 @@ class MapViewModel: ObservableObject {
       origin: vector_double2(0.0, 0.0),
       sampleCount: vector_int2(128, 128),
       seamless: true)
-    let value = noiseMap.value(at: vector_int2(Int32(lat), Int32(lng)))
+      let value = noiseMap.value(at: vector_int2(Int32(lat), Int32(lng))) + 0.5
 
     return 1 + value * 0.3
   }
