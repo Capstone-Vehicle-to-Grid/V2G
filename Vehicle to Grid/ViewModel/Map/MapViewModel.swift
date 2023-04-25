@@ -48,48 +48,60 @@ class MapViewModel: ObservableObject {
               
             print("Grid need is " + self.gridNeed.description)
                 
-            self.getNearbyZipCodes(zipCode: zipCode) { zipCodes in
-              for zipCode in zipCodes {
-                self.getCoordinateFromZipCode(zipCode: zipCode) { coord in
-                  // Fetch the historical rate from NREL for the coordinate
-                  self.getHistoricalRate(lat: coord.latitude, lng: coord.longitude) {
-                    historicalRate in
-
-                    if let historicalRate = historicalRate {
-                      // Generate 10 points per zip code
-                      for _ in 1...3 {
-                        // Generate a random offset for the latitude and longitude
-                        let latOffset = Double.random(in: -0.09...0.09)
-                        let lngOffset = Double.random(in: -0.09...0.09)
-                        // Create a new coordinate with the offset
-                        let newCoord = CLLocationCoordinate2D(
-                          latitude: coord.latitude + latOffset,
-                          longitude: coord.longitude + lngOffset
-                        )
-                        // Generate the grid need ratio with Perlin noise for the new coordinate and a random seed
-                        let ratio = self.generateGridNeedRatio(
-                          lat: newCoord.latitude, lng: newCoord.longitude,
-                          seed: self.perlinSeed)
-                        // Create a GridNeedPoint object with the ratio constructor
-                        let gridNeedPoint = GridNeedPoint(
-                          zipCode: zipCode, coordinates: newCoord,
-                          historicalCost: Double(historicalRate.outputs.commercial),
-                          ratio: Double(ratio))
-
-                        print(gridNeedPoint)
-
-                        DispatchQueue.main.async {
-                          self.gridNeedPoints.append(gridNeedPoint)
-                        }
-                      }
-                    } else {
-                      print("Could not get historical rate")
-                    }
-
-                  }
+              self.fetchStations { stations in
+                self.updatePOIDictionary(with: stations)
+                DispatchQueue.main.async {
+                    self.stations = stations
                 }
+                  
+                  for station in stations{
+                      let coord = station.coordinate
+                      
+                      self.getHistoricalRate(lat: coord.latitude, lng: coord.longitude) {
+                        historicalRate in
+
+                        if let historicalRate = historicalRate {
+                          // Generate 10 points per zip code
+                            // Create a new coordinate with the offset
+                            for i in 1...3 {
+                                var latOffset = 0.0;
+                                var lngOffset = 0.0;
+                                
+                                if i > 0{
+                                    latOffset = Double.random(in: -0.01...0.01)
+                                    lngOffset = Double.random(in: -0.01...0.01)
+                                }
+                                
+                                let newCoord = CLLocationCoordinate2D(
+                                                          latitude: coord.latitude + latOffset,
+                                                          longitude: coord.longitude + lngOffset
+                                                        )
+                                
+                                // Generate the grid need ratio with Perlin noise for the new coordinate and a random seed
+                                let ratio = self.generateGridNeedRatio(
+                                    lat: newCoord.latitude, lng: newCoord.longitude,
+                                    seed: self.perlinSeed)
+                                
+                                if ratio > 1{
+                                    // Create a GridNeedPoint object with the ratio constructor
+                                    let gridNeedPoint = GridNeedPoint(
+                                        zipCode: zipCode, coordinates: newCoord,
+                                        historicalCost: Double(historicalRate.outputs.commercial),
+                                        ratio: Double(ratio))
+                                    
+                                    DispatchQueue.main.async {
+                                        self.gridNeedPoints.append(gridNeedPoint)
+                                    }
+                                }
+                            }
+                        } else {
+                          print("Could not get historical rate")
+                        }
+
+                      }
+                  }
+                  
               }
-            }
 
           } else {
             print("Could not get zip code")
@@ -99,13 +111,6 @@ class MapViewModel: ObservableObject {
       } else {
         print("Could not get location")
         self.userLocation = CLLocationCoordinate2D(latitude: 32.7767, longitude: 96.797)
-      }
-
-      self.fetchStations { stations in
-        self.updatePOIDictionary(with: stations)
-        DispatchQueue.main.async {
-            self.stations = stations
-        }
       }
     }
   }
@@ -341,7 +346,7 @@ class MapViewModel: ObservableObject {
       origin: vector_double2(0.0, 0.0),
       sampleCount: vector_int2(128, 128),
       seamless: true)
-      let value = noiseMap.value(at: vector_int2(Int32(lat), Int32(lng))) + 0.5
+      let value = noiseMap.value(at: vector_int2(Int32(lat), Int32(lng))) + 0.65
 
     return 1 + value * 0.3
   }

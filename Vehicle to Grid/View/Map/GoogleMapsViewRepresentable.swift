@@ -56,7 +56,7 @@ struct GoogleMapsViewRepresentable: UIViewRepresentable {
     heatmapLayer.opacity = 1.0
     heatmapLayer.maximumZoomIntensity = 13
     heatmapLayer.minimumZoomIntensity = 8
-    heatmapLayer.radius = 100
+    heatmapLayer.radius = 110
       
     //List Set up After
     heatmapLayer.weightedData = list
