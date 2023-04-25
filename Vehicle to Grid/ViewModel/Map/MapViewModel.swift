@@ -15,7 +15,7 @@ class MapViewModel: ObservableObject {
   @Published var stations = [ChargingStation]()
   @Published var gridNeedPoints = [GridNeedPoint]()
   @Published var poiDictionary = [String: OpenChargeMapPOI]()
-    @Published private var gridNeed = Float(1.0)
+  @Published private var gridNeed = Float(1.0)
   @Published var isInHighGridNeed = false
     
     private var highGridNeedStart = Float(1.05);
@@ -103,6 +103,9 @@ class MapViewModel: ObservableObject {
 
       self.fetchStations { stations in
         self.updatePOIDictionary(with: stations)
+        DispatchQueue.main.async {
+            self.stations = stations
+        }
       }
     }
   }
