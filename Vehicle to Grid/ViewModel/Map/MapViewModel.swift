@@ -63,7 +63,7 @@ class MapViewModel: ObservableObject {
                         if let historicalRate = historicalRate {
                           // Generate 10 points per zip code
                             // Create a new coordinate with the offset
-                            for i in 1...3 {
+                            for i in 0...1{
                                 var latOffset = 0.0;
                                 var lngOffset = 0.0;
                                 
