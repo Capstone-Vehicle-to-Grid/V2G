@@ -100,19 +100,32 @@ struct RegisterView: View {
     
     viewModel.register() { successfulRegister in
       
-      print("Value of successfulRegister = \(successfulRegister)")
-      
-      if !successfulRegister {
+      switch successfulRegister {
         
+      case .success:
+        print("Registration Successful")
         showAddInfoView = true
-        print("User successfully registered")
         
-      } else {
-        
+      case .failure(let error):
         showAlert = true
-        print("User already exists")
+        print("Registration failed with error: \(error.localizedDescription)")
         
       }
+      
+//      print("Value of successfulRegister = \(successfulRegister)")
+//
+//      if !successfulRegister {
+//
+//        showAddInfoView = true
+//        print("User successfully registered")
+//        print("Value of showAddInfoView = \(showAddInfoView)")
+//
+//      } else {
+//
+//        showAlert = true
+//        print("User already exists")
+//
+//      }
       
     }
     
