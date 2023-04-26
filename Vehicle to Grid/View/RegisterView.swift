@@ -104,7 +104,8 @@ struct RegisterView: View {
         
       case .success:
         print("Registration Successful")
-        showAddInfoView = true
+//        showAddInfoView = true
+        isLoggedIn = true
         
       case .failure(let error):
         showAlert = true
